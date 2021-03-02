@@ -20,6 +20,10 @@
 		754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848E725EEAC8500529C79 /* OnboardingDependencyContainer.swift */; };
 		754848EA25EEAC9E00529C79 /* LoginDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848E925EEAC9E00529C79 /* LoginDependencyContainer.swift */; };
 		754848EC25EEACBA00529C79 /* SignupDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848EB25EEACBA00529C79 /* SignupDependencyContainer.swift */; };
+		754848F025EEB5E900529C79 /* UserSessionDataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848EF25EEB5E900529C79 /* UserSessionDataStoreType.swift */; };
+		754848F325EEB6E600529C79 /* UserSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F225EEB6E600529C79 /* UserSessionModel.swift */; };
+		754848F525EEB74600529C79 /* RemoteUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F425EEB74600529C79 /* RemoteUserSession.swift */; };
+		754848F725EEB76500529C79 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F625EEB76500529C79 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		754848E725EEAC8500529C79 /* OnboardingDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDependencyContainer.swift; sourceTree = "<group>"; };
 		754848E925EEAC9E00529C79 /* LoginDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDependencyContainer.swift; sourceTree = "<group>"; };
 		754848EB25EEACBA00529C79 /* SignupDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDependencyContainer.swift; sourceTree = "<group>"; };
+		754848EF25EEB5E900529C79 /* UserSessionDataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStoreType.swift; sourceTree = "<group>"; };
+		754848F225EEB6E600529C79 /* UserSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionModel.swift; sourceTree = "<group>"; };
+		754848F425EEB74600529C79 /* RemoteUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserSession.swift; sourceTree = "<group>"; };
+		754848F625EEB76500529C79 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,8 @@
 		754848C625E812F600529C79 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				754848F125EEB67600529C79 /* Model */,
+				754848EE25EEB5D700529C79 /* Persistence */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -179,6 +189,24 @@
 				754848E325EEAB4500529C79 /* Signup */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		754848EE25EEB5D700529C79 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				754848EF25EEB5E900529C79 /* UserSessionDataStoreType.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		754848F125EEB67600529C79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				754848F225EEB6E600529C79 /* UserSessionModel.swift */,
+				754848F425EEB74600529C79 /* RemoteUserSession.swift */,
+				754848F625EEB76500529C79 /* UserProfile.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,12 +311,16 @@
 			files = (
 				754848E625EEAC6200529C79 /* LaunchDependencyContainer.swift in Sources */,
 				754848CD25E8140900529C79 /* NiblessNavigationController.swift in Sources */,
+				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
 				754848EC25EEACBA00529C79 /* SignupDependencyContainer.swift in Sources */,
 				754848A425E80E8500529C79 /* ViewController.swift in Sources */,
 				754848EA25EEAC9E00529C79 /* LoginDependencyContainer.swift in Sources */,
 				754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */,
+				754848F025EEB5E900529C79 /* UserSessionDataStoreType.swift in Sources */,
 				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
 				754848CB25E813D300529C79 /* NiblessView.swift in Sources */,
+				754848F525EEB74600529C79 /* RemoteUserSession.swift in Sources */,
+				754848F325EEB6E600529C79 /* UserSessionModel.swift in Sources */,
 				754848A025E80E8500529C79 /* AppDelegate.swift in Sources */,
 				754848C525E8123400529C79 /* MainDependencyContainer.swift in Sources */,
 			);

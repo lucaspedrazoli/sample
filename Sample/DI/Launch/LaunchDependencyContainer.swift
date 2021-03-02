@@ -9,5 +9,10 @@
 import Foundation
 
 class LaunchDependencyContainer {
-  
+
+  let userSessionStore: UserSessionStoreType
+
+  init(userSessionStore: UserSessionStoreType) {
+    self.userSessionStore = userSessionStore
+  }
 }

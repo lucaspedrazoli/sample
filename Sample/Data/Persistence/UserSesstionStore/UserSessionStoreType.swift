@@ -1,5 +1,5 @@
 //
-//  UserSessionDataStoreType.swift
+//  UserSessionStoreType.swift
 //  Sample
 //
 //  Created by Lucas Pedrazoli on 02/03/21.
@@ -10,7 +10,7 @@ import Foundation
 
 typealias AuthToken = String
 
-protocol UserSessionDataStoreType {
+protocol UserSessionStoreType {
   func read() -> UserSessionModel
 
   @discardableResult

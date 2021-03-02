@@ -11,7 +11,7 @@ import Foundation
 class MainDependencyContainer {
 
   let onBoardingContainer = OnboardingDependencyContainer()
-  let launchContainer = LaunchDependencyContainer()
+  //let launchContainer = LaunchDependencyContainer()
   let loginContainer = LoginDependencyContainer()
   let signupContainer = SignupDependencyContainer()
 

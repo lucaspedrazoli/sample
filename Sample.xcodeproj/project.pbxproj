@@ -12,6 +12,14 @@
 		754848A925E80E8800529C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754848A825E80E8800529C79 /* Assets.xcassets */; };
 		754848B725E80E8800529C79 /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848B625E80E8800529C79 /* SampleTests.swift */; };
 		754848C225E8110D00529C79 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 754848C125E8110D00529C79 /* .gitignore */; };
+		754848C525E8123400529C79 /* MainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848C425E8123400529C79 /* MainDependencyContainer.swift */; };
+		754848C925E8132600529C79 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848C825E8132600529C79 /* NiblessViewController.swift */; };
+		754848CB25E813D300529C79 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848CA25E813D300529C79 /* NiblessView.swift */; };
+		754848CD25E8140900529C79 /* NiblessNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848CC25E8140900529C79 /* NiblessNavigationController.swift */; };
+		754848E625EEAC6200529C79 /* LaunchDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848E525EEAC6200529C79 /* LaunchDependencyContainer.swift */; };
+		754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848E725EEAC8500529C79 /* OnboardingDependencyContainer.swift */; };
+		754848EA25EEAC9E00529C79 /* LoginDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848E925EEAC9E00529C79 /* LoginDependencyContainer.swift */; };
+		754848EC25EEACBA00529C79 /* SignupDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848EB25EEACBA00529C79 /* SignupDependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,14 @@
 		754848B625E80E8800529C79 /* SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTests.swift; sourceTree = "<group>"; };
 		754848B825E80E8800529C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		754848C125E8110D00529C79 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		754848C425E8123400529C79 /* MainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDependencyContainer.swift; sourceTree = "<group>"; };
+		754848C825E8132600529C79 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
+		754848CA25E813D300529C79 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		754848CC25E8140900529C79 /* NiblessNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessNavigationController.swift; sourceTree = "<group>"; };
+		754848E525EEAC6200529C79 /* LaunchDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDependencyContainer.swift; sourceTree = "<group>"; };
+		754848E725EEAC8500529C79 /* OnboardingDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDependencyContainer.swift; sourceTree = "<group>"; };
+		754848E925EEAC9E00529C79 /* LoginDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDependencyContainer.swift; sourceTree = "<group>"; };
+		754848EB25EEACBA00529C79 /* SignupDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupDependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +92,9 @@
 		7548489E25E80E8500529C79 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				7548489F25E80E8500529C79 /* AppDelegate.swift */,
-				754848A325E80E8500529C79 /* ViewController.swift */,
+				754848E425EEAB8000529C79 /* UseCases */,
+				754848C725E8130C00529C79 /* UIKit */,
+				754848C625E812F600529C79 /* Data */,
 				754848A825E80E8800529C79 /* Assets.xcassets */,
 				754848AD25E80E8800529C79 /* Info.plist */,
 			);
@@ -91,6 +108,69 @@
 				754848B825E80E8800529C79 /* Info.plist */,
 			);
 			path = SampleTests;
+			sourceTree = "<group>";
+		};
+		754848C625E812F600529C79 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		754848C725E8130C00529C79 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				754848C825E8132600529C79 /* NiblessViewController.swift */,
+				754848CA25E813D300529C79 /* NiblessView.swift */,
+				754848CC25E8140900529C79 /* NiblessNavigationController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		754848E025EEAB2200529C79 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				7548489F25E80E8500529C79 /* AppDelegate.swift */,
+				754848E525EEAC6200529C79 /* LaunchDependencyContainer.swift */,
+				754848A325E80E8500529C79 /* ViewController.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		754848E125EEAB2D00529C79 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				754848E725EEAC8500529C79 /* OnboardingDependencyContainer.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		754848E225EEAB3D00529C79 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				754848E925EEAC9E00529C79 /* LoginDependencyContainer.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		754848E325EEAB4500529C79 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				754848EB25EEACBA00529C79 /* SignupDependencyContainer.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		754848E425EEAB8000529C79 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				754848C425E8123400529C79 /* MainDependencyContainer.swift */,
+				754848E025EEAB2200529C79 /* Launch */,
+				754848E125EEAB2D00529C79 /* Onboarding */,
+				754848E225EEAB3D00529C79 /* Login */,
+				754848E325EEAB4500529C79 /* Signup */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +273,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754848E625EEAC6200529C79 /* LaunchDependencyContainer.swift in Sources */,
+				754848CD25E8140900529C79 /* NiblessNavigationController.swift in Sources */,
+				754848EC25EEACBA00529C79 /* SignupDependencyContainer.swift in Sources */,
 				754848A425E80E8500529C79 /* ViewController.swift in Sources */,
+				754848EA25EEAC9E00529C79 /* LoginDependencyContainer.swift in Sources */,
+				754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */,
+				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
+				754848CB25E813D300529C79 /* NiblessView.swift in Sources */,
 				754848A025E80E8500529C79 /* AppDelegate.swift in Sources */,
+				754848C525E8123400529C79 /* MainDependencyContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lucaspedrazoli.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -361,7 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lucaspedrazoli.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

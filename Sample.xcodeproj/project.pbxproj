@@ -92,6 +92,7 @@
 		7548489E25E80E8500529C79 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				754848ED25EEB08400529C79 /* DI */,
 				754848E425EEAB8000529C79 /* UseCases */,
 				754848C725E8130C00529C79 /* UIKit */,
 				754848C625E812F600529C79 /* Data */,
@@ -164,13 +165,20 @@
 		754848E425EEAB8000529C79 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		754848ED25EEB08400529C79 /* DI */ = {
+			isa = PBXGroup;
+			children = (
 				754848C425E8123400529C79 /* MainDependencyContainer.swift */,
 				754848E025EEAB2200529C79 /* Launch */,
 				754848E125EEAB2D00529C79 /* Onboarding */,
 				754848E225EEAB3D00529C79 /* Login */,
 				754848E325EEAB4500529C79 /* Signup */,
 			);
-			path = UseCases;
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

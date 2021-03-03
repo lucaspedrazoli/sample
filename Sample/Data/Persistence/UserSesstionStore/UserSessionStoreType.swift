@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import RxSwift
 
 typealias AuthToken = String
 
 protocol UserSessionStoreType {
-  func read() -> UserSessionModel
+  func read() -> Single<UserSessionModel>
 
   @discardableResult
-  func save() -> UserSessionModel
+  func save() -> Single<UserSessionModel>
 
   @discardableResult
-  func delete() -> UserSessionModel
+  func delete() -> Single<UserSessionModel>
 }

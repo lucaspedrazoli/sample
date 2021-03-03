@@ -7,26 +7,32 @@
 //
 
 import Foundation
-
-let profile = UserProfile(name: "",
-                          email: "",
-                          mobileNumber: "",
-                          avatar: URL(fileURLWithPath: ""))
-
-let remote = RemoteUserSession(token: "")
+import RxSwift
 
 class FileUserSessionDataStore: UserSessionStoreType {
-  func read() -> UserSessionModel {
-    return UserSessionModel(profile: profile, remote: remote)
+
+  let profile = UserProfile(name: "",
+                            email: "",
+                            mobileNumber: "",
+                            avatar: URL(fileURLWithPath: ""))
+
+  let remote = RemoteUserSession(token: "")
+
+  func read() -> Single<UserSessionModel> {
+    return Single
+      .just(UserSessionModel(profile: profile,
+                             remote: remote))
   }
 
-  func save() -> UserSessionModel {
-    return UserSessionModel(profile: profile, remote: remote)
+  func save() -> Single<UserSessionModel> {
+    return Single
+      .just(UserSessionModel(profile: profile,
+                             remote: remote))
   }
 
-  func delete() -> UserSessionModel {
-    return UserSessionModel(profile: profile, remote: remote)
+  func delete() -> Single<UserSessionModel> {
+    return Single
+      .just(UserSessionModel(profile: profile,
+                             remote: remote))
   }
-
-
 }

@@ -15,7 +15,7 @@ struct NetworkDataSource <M: Decodable>: DataSourceType {
   typealias Subject = PublishSubject<Model?>
 
   private let session = URLSession(configuration: .default)
-  let endpoint: Endpoint
+  private let endpoint: Endpoint
   private let subject: Subject
   lazy private(set) var observable = {
     return subject.asSingle()
@@ -35,7 +35,7 @@ struct NetworkDataSource <M: Decodable>: DataSourceType {
           return
         }
         let model = try? JSONDecoder().decode(Model.self, from: data!)
-        self.subject.onNext(model!)
+        self.subject.onNext(model)
     }
     task.resume()
   }

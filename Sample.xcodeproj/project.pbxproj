@@ -28,6 +28,10 @@
 		754848FA25EED03000529C79 /* FileUserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F925EED03000529C79 /* FileUserSessionDataStore.swift */; };
 		754848FC25EED3EC00529C79 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 754848FB25EED3EC00529C79 /* Podfile */; };
 		7558A5F125F126E400E31585 /* DataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F025F126E400E31585 /* DataSourceType.swift */; };
+		7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */; };
+		7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F725F1386100E31585 /* HTTPVerb.swift */; };
+		7558A5FA25F138E000E31585 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F925F138E000E31585 /* Request.swift */; };
+		7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FB25F14C0000E31585 /* Endpoint.swift */; };
 		795427741CFF8DD68F26E2C2 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FFBE67CBD59F2E3BFCA9DC /* Pods_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		754848F925EED03000529C79 /* FileUserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUserSessionDataStore.swift; sourceTree = "<group>"; };
 		754848FB25EED3EC00529C79 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		7558A5F025F126E400E31585 /* DataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceType.swift; sourceTree = "<group>"; };
+		7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
+		7558A5F725F1386100E31585 /* HTTPVerb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPVerb.swift; sourceTree = "<group>"; };
+		7558A5F925F138E000E31585 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7558A5FB25F14C0000E31585 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		9E22ED75257A4928C6FFA1EA /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E7259780D1EED844DD52B61 /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		C44060257B321FFCC3918CD7 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,8 +267,20 @@
 			isa = PBXGroup;
 			children = (
 				7558A5F025F126E400E31585 /* DataSourceType.swift */,
+				7558A5F625F137F900E31585 /* Network */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		7558A5F625F137F900E31585 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */,
+				7558A5FB25F14C0000E31585 /* Endpoint.swift */,
+				7558A5F925F138E000E31585 /* Request.swift */,
+				7558A5F725F1386100E31585 /* HTTPVerb.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D9B966EE96B964AF0AE5B215 /* Pods */ = {
@@ -464,12 +484,16 @@
 				754848CD25E8140900529C79 /* NiblessNavigationController.swift in Sources */,
 				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
 				754848EC25EEACBA00529C79 /* SignupDependencyContainer.swift in Sources */,
+				7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */,
 				754848FA25EED03000529C79 /* FileUserSessionDataStore.swift in Sources */,
 				754848A425E80E8500529C79 /* ViewController.swift in Sources */,
 				754848EA25EEAC9E00529C79 /* LoginDependencyContainer.swift in Sources */,
 				754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */,
+				7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */,
 				754848F025EEB5E900529C79 /* UserSessionStoreType.swift in Sources */,
+				7558A5FA25F138E000E31585 /* Request.swift in Sources */,
 				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
+				7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */,
 				754848CB25E813D300529C79 /* NiblessView.swift in Sources */,
 				754848F525EEB74600529C79 /* RemoteUserSession.swift in Sources */,
 				7558A5F125F126E400E31585 /* DataSourceType.swift in Sources */,

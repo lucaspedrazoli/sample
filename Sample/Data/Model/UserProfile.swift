@@ -13,5 +13,4 @@ struct UserProfile: Codable, Equatable {
   public let name: String
   public let email: String
   public let mobileNumber: String
-  public let avatar: URL
 }

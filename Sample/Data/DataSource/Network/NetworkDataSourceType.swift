@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol DataSourceType {
+protocol NetworkDataSourceType {
   associatedtype Model
 
   func execute() -> Observable<Model?>

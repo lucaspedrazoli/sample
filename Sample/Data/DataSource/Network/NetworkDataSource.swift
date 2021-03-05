@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-struct NetworkDataSource<Model: Codable>: DataSourceType {
+struct NetworkDataSource<Model: Codable>: NetworkDataSourceType {
 
   private let session: URLSession
   private let endpoint: Endpoint

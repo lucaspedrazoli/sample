@@ -33,6 +33,7 @@
 		7558A5FA25F138E000E31585 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F925F138E000E31585 /* Request.swift */; };
 		7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FB25F14C0000E31585 /* Endpoint.swift */; };
 		7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FD25F1945700E31585 /* LoggerType.swift */; };
+		7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60A25F27DBF00E31585 /* ErrorInfo.swift */; };
 		795427741CFF8DD68F26E2C2 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FFBE67CBD59F2E3BFCA9DC /* Pods_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		7558A5F925F138E000E31585 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7558A5FB25F14C0000E31585 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7558A5FD25F1945700E31585 /* LoggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerType.swift; sourceTree = "<group>"; };
+		7558A60A25F27DBF00E31585 /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
 		9E22ED75257A4928C6FFA1EA /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E7259780D1EED844DD52B61 /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		C44060257B321FFCC3918CD7 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				7558A5EE25F1266E00E31585 /* Repository */,
 				754848F125EEB67600529C79 /* Model */,
 				754848EE25EEB5D700529C79 /* Persistence */,
+				7558A60A25F27DBF00E31585 /* ErrorInfo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */,
 				7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */,
 				754848F025EEB5E900529C79 /* UserSessionStoreType.swift in Sources */,
+				7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */,
 				7558A5FA25F138E000E31585 /* Request.swift in Sources */,
 				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
 				7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */,

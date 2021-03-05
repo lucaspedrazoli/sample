@@ -9,5 +9,7 @@
 import RxSwift
 
 protocol DataSourceType {
-  func execute()
+  associatedtype Model
+
+  func execute() -> Observable<Model?>
 }

@@ -7,5 +7,5 @@
 //
 
 protocol LoggerType {
-  func log(_ error: Error?, _ info: [String: Any])
+  func log(_ error: Error?, _ info: ErrorInfo?)
 }

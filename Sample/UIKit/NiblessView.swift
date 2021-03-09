@@ -14,6 +14,10 @@ class NiblessView: UIView {
     super.init(frame: frame)
   }
 
+  @available(*, unavailable,
+    message: "Loading this view controller from a nib is unsupported."
+  )
+
   public required init?(coder aDecoder: NSCoder) {
     fatalError("Loading this view from a nib is unsupported.")
   }

@@ -9,13 +9,15 @@
 import Foundation
 
 class MainDependencyContainer {
+  //let loginContainer = LoginDependencyContainer()
+  //let signupContainer = SignupDependencyContainer()
+  //let onBoardingContainer = OnboardingDependencyContainer()
+  lazy var launchContainer: LaunchDependencyContainer = {
+    return makeLaunchContainer()
+  }()
+  private let userSessionDataStore = UserSessionStore()
 
-  let onBoardingContainer = OnboardingDependencyContainer()
-  //let launchContainer = LaunchDependencyContainer()
-  let loginContainer = LoginDependencyContainer()
-  let signupContainer = SignupDependencyContainer()
-
-  init() {
-    
+  private func makeLaunchContainer() -> LaunchDependencyContainer {
+    return LaunchDependencyContainer(userSessionStore: userSessionDataStore)
   }
 }

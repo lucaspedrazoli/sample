@@ -9,18 +9,23 @@
 import UIKit
 import RxSwift
 
-class LaunchViewController: NiblessViewController {
+class LaunchViewController<
+  N: Navigator,
+  A: Animator>: NiblessViewController
+  where
+  A.AnimationType == LaunchAnimator.AnimationType {
 
-  var viewModel: LaunchViewModel
   let container: LaunchDependencyContainer
-  let navigator: LaunchNavigator
-  let animator: LaunchAnimator
+  var viewModel: LaunchViewModel
+  let navigator: N
+  let animator: A
   let bag = DisposeBag()
 
-  public init(viewModel: LaunchViewModel,
-              navigator: LaunchNavigator,
-              container: LaunchDependencyContainer,
-              animator: LaunchAnimator) {
+  public init(
+    container: LaunchDependencyContainer,
+    viewModel: LaunchViewModel,
+    navigator: N,
+    animator: A) {
     self.viewModel = viewModel
     self.container = container
     self.navigator = navigator

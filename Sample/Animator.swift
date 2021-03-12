@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol LaunchAnimatorType {
+protocol Animator {
   associatedtype AnimationType
 
   func animate(_ animation: AnimationType) -> Observable<UIViewPropertyAnimator>

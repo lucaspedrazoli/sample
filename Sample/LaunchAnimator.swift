@@ -9,23 +9,25 @@
 import RxSwift
 import UIKit
 
-struct LaunchAnimator: LaunchAnimatorType {
+struct LaunchAnimator: Animator {
 
   typealias ObservableType = Observable<UIViewPropertyAnimator>
 
-  enum AnimationType {
-    case start
-  }
+  var start = AnimationType.start
 
-  func animate(_ animation: AnimationType) -> ObservableType {
+  func animate(_ animation: LaunchAnimationType) -> ObservableType {
     switch animation {
     case .start:
-      let animation = createStartAnimation()
+      let animation = stubAnimation()
+      return ObservableType.just(animation)
+    case .end:
+      let animation = stubAnimation()
       return ObservableType.just(animation)
     }
   }
 
-  private func createStartAnimation() -> UIViewPropertyAnimator {
+  private func stubAnimation() -> UIViewPropertyAnimator {
     return UIViewPropertyAnimator()
   }
 }
+

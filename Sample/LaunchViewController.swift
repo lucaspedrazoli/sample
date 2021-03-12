@@ -14,24 +14,36 @@ class LaunchViewController: NiblessViewController {
   var viewModel: LaunchViewModel
   let container: LaunchDependencyContainer
   let navigator: LaunchNavigator
+  let animator: LaunchAnimator
   let bag = DisposeBag()
 
   public init(viewModel: LaunchViewModel,
               navigator: LaunchNavigator,
-              container: LaunchDependencyContainer) {
+              container: LaunchDependencyContainer,
+              animator: LaunchAnimator) {
     self.viewModel = viewModel
     self.container = container
     self.navigator = navigator
+    self.animator = animator
     super.init()
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-  }
+    let startAnimation = animator.animate(.start)
+    let loadUserSession = viewModel.loadUserSession()
+    Observable
+      .combineLatest(startAnimation, loadUserSession)
+      .subscribe(onNext: { value in
+        print(value)
+      })
+      .disposed(by: bag)
 
-  func startAnimation() -> Observable<Void> {
-    return Observable.empty()
+
+    animator
+      .animate(.start)
+      .subscribe(onCompleted: { print("completed") })
+      .disposed(by: bag)
   }
 }
 

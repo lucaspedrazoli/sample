@@ -32,6 +32,8 @@
 		7552E72025FA7DDE00C070B4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E71F25FA7DDD00C070B4 /* Navigator.swift */; };
 		7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */; };
 		7552E72425FA7F5200C070B4 /* LaunchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72325FA7F5200C070B4 /* LaunchState.swift */; };
+		7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */; };
+		7552E72825FBB22D00C070B4 /* LaunchAnimatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72725FBB22D00C070B4 /* LaunchAnimatorType.swift */; };
 		7558A5F125F126E400E31585 /* NetworkDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */; };
 		7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */; };
 		7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F725F1386100E31585 /* HTTPVerb.swift */; };
@@ -79,12 +81,14 @@
 		754848F425EEB74600529C79 /* RemoteUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserSession.swift; sourceTree = "<group>"; };
 		754848F625EEB76500529C79 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		754848F925EED03000529C79 /* UserSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStore.swift; sourceTree = "<group>"; };
-		754848FB25EED3EC00529C79 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		754848FB25EED3EC00529C79 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		7552E71925F925D800C070B4 /* NavigationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationType.swift; sourceTree = "<group>"; };
 		7552E71F25FA7DDD00C070B4 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNavigator.swift; sourceTree = "<group>"; };
 		7552E72325FA7F5200C070B4 /* LaunchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchState.swift; sourceTree = "<group>"; };
+		7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimator.swift; sourceTree = "<group>"; };
+		7552E72725FBB22D00C070B4 /* LaunchAnimatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimatorType.swift; sourceTree = "<group>"; };
 		7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSourceType.swift; sourceTree = "<group>"; };
 		7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		7558A5F725F1386100E31585 /* HTTPVerb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPVerb.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				7548489F25E80E8500529C79 /* AppDelegate.swift */,
 				754848A325E80E8500529C79 /* LaunchViewController.swift */,
 				7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */,
+				7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */,
+				7552E72725FBB22D00C070B4 /* LaunchAnimatorType.swift */,
 				7552E72325FA7F5200C070B4 /* LaunchState.swift */,
 				7552E71925F925D800C070B4 /* NavigationType.swift */,
 				7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */,
@@ -524,6 +530,7 @@
 				754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */,
 				7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */,
 				754848EA25EEAC9E00529C79 /* LoginDependencyContainer.swift in Sources */,
+				7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */,
 				754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */,
 				7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */,
 				754848F025EEB5E900529C79 /* UserSessionStoreType.swift in Sources */,
@@ -536,6 +543,7 @@
 				754848F525EEB74600529C79 /* RemoteUserSession.swift in Sources */,
 				7558A5F125F126E400E31585 /* NetworkDataSourceType.swift in Sources */,
 				754848F325EEB6E600529C79 /* UserSessionModel.swift in Sources */,
+				7552E72825FBB22D00C070B4 /* LaunchAnimatorType.swift in Sources */,
 				7552E71A25F925D800C070B4 /* NavigationType.swift in Sources */,
 				754848A025E80E8500529C79 /* AppDelegate.swift in Sources */,
 				7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */,

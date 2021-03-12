@@ -45,7 +45,6 @@ class LaunchViewController<
       })
       .disposed(by: bag)
 
-
     animator
       .animate(.start)
       .subscribe(onCompleted: { print("completed") })

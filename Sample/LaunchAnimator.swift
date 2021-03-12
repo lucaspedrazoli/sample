@@ -13,8 +13,6 @@ struct LaunchAnimator: AnimatorType {
 
   typealias ObservableType = Observable<UIViewPropertyAnimator>
 
-  var start = AnimationType.start
-
   func animate(_ animation: LaunchAnimationType) -> ObservableType {
     switch animation {
     case .start:

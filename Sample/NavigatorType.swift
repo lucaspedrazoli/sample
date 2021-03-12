@@ -6,11 +6,12 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import UIKit
 
 protocol NavigatorType {
 
   associatedtype Destination
 
-  func navigate(to destination: Destination)
+  func navigate(to destination: Destination) -> Observable<UIViewController>
 }

@@ -13,6 +13,7 @@ class LaunchViewController<
   Navigator: NavigatorType,
   Animator: AnimatorType>: NiblessViewController
   where
+  Navigator.Destination == LaunchNavigator.Destination,
   Animator.AnimationType == LaunchAnimator.AnimationType {
 
   let container: LaunchDependencyContainer
@@ -48,6 +49,11 @@ class LaunchViewController<
     animator
       .animate(.start)
       .subscribe(onCompleted: { print("completed") })
+      .disposed(by: bag)
+
+    navigator
+      .navigate(to: .signedIn)
+      .subscribe(onNext: { print($0) })
       .disposed(by: bag)
   }
 }

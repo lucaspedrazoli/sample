@@ -11,29 +11,14 @@ import RxSwift
 
 class LaunchNavigator: NavigatorType {
 
-  enum Destination {
-    case onboarding, signedIn, signedOut
-  }
-
-  let navigationController: UINavigationController
   let bag = DisposeBag()
 
-  init(navigationController: UINavigationController) {
-      self.navigationController = navigationController
-  }
-
-  func navigate(to destination: Destination) {
+  func navigate(to destination: LaunchDestination) -> Observable<UIViewController> {
     let viewController = makeViewController(for: destination)
-    navigationController.pushViewController(viewController, animated: true)
+    return Observable<UIViewController>.just(viewController)
   }
 
-  func subscribe(to observable: Observable<Destination>) {
-    observable
-      .subscribe(onNext: navigate)
-      .disposed(by: bag)
-  }
-
-  private func makeViewController(for destination: Destination) -> UIViewController {
+  private func makeViewController(for destination: LaunchDestination) -> UIViewController {
       switch destination {
       case .onboarding:
         return NiblessViewController()

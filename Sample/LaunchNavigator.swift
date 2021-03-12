@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class LaunchNavigator: Navigator {
+class LaunchNavigator: NavigatorType {
 
   enum Destination {
     case onboarding, signedIn, signedOut

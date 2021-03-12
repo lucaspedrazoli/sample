@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Navigator {
+protocol NavigatorType {
 
   associatedtype Destination
 

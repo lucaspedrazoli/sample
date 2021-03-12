@@ -9,7 +9,7 @@
 import RxSwift
 import UIKit
 
-struct LaunchAnimator: Animator {
+struct LaunchAnimator: AnimatorType {
 
   typealias ObservableType = Observable<UIViewPropertyAnimator>
 

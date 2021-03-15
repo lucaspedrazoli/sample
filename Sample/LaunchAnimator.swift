@@ -9,45 +9,58 @@
 import RxSwift
 import UIKit
 
-struct LaunchAnimator: AnimatorType {
+class LaunchAnimator: AnimatorType {
 
   typealias Closure = () -> Void
-  typealias ObservableType = Observable<Closure>
   typealias Subject = PublishSubject<Closure>
 
-  lazy var subject = {
+  lazy private var subject: Subject = {
     return makeSubject()
   }()
 
-  func animate(_ animation: LaunchAnimationType) -> ObservableType {
+  lazy var observable: Observable<Closure> = {
+    return subject.asObservable()
+  }()
+
+  func animate(_ animation: LaunchAnimationType) -> Observable<Closure> {
     switch animation {
     case .start:
-      let animation = makeStartAnimation()
-      return ObservableType.just(animation)
+      subject.onNext(makeStartAnimation())
+      return observable
     case .end:
-      let animation = makeEndAnimation()
-      return ObservableType.just(animation)
+      subject.onNext(makeEndAnimation())
+      return observable
     }
   }
 
 
   private func makeStartAnimation() -> Closure {
-    return { }
+    return {
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+        print("start animation")
+      }
+    }
   }
 
   private func makeEndAnimation() -> Closure {
-    return {  }
+    return {
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
+        self?.subject.onCompleted()
+        print("end animation")
+      }
+    }
   }
 
-  private func makeSubject() -> ObservableType {
+  private func makeSubject() -> Subject {
     let subject = Subject()
-    return subject.do(onCompleted: {
-      let animation = self.makeEndAnimation()
-      animation()
-    }, onSubscribe: {
-      let animation = self.makeStartAnimation()
-      animation()
+    _ = subject.do(onCompleted: { [weak self] in
+      let animation = self?.makeEndAnimation()
+      animation?()
+    }, onSubscribe: { [weak self] in
+      let animation = self?.makeStartAnimation()
+      animation?()
     })
+    return subject
   }
 }
 

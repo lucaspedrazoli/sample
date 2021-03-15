@@ -11,5 +11,5 @@ import RxSwift
 protocol AnimatorType {
   associatedtype AnimationType
 
-  func animate(_ animation: AnimationType) -> Observable<UIViewPropertyAnimator>
+  func animate(_ animation: AnimationType) -> Observable<() -> Void>
 }

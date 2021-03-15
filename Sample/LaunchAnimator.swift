@@ -11,7 +11,8 @@ import UIKit
 
 struct LaunchAnimator: AnimatorType {
 
-  typealias ObservableType = Observable<UIViewPropertyAnimator>
+  typealias Closure = () -> Void
+  typealias ObservableType = Observable<Closure>
 
   func animate(_ animation: LaunchAnimationType) -> ObservableType {
     switch animation {
@@ -24,8 +25,8 @@ struct LaunchAnimator: AnimatorType {
     }
   }
 
-  private func stubAnimation() -> UIViewPropertyAnimator {
-    return UIViewPropertyAnimator()
+  private func stubAnimation() -> Closure {
+    return { }
   }
 }
 

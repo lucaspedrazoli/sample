@@ -11,54 +11,41 @@ import UIKit
 
 class LaunchAnimator: AnimatorType {
 
-  typealias Closure = () -> Void
-  typealias Subject = PublishSubject<Closure>
-
-  lazy private var subject: Subject = {
+  lazy private var subject: BehaviorSubject<LaunchState> = {
     return makeSubject()
   }()
 
-  lazy var observable: Observable<Closure> = {
-    return subject.asObservable()
-  }()
-
-  func animate(_ animation: LaunchAnimationType) -> Observable<Closure> {
-    switch animation {
-    case .start:
-      subject.onNext(makeStartAnimation())
-      return observable
-    case .end:
-      subject.onNext(makeEndAnimation())
-      return observable
+  func animate(for state: LaunchState) -> LaunchState {
+    switch state {
+    case .loading:
+      loadingAnimation()
+      subject.onNext(state)
+      return state
+    default:
+      endAnimation()
+      subject.onNext(state)
+      return state
     }
   }
 
 
-  private func makeStartAnimation() -> Closure {
-    return {
-      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-        print("start animation")
-      }
+  private func loadingAnimation() {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      print("start animation")
     }
   }
 
-  private func makeEndAnimation() -> Closure {
-    return {
-      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-        self?.subject.onCompleted()
-        print("end animation")
-      }
+  private func endAnimation() {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
+      print("end animation")
+      self?.subject.onCompleted()
     }
   }
 
-  private func makeSubject() -> Subject {
-    let subject = Subject()
-    _ = subject.do(onCompleted: { [weak self] in
-      let animation = self?.makeEndAnimation()
-      animation?()
-    }, onSubscribe: { [weak self] in
-      let animation = self?.makeStartAnimation()
-      animation?()
+  private func makeSubject() -> BehaviorSubject<LaunchState> {
+    let subject = BehaviorSubject<LaunchState>(value: .loading)
+    _ = subject.do(onSubscribe: { [weak self] in
+      self?.loadingAnimation()
     })
     return subject
   }

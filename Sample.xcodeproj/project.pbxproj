@@ -29,12 +29,10 @@
 		754848FC25EED3EC00529C79 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 754848FB25EED3EC00529C79 /* Podfile */; };
 		7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */; };
 		7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */; };
-		7552E72425FA7F5200C070B4 /* LaunchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72325FA7F5200C070B4 /* LaunchState.swift */; };
 		7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */; };
 		7552E72825FBB22D00C070B4 /* AnimatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72725FBB22D00C070B4 /* AnimatorType.swift */; };
 		7552E72C25FBEDA300C070B4 /* NavigatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72B25FBEDA300C070B4 /* NavigatorType.swift */; };
-		7552E72E25FBF86E00C070B4 /* LaunchAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72D25FBF86E00C070B4 /* LaunchAnimationType.swift */; };
-		7552E73025FBFB6A00C070B4 /* LaunchDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72F25FBFB6A00C070B4 /* LaunchDestination.swift */; };
+		7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72F25FBFB6A00C070B4 /* LaunchState.swift */; };
 		7558A5F125F126E400E31585 /* NetworkDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */; };
 		7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */; };
 		7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F725F1386100E31585 /* HTTPVerb.swift */; };
@@ -85,12 +83,10 @@
 		754848FB25EED3EC00529C79 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNavigator.swift; sourceTree = "<group>"; };
-		7552E72325FA7F5200C070B4 /* LaunchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchState.swift; sourceTree = "<group>"; };
 		7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimator.swift; sourceTree = "<group>"; };
 		7552E72725FBB22D00C070B4 /* AnimatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorType.swift; sourceTree = "<group>"; };
 		7552E72B25FBEDA300C070B4 /* NavigatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorType.swift; sourceTree = "<group>"; };
-		7552E72D25FBF86E00C070B4 /* LaunchAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationType.swift; sourceTree = "<group>"; };
-		7552E72F25FBFB6A00C070B4 /* LaunchDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDestination.swift; sourceTree = "<group>"; };
+		7552E72F25FBFB6A00C070B4 /* LaunchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchState.swift; sourceTree = "<group>"; };
 		7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSourceType.swift; sourceTree = "<group>"; };
 		7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		7558A5F725F1386100E31585 /* HTTPVerb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPVerb.swift; sourceTree = "<group>"; };
@@ -160,13 +156,11 @@
 			children = (
 				7548489F25E80E8500529C79 /* AppDelegate.swift */,
 				754848A325E80E8500529C79 /* LaunchViewController.swift */,
-				7552E72F25FBFB6A00C070B4 /* LaunchDestination.swift */,
+				7552E72F25FBFB6A00C070B4 /* LaunchState.swift */,
 				7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */,
 				7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */,
 				7552E72725FBB22D00C070B4 /* AnimatorType.swift */,
-				7552E72D25FBF86E00C070B4 /* LaunchAnimationType.swift */,
 				7552E72B25FBEDA300C070B4 /* NavigatorType.swift */,
-				7552E72325FA7F5200C070B4 /* LaunchState.swift */,
 				7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */,
 				7552E71225F7EB5100C070B4 /* UI */,
 				754848C625E812F600529C79 /* Data */,
@@ -526,7 +520,7 @@
 				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
 				754848EC25EEACBA00529C79 /* SignupDependencyContainer.swift in Sources */,
-				7552E73025FBFB6A00C070B4 /* LaunchDestination.swift in Sources */,
+				7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */,
 				7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */,
 				7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */,
 				754848FA25EED03000529C79 /* UserSessionStore.swift in Sources */,
@@ -542,7 +536,6 @@
 				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
 				7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */,
 				754848CB25E813D300529C79 /* NiblessView.swift in Sources */,
-				7552E72425FA7F5200C070B4 /* LaunchState.swift in Sources */,
 				754848F525EEB74600529C79 /* RemoteUserSession.swift in Sources */,
 				7558A5F125F126E400E31585 /* NetworkDataSourceType.swift in Sources */,
 				754848F325EEB6E600529C79 /* UserSessionModel.swift in Sources */,
@@ -551,7 +544,6 @@
 				754848A025E80E8500529C79 /* AppDelegate.swift in Sources */,
 				7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */,
 				754848C525E8123400529C79 /* MainDependencyContainer.swift in Sources */,
-				7552E72E25FBF86E00C070B4 /* LaunchAnimationType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

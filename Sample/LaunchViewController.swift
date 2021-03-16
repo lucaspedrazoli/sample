@@ -13,8 +13,8 @@ class LaunchViewController<
   Navigator: NavigatorType,
   Animator: AnimatorType>: NiblessViewController
   where
-  Navigator.Destination == LaunchNavigator.Destination,
-  Animator.AnimationType == LaunchAnimator.AnimationType {
+  Navigator.State == LaunchState,
+  Animator.State == LaunchState {
 
   let container: LaunchDependencyContainer
   var viewModel: LaunchViewModel
@@ -36,23 +36,12 @@ class LaunchViewController<
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let startAnimation = animator.animate(.start)
-    let loadUserSession = viewModel.loadUserSession()
-    Observable
-      .combineLatest(startAnimation, loadUserSession)
-      .subscribe(onNext: { value in
-        print(value)
-      })
-      .disposed(by: bag)
 
-    animator
-      .animate(.start)
-      .subscribe(onCompleted: { print("completed") })
-      .disposed(by: bag)
-
-    navigator
-      .navigate(to: .signedIn)
-      .subscribe(onNext: { print($0) })
+    viewModel
+      .loadUserSession()
+      .map(animator.animate)
+      .map(navigator.nextScreen)
+      .subscribe()
       .disposed(by: bag)
   }
 }

@@ -9,22 +9,19 @@
 import UIKit
 import RxSwift
 
-class LaunchNavigator: NavigatorType {
-
+struct LaunchNavigator: NavigatorType {
   let bag = DisposeBag()
+  let navigationController: NiblessNavigationController
 
-  func navigate(to destination: LaunchDestination) -> Observable<UIViewController> {
-    let viewController = makeViewController(for: destination)
-    return Observable<UIViewController>.just(viewController)
+  func nextScreen(for state: LaunchState) -> Observable<LaunchState> {
+    let viewController = makeViewController(for: state)
+    navigationController.pushViewController(viewController, animated: true)
+    return Observable<LaunchState>.just(.ending)
   }
 
-  private func makeViewController(for destination: LaunchDestination) -> UIViewController {
-      switch destination {
-      case .onboarding:
-        return NiblessViewController()
-      case .signedIn:
-        return NiblessViewController()
-      case .signedOut:
+  private func makeViewController(for state: LaunchState) -> UIViewController {
+      switch state {
+      default:
         return NiblessViewController()
     }
   }

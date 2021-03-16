@@ -11,7 +11,7 @@ import UIKit
 
 protocol NavigatorType {
 
-  associatedtype Destination
+  associatedtype State
 
-  func navigate(to destination: Destination) -> Observable<UIViewController>
+  func nextScreen(for state: State) -> Observable<LaunchState>
 }

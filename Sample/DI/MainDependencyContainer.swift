@@ -13,11 +13,14 @@ class MainDependencyContainer {
   //let signupContainer = SignupDependencyContainer()
   //let onBoardingContainer = OnboardingDependencyContainer()
   lazy var launchContainer: LaunchDependencyContainer = {
-    return makeLaunchContainer()
+    return LaunchDependencyContainer(userSessionStore: userSessionDataStore)
   }()
   private let userSessionDataStore = UserSessionStore()
 
-  private func makeLaunchContainer() -> LaunchDependencyContainer {
-    return LaunchDependencyContainer(userSessionStore: userSessionDataStore)
+
+  func makeLaunchViewController() -> NiblessViewController {
+    let navigator = LaunchNavigator(navigationController: NiblessNavigationController())
+
+    return NiblessViewController()
   }
 }

@@ -10,8 +10,6 @@ import RxSwift
 
 class LaunchViewModel {
 
-  typealias NavigationObservable = Observable<LaunchNavigator.Destination>
-  
   let userSessionRepository: UserSessionRepositoryType
   let bag = DisposeBag()
 
@@ -19,19 +17,19 @@ class LaunchViewModel {
     self.userSessionRepository = userSessionRepository
   }
 
-  func loadUserSession() -> NavigationObservable {
+  func loadUserSession() -> Observable<LaunchState> {
     return userSessionRepository
       .readUserSession()
-      .flatMap(goToNextScreen)
+      .flatMap(stateForSession)
   }
 
-  func goToNextScreen(session: UserSessionModel?) -> NavigationObservable {
+  private func stateForSession(_ session: UserSessionModel?) -> Observable<LaunchState> {
     switch session {
     case .none:
-      return NavigationObservable
-        .just(.signedOut)
+      return Observable<LaunchState>
+        .just(.notSignedIn)
     case .some:
-      return NavigationObservable
+      return Observable<LaunchState>
         .just(.signedIn)
     }
   }

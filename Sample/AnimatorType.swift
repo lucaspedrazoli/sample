@@ -9,7 +9,7 @@
 import RxSwift
 
 protocol AnimatorType {
-  associatedtype AnimationType
+  associatedtype State
 
-  func animate(_ animation: AnimationType) -> Observable<() -> Void>
+  func animate(for state: State) -> State
 }

@@ -9,18 +9,21 @@
 import Foundation
 
 class MainDependencyContainer {
-  //let loginContainer = LoginDependencyContainer()
-  //let signupContainer = SignupDependencyContainer()
-  //let onBoardingContainer = OnboardingDependencyContainer()
-  lazy var launchContainer: LaunchDependencyContainer = {
-    return LaunchDependencyContainer(userSessionStore: userSessionDataStore)
-  }()
+
   private let userSessionDataStore = UserSessionStore()
 
-
   func makeLaunchViewController() -> NiblessViewController {
-    let navigator = LaunchNavigator(navigationController: NiblessNavigationController())
-
-    return NiblessViewController()
+    let navigator = LaunchNavigator(navigationController:
+      NiblessNavigationController())
+    let viewModel = LaunchViewModel(userSessionRepository:
+      FakeUserSessionRepository())
+    let animator = LaunchAnimator()
+    let container = LaunchDependencyContainer(userSessionStore:
+      userSessionDataStore)
+    return LaunchViewController(
+      container: container,
+      viewModel: viewModel,
+      navigator: navigator,
+      animator: animator)
   }
 }

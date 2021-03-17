@@ -11,13 +11,12 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  let dependencyContainer = MainDependencyContainer()
+  let container = MainDependencyContainer()
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    window = createWindow(root: NiblessViewController())
+    window = createWindow(root: container.makeLaunchViewController())
     window?.makeKeyAndVisible()
-
     return true
   }
 

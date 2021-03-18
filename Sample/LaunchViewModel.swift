@@ -28,9 +28,17 @@ class LaunchViewModel {
   private func stateForSession(_ session: UserSessionModel?) -> Observable<LaunchState> {
     switch session {
     case .none:
-      subject.onNext(.notSignedIn)
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+        print("load session NOT signed in")
+        self.subject.onNext(.notSignedIn)
+      }
+
     case .some:
-      subject.onNext(.signedIn)
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+        print("load session signed in")
+        self.subject.onNext(.signedIn)
+        self.subject.onCompleted()
+      }
     }
     return subject.asObserver()
   }

@@ -24,6 +24,7 @@ struct LaunchNavigator: NavigatorType {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
           print("default navigation")
           self.subject.onNext(state)
+          self.subject.onCompleted()
         }
     }
   }

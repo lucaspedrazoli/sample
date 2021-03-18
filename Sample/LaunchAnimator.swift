@@ -20,7 +20,7 @@ class LaunchAnimator: AnimatorType {
     default:
       endAnimation()
     }
-    return subject.asObserver()
+    return subject.share()
   }
 
   private func loadingAnimation() {
@@ -32,7 +32,9 @@ class LaunchAnimator: AnimatorType {
 
   private func endAnimation() {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      print("end animation")
       self.subject.onNext(.ending)
+      self.subject.onCompleted()
     }
   }
 }

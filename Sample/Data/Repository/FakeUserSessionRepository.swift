@@ -10,8 +10,12 @@ import RxSwift
 
 struct FakeUserSessionRepository: UserSessionRepositoryType {
 
-  func readUserSession() -> Observable<UserSessionModel> {
-    return Observable.just(UserSessionModel.empty())
+  func readUserSession() -> Observable<UserSessionModel?> {
+    let obs = PublishSubject<UserSessionModel?>()
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      obs.onNext(UserSessionModel.empty())
+    }
+    return obs.asObserver()
   }
 
   func signUp(newAccount: Any) -> Observable<UserSessionModel> {

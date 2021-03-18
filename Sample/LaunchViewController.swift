@@ -37,13 +37,11 @@ class LaunchViewController<
   override func viewDidLoad() {
     super.viewDidLoad()
     print("did load")
-    animator
-      .animate(for: .loading)
-      .flatMap(viewModel.loadSession)
-      .flatMap(animator.animate)
-      .flatMap(navigator.nextScreen)
-      .subscribe(onNext: { print("on next: \($0)") })
-      .disposed(by: bag)
+    
+
+
+
+
   }
 }
 

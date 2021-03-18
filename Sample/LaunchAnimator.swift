@@ -17,22 +17,24 @@ class LaunchAnimator: AnimatorType {
     switch state {
     case .loading:
       loadingAnimation()
-    default:
+    case .signedIn, .ending, .notSignedIn, .onboard:
       endAnimation()
+    default:
+      print("animate? \(state)")
     }
     return subject.share()
   }
 
   private func loadingAnimation() {
+    print("start animation")
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("start animation")
       self.subject.onNext(.loading)
     }
   }
 
   private func endAnimation() {
+    print("end animation")
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("end animation")
       self.subject.onNext(.ending)
       self.subject.onCompleted()
     }

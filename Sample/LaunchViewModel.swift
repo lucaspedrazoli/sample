@@ -19,10 +19,13 @@ class LaunchViewModel {
   }
 
   func loadSession(for state: LaunchState) -> Observable<LaunchState> {
-    guard state == .loading else { return Observable.just(.error) }
+    guard state == .loading else {
+      print("load session?? \(state)")
+      return Observable.just(state)
+    }
     return userSessionRepository
             .readUserSession()
-            .flatMap(stateForSession)
+      .flatMap(stateForSession)
   }
 
   private func stateForSession(_ session: UserSessionModel?) -> Observable<LaunchState> {
@@ -40,6 +43,6 @@ class LaunchViewModel {
         self.subject.onCompleted()
       }
     }
-    return subject.asObserver()
+    return subject.share()
   }
 }

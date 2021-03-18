@@ -10,19 +10,21 @@ import UIKit
 import RxSwift
 
 struct LaunchNavigator: NavigatorType {
-  let bag = DisposeBag()
   let navigationController: NiblessNavigationController
+  let subject = PublishSubject<LaunchState>()
 
   func nextScreen(for state: LaunchState) -> Observable<LaunchState> {
-    let viewController = makeViewController(for: state)
-    navigationController.pushViewController(viewController, animated: true)
-    return Observable<LaunchState>.just(.ending)
+    navigate(for: state)
+    return subject.asObserver()
   }
 
-  private func makeViewController(for state: LaunchState) -> UIViewController {
+  private func navigate(for state: LaunchState) {
       switch state {
       default:
-        return NiblessViewController()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+          print("default navigation")
+          self.subject.onNext(state)
+        }
     }
   }
 }

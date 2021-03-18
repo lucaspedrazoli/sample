@@ -7,5 +7,5 @@
 //
 
 enum LaunchState {
-  case onboard, signedIn, notSignedIn, loading, ending
+  case onboard, signedIn, notSignedIn, loading, ending, error
 }

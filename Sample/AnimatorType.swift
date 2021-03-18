@@ -11,5 +11,5 @@ import RxSwift
 protocol AnimatorType {
   associatedtype State
 
-  func animate(for state: State) -> State
+  func animate(for state: State) -> Observable<State>
 }

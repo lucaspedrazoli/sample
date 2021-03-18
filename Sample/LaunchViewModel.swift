@@ -10,6 +10,7 @@ import RxSwift
 
 class LaunchViewModel {
 
+  let subject = PublishSubject<LaunchState>()
   let userSessionRepository: UserSessionRepositoryType
   let bag = DisposeBag()
 
@@ -17,20 +18,20 @@ class LaunchViewModel {
     self.userSessionRepository = userSessionRepository
   }
 
-  func loadUserSession() -> Observable<LaunchState> {
+  func loadSession(for state: LaunchState) -> Observable<LaunchState> {
+    guard state == .loading else { return Observable.just(.error) }
     return userSessionRepository
-      .readUserSession()
-      .flatMap(stateForSession)
+            .readUserSession()
+            .flatMap(stateForSession)
   }
 
   private func stateForSession(_ session: UserSessionModel?) -> Observable<LaunchState> {
     switch session {
     case .none:
-      return Observable<LaunchState>
-        .just(.notSignedIn)
+      subject.onNext(.notSignedIn)
     case .some:
-      return Observable<LaunchState>
-        .just(.signedIn)
+      subject.onNext(.signedIn)
     }
+    return subject.asObserver()
   }
 }

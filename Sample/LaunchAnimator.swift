@@ -6,48 +6,34 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
-import RxSwift
 import UIKit
+import RxSwift
 
 class LaunchAnimator: AnimatorType {
 
-  lazy private var subject: BehaviorSubject<LaunchState> = {
-    return makeSubject()
-  }()
+  let subject = PublishSubject<LaunchState>()
 
-  func animate(for state: LaunchState) -> LaunchState {
+  func animate(for state: LaunchState) -> Observable<LaunchState> {
     switch state {
     case .loading:
       loadingAnimation()
-      subject.onNext(state)
-      return state
     default:
       endAnimation()
-      subject.onNext(state)
-      return state
     }
+    return subject.asObserver()
   }
-
 
   private func loadingAnimation() {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
       print("start animation")
+      self.subject.onNext(.loading)
     }
   }
 
   private func endAnimation() {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-      print("end animation")
-      self?.subject.onCompleted()
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      self.subject.onNext(.ending)
     }
-  }
-
-  private func makeSubject() -> BehaviorSubject<LaunchState> {
-    let subject = BehaviorSubject<LaunchState>(value: .loading)
-    _ = subject.do(onSubscribe: { [weak self] in
-      self?.loadingAnimation()
-    })
-    return subject
   }
 }
 

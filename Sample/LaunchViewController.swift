@@ -37,8 +37,15 @@ class LaunchViewController<
   override func viewDidLoad() {
     super.viewDidLoad()
     print("did load")
-    
+    let source = Observable.merge(animator
+      .animate(for: .loading)
+      .flatMap(viewModel.loadSession)
+      .flatMap(animator.animate)
+      .flatMap(navigator.nextScreen))
 
+    source
+    .subscribe()
+    .disposed(by: bag)
 
 
 

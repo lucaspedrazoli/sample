@@ -27,13 +27,13 @@ class LaunchViewModel {
     switch session {
     case .none:
       let action = {
-        print("load session NOT signed in")
+        print("session NOT signed in")
       }
       return Observable.just((LaunchState.notSignedIn, action))
 
     case .some:
       let action = {
-          print("load session signed in")
+          print("session signed in")
       }
       return Observable.just((LaunchState.signedIn, action))
     }

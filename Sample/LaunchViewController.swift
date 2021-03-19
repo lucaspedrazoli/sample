@@ -49,7 +49,7 @@ class LaunchViewController<
       }
       .flatMap { element -> Observable<(LaunchState, Closure)> in
         element.1()
-        return self.navigator.nextScreen(for: element.0)
+        return self.navigator.navigate(for: element.0)
       }
       .map { $0.1() }
       .subscribe()

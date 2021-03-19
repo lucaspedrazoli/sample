@@ -13,5 +13,5 @@ protocol NavigatorType {
 
   associatedtype State
 
-  func nextScreen(for state: State) -> Observable<(State, Closure)>
+  func navigate(for state: State) -> Observable<(State, Closure)>
 }

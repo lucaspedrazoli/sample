@@ -6,43 +6,36 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
+import Foundation
 import RxSwift
 
 class LaunchViewModel {
 
-  let subject = PublishSubject<LaunchState>()
   let userSessionRepository: UserSessionRepositoryType
-  let bag = DisposeBag()
 
   init(userSessionRepository: UserSessionRepositoryType) {
     self.userSessionRepository = userSessionRepository
   }
 
-  func loadSession(for state: LaunchState) -> Observable<LaunchState> {
-    guard state == .loading else {
-      print("load session?? \(state)")
-      return Observable.just(state)
-    }
+  func loadSession() -> Observable<(LaunchState, Closure)> {
     return userSessionRepository
             .readUserSession()
-      .flatMap(stateForSession)
+            .flatMap(stateForSession)
   }
 
-  private func stateForSession(_ session: UserSessionModel?) -> Observable<LaunchState> {
+  private func stateForSession(_ session: UserSessionModel?) -> Observable<(LaunchState, Closure)> {
     switch session {
     case .none:
-      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      let action = {
         print("load session NOT signed in")
-        self.subject.onNext(.notSignedIn)
       }
+      return Observable.just((LaunchState.notSignedIn, action))
 
     case .some:
-      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-        print("load session signed in")
-        self.subject.onNext(.signedIn)
-        self.subject.onCompleted()
+      let action = {
+          print("load session signed in")
       }
+      return Observable.just((LaunchState.signedIn, action))
     }
-    return subject.share()
   }
 }

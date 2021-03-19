@@ -11,21 +11,19 @@ import RxSwift
 
 struct LaunchNavigator: NavigatorType {
   let navigationController: NiblessNavigationController
-  let subject = PublishSubject<LaunchState>()
 
-  func nextScreen(for state: LaunchState) -> Observable<LaunchState> {
-    navigate(for: state)
-    return subject.asObserver()
+  func nextScreen(for state: LaunchState) -> Observable<(LaunchState, Closure)> {
+    return navigate(for: state)
   }
 
-  private func navigate(for state: LaunchState) {
-      switch state {
+  private func navigate(for state: LaunchState) -> Observable<(LaunchState, Closure)> {
+    switch state {
       default:
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-          print("default navigation")
-          self.subject.onNext(state)
-          self.subject.onCompleted()
-        }
-    }
+        return Observable.just((state, teste))
+      }
+  }
+
+  private func teste() {
+    print("teste navigation")
   }
 }

@@ -9,35 +9,31 @@
 import UIKit
 import RxSwift
 
+typealias Closure = ()-> Void
+
 class LaunchAnimator: AnimatorType {
 
-  let subject = PublishSubject<LaunchState>()
-
-  func animate(for state: LaunchState) -> Observable<LaunchState> {
+  func animate(for state: LaunchState) -> Observable<(LaunchState, Closure)> {
     switch state {
     case .loading:
-      loadingAnimation()
-    case .signedIn, .ending, .notSignedIn, .onboard:
-      endAnimation()
-    default:
-      print("animate? \(state)")
+      return Observable.just((.loading, loadingAnimation))
+    case .signedIn:
+      return Observable.just((.signedIn, signedInAnimation))
+    case .notSignedIn:
+      return Observable.just((.notSignedIn, notSignedInAnimation))
     }
-    return subject.share()
   }
 
   private func loadingAnimation() {
-    print("start animation")
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      self.subject.onNext(.loading)
-    }
+    print("loading animation")
   }
 
-  private func endAnimation() {
-    print("end animation")
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      self.subject.onNext(.ending)
-      self.subject.onCompleted()
-    }
+  private func signedInAnimation() {
+    print("signed in animation")
+  }
+
+  private func notSignedInAnimation() {
+    print("NOT signed in animation")
   }
 }
 

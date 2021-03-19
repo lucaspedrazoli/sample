@@ -36,16 +36,24 @@ class LaunchViewController<
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    print("did load")
-    let source = Observable.merge(animator
+    print("didload")
+    animator
       .animate(for: .loading)
-      .flatMap(viewModel.loadSession)
-      .flatMap(animator.animate)
-      .flatMap(navigator.nextScreen))
-
-    source
-    .subscribe()
-    .disposed(by: bag)
+      .flatMap { element -> Observable<(LaunchState, Closure)> in
+        element.1()
+        return self.viewModel.loadSession()
+      }
+      .flatMap { element -> Observable<(LaunchState, Closure)> in
+        element.1()
+        return self.animator.animate(for: element.0)
+      }
+      .flatMap { element -> Observable<(LaunchState, Closure)> in
+        element.1()
+        return self.navigator.nextScreen(for: element.0)
+      }
+      .map { $0.1() }
+      .subscribe()
+      .disposed(by: bag)
 
 
 

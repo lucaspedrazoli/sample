@@ -39,13 +39,12 @@ class LaunchViewController<
     print("didload")
     animator
       .animate(for: .loading)
-      .flatMap { element -> Observable<(LaunchState, Closure)> in
+      .flatMap { element -> Observable<LaunchState> in
         element.1()
         return self.viewModel.loadSession()
       }
       .flatMap { element -> Observable<(LaunchState, Closure)> in
-        element.1()
-        return self.animator.animate(for: element.0)
+        return self.animator.animate(for: element)
       }
       .flatMap { element -> Observable<(LaunchState, Closure)> in
         element.1()

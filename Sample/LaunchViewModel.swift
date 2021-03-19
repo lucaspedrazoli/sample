@@ -17,25 +17,19 @@ class LaunchViewModel {
     self.userSessionRepository = userSessionRepository
   }
 
-  func loadSession() -> Observable<(LaunchState, Closure)> {
+  func loadSession() -> Observable<LaunchState> {
     return userSessionRepository
             .readUserSession()
             .flatMap(stateForSession)
   }
 
-  private func stateForSession(_ session: UserSessionModel?) -> Observable<(LaunchState, Closure)> {
+  private func stateForSession(_ session: UserSessionModel?) -> Observable<LaunchState> {
     switch session {
     case .none:
-      let action = {
-        print("session NOT signed in")
-      }
-      return Observable.just((LaunchState.notSignedIn, action))
+      return Observable.just(.notSignedIn)
 
     case .some:
-      let action = {
-          print("session signed in")
-      }
-      return Observable.just((LaunchState.signedIn, action))
+      return Observable.just(.signedIn)
     }
   }
 }

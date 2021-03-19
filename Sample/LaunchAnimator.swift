@@ -41,7 +41,7 @@ class LaunchAnimator: AnimatorType {
     let action = {
       print("signed in animation")
     }
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
       subject.onNext((LaunchState.loading, action))
       subject.onCompleted()
     }

@@ -36,6 +36,10 @@ class LaunchViewController<
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    let launchView = LaunchView(frame: view.frame)
+    view = launchView
+
+
     print("didload")
     animator
       .animate(for: .loading)
@@ -46,16 +50,13 @@ class LaunchViewController<
       .flatMap { element -> Observable<(LaunchState, Closure)> in
         return self.animator.animate(for: element)
       }
-      .flatMap { element -> Observable<(LaunchState, Closure)> in
-        element.1()
+      .flatMap { element -> Observable<LaunchState> in
         return self.navigator.navigate(for: element.0)
       }
-      .map { $0.1() }
-      .subscribe()
+      .subscribe(onCompleted: {
+        print("completed")
+      })
       .disposed(by: bag)
-
-
-
   }
 }
 

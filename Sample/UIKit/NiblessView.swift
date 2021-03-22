@@ -12,7 +12,13 @@ class NiblessView: UIView {
 
   public override init(frame: CGRect) {
     super.init(frame: frame)
+    setup()
+    installConstraints()
   }
+
+  func installConstraints() {}
+
+  func setup() {}
 
   @available(*, unavailable,
     message: "Loading this view controller from a nib is unsupported."

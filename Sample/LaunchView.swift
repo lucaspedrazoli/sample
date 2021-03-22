@@ -30,11 +30,15 @@ class LaunchView: NiblessView {
   }
 
   override func installConstraints() {
-    let constraints = [
+    var constraints = [
       container.topAnchor.constraint(equalTo: self.topAnchor),
       container.bottomAnchor.constraint(equalTo: self.bottomAnchor),
       container.leadingAnchor.constraint(equalTo: self.leadingAnchor),
       container.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+    ]
+    constraints += [
+      helloMessage.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      helloMessage.centerYAnchor.constraint(equalTo: container.centerYAnchor)
     ]
     NSLayoutConstraint.activate(constraints)
   }

@@ -12,8 +12,9 @@ import RxSwift
 typealias Closure = ()-> Void
 
 class LaunchAnimator: AnimatorType {
+  var actions: [LaunchState : ControllerAction] = [:]
 
-  func animate(for state: LaunchState) -> Observable<(LaunchState, Closure)> {
+  func animate(for state: LaunchState) -> Observable<LaunchState> {
     switch state {
     case .loading:
       return loadingAnimation()
@@ -24,37 +25,31 @@ class LaunchAnimator: AnimatorType {
     }
   }
 
-  private func loadingAnimation() -> Observable<(LaunchState, Closure)> {
-    let subject = PublishSubject<(LaunchState, Closure)>()
-    let action = {
-      print("loading animation")
-    }
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      subject.onNext((LaunchState.loading, action))
+  private func loadingAnimation() -> Observable<LaunchState> {
+    let subject = PublishSubject<LaunchState>()
+    let action = actions[.loading]
+    action?() {
+      subject.onNext(.loading)
       subject.onCompleted()
     }
     return subject.asObservable()
   }
 
-  private func signedInAnimation() -> Observable<(LaunchState, Closure)> {
-    let subject = PublishSubject<(LaunchState, Closure)>()
-    let action = {
-      print("signed in animation")
-    }
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      subject.onNext((LaunchState.loading, action))
+  private func signedInAnimation() -> Observable<LaunchState> {
+    let subject = PublishSubject<LaunchState>()
+    let action = actions[.signedIn]
+    action?() {
+      subject.onNext(.signedIn)
       subject.onCompleted()
     }
     return subject.asObservable()
   }
 
-  private func notSignedInAnimation() -> Observable<(LaunchState, Closure)> {
-    let subject = PublishSubject<(LaunchState, Closure)>()
-    let action = {
-      print("NOT signed in animation")
-    }
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      subject.onNext((LaunchState.loading, action))
+  private func notSignedInAnimation() -> Observable<LaunchState> {
+    let subject = PublishSubject<LaunchState>()
+    let action = actions[.notSignedIn]
+    action?() {
+      subject.onNext(.notSignedIn)
       subject.onCompleted()
     }
     return subject.asObservable()

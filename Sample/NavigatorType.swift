@@ -11,7 +11,7 @@ import UIKit
 
 protocol NavigatorType {
   associatedtype State: Hashable
-  var actions: [State: ControllerAction] { get set}
+  var actions: [State: ControllerAction] { get set }
 
   func navigate(for state: LaunchState) -> Observable<State>
 }

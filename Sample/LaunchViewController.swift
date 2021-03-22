@@ -44,14 +44,13 @@ class LaunchViewController<
     animator
       .animate(for: .loading)
       .flatMap { element -> Observable<LaunchState> in
-        element.1()
         return self.viewModel.loadSession()
       }
-      .flatMap { element -> Observable<(LaunchState, Closure)> in
+      .flatMap { element -> Observable<LaunchState> in
         return self.animator.animate(for: element)
       }
       .flatMap { element -> Observable<LaunchState> in
-        return self.navigator.navigate(for: element.0)
+        return self.navigator.navigate(for: element)
       }
       .subscribe(onCompleted: {
         print("completed")

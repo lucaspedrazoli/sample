@@ -6,7 +6,7 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
-enum LaunchState {
+enum LaunchState: String {
   case loading
   case notSignedIn
   case signedIn

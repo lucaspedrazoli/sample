@@ -10,8 +10,8 @@ import RxSwift
 import UIKit
 
 protocol NavigatorType {
+  associatedtype State: Hashable
+  var actions: [State: ControllerAction] { get set}
 
-  associatedtype State
-
-  func navigate(for state: State) -> Observable<(State, Closure)>
+  func navigate(for state: LaunchState) -> Observable<State>
 }

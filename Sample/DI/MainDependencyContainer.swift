@@ -13,8 +13,7 @@ class MainDependencyContainer {
   private let userSessionDataStore = UserSessionStore()
 
   func makeLaunchViewController() -> NiblessViewController {
-    let navigator = LaunchNavigator(navigationController:
-      NiblessNavigationController())
+    let navigator = LaunchNavigator()
     let viewModel = LaunchViewModel(userSessionRepository:
       FakeUserSessionRepository())
     let animator = LaunchAnimator()

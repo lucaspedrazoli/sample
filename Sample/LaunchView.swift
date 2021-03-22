@@ -13,13 +13,14 @@ class LaunchView: NiblessView {
   private lazy var container: UIView = {
       let view = UIView()
       view.translatesAutoresizingMaskIntoConstraints = false
-      view.backgroundColor = .cyan
+      view.backgroundColor = .black
       return view
   }()
 
   private lazy var helloMessage: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
+    label.textColor = .white
     label.text = "Launch app test"
     return label
   }()

@@ -20,6 +20,9 @@ class LaunchViewController<
   var viewModel: LaunchViewModel
   var navigator: Navigator
   var animator: Animator
+  lazy var launchView = {
+  return LaunchView(frame: view.frame)
+  }()
   let bag = DisposeBag()
 
   public init(
@@ -38,7 +41,6 @@ class LaunchViewController<
     super.viewDidLoad()
     setupAnimator()
     setupNavigator()
-    let launchView = LaunchView(frame: view.frame)
     view = launchView
     animator
       .animate(for: .loading)

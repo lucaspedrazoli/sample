@@ -38,11 +38,8 @@ class LaunchViewController<
     super.viewDidLoad()
     setupAnimator()
     setupNavigator()
-    //let launchView = LaunchView(frame: view.frame)
-    //view = launchView
-
-
-    print("didload")
+    let launchView = LaunchView(frame: view.frame)
+    view = launchView
     animator
       .animate(for: .loading)
       .flatMap { [weak self] _ -> Observable<LaunchState> in

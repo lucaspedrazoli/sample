@@ -31,10 +31,10 @@ class LaunchView: NiblessView {
 
   override func installConstraints() {
     var constraints = [NSLayoutConstraint]()
-    constraints.append(container.topAnchor.constraint(equalTo: superview!.topAnchor))
-    constraints.append(container.bottomAnchor.constraint(equalTo: superview!.bottomAnchor))
-    constraints.append(container.leadingAnchor.constraint(equalTo: superview!.leadingAnchor))
-    constraints.append(container.trailingAnchor.constraint(equalTo: superview!.trailingAnchor))
+    constraints.append(container.topAnchor.constraint(equalTo: self.topAnchor))
+    constraints.append(container.bottomAnchor.constraint(equalTo: self.bottomAnchor))
+    constraints.append(container.leadingAnchor.constraint(equalTo: self.leadingAnchor))
+    constraints.append(container.trailingAnchor.constraint(equalTo: self.trailingAnchor))
     NSLayoutConstraint.activate(constraints)
   }
 }

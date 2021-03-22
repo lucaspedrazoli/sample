@@ -18,8 +18,8 @@ class LaunchViewController<
 
   let container: LaunchDependencyContainer
   var viewModel: LaunchViewModel
-  let navigator: Navigator
-  let animator: Animator
+  var navigator: Navigator
+  var animator: Animator
   let bag = DisposeBag()
 
   public init(
@@ -36,8 +36,10 @@ class LaunchViewController<
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let launchView = LaunchView(frame: view.frame)
-    view = launchView
+    setupAnimator()
+    setupNavigator()
+    //let launchView = LaunchView(frame: view.frame)
+    //view = launchView
 
 
     print("didload")
@@ -56,6 +58,45 @@ class LaunchViewController<
         print("completed")
       })
       .disposed(by: bag)
+  }
+
+  private func setupAnimator() {
+    animator.actions[.loading] = loadingAnimation
+    animator.actions[.signedIn] = signedInAnimation
+    animator.actions[.notSignedIn] = notSignedInAnimation
+  }
+
+  private func setupNavigator() {
+    animator.actions[.signedIn] = navigation
+    animator.actions[.notSignedIn] = navigation
+  }
+
+  private func loadingAnimation(completion: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      print("loading animation")
+      completion()
+    }
+  }
+
+  private func signedInAnimation(completion: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      print("signed in animation")
+      completion()
+    }
+  }
+
+  private func notSignedInAnimation(completion: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      print("NOT signedIn animation")
+      completion()
+    }
+  }
+
+  private func navigation(completion: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+      print("navigation")
+      completion()
+    }
   }
 }
 

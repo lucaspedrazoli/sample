@@ -9,9 +9,7 @@
 import UIKit
 import RxSwift
 
-typealias Closure = ()-> Void
-
-class LaunchAnimator: AnimatorType {
+struct LaunchAnimator: AnimatorType {
   var actions: [LaunchState : ControllerAction] = [:]
 
   func animate(for state: LaunchState) -> Observable<LaunchState> {
@@ -40,7 +38,6 @@ class LaunchAnimator: AnimatorType {
     let action = actions[.signedIn]
     action?() {
       subject.onNext(.signedIn)
-      subject.onCompleted()
     }
     return subject.asObservable()
   }
@@ -50,7 +47,6 @@ class LaunchAnimator: AnimatorType {
     let action = actions[.notSignedIn]
     action?() {
       subject.onNext(.notSignedIn)
-      subject.onCompleted()
     }
     return subject.asObservable()
   }

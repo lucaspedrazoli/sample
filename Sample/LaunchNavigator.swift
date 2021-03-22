@@ -22,7 +22,6 @@ struct LaunchNavigator: NavigatorType {
     let subject = PublishSubject<LaunchState>()
     let action = actions[.signedIn]
     action?() {
-      subject.onNext(.signedIn)
       subject.onCompleted()
     }
     return subject.asObservable()

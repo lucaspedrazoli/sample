@@ -26,9 +26,11 @@ class LaunchViewModel {
   private func stateForSession(_ session: UserSessionModel?) -> Observable<LaunchState> {
     switch session {
     case .none:
+      print("Session none")
       return Observable.just(.notSignedIn)
 
     case .some:
+      print("Session some")
       return Observable.just(.signedIn)
     }
   }

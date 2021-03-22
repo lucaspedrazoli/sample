@@ -24,31 +24,36 @@ struct LaunchAnimator: AnimatorType {
   }
 
   private func loadingAnimation() -> Observable<LaunchState> {
-    let subject = PublishSubject<LaunchState>()
-    let action = actions[.loading]
-    action?() {
-      subject.onNext(.loading)
-      subject.onCompleted()
+    return Observable.create { observer in
+      let action = self.actions[.loading]
+      action?() {
+        observer.onNext(.loading)
+        observer.onCompleted()
+      }
+      return Disposables.create()
     }
-    return subject.asObservable()
   }
 
   private func signedInAnimation() -> Observable<LaunchState> {
-    let subject = PublishSubject<LaunchState>()
-    let action = actions[.signedIn]
-    action?() {
-      subject.onNext(.signedIn)
+    return Observable.create { observer in
+      let action = self.actions[.signedIn]
+      action?() {
+        observer.onNext(.signedIn)
+        observer.onCompleted()
+      }
+      return Disposables.create()
     }
-    return subject.asObservable()
   }
 
   private func notSignedInAnimation() -> Observable<LaunchState> {
-    let subject = PublishSubject<LaunchState>()
-    let action = actions[.notSignedIn]
-    action?() {
-      subject.onNext(.notSignedIn)
+    return Observable.create { observer in
+      let action = self.actions[.notSignedIn]
+      action?() {
+        observer.onNext(.notSignedIn)
+        observer.onCompleted()
+      }
+      return Disposables.create()
     }
-    return subject.asObservable()
   }
 }
 

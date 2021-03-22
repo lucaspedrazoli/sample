@@ -27,11 +27,11 @@ class LaunchViewModel {
     switch session {
     case .none:
       print("Session none")
-      return Observable.just(.notSignedIn)
+      return .just(.notSignedIn)
 
     case .some:
       print("Session some")
-      return Observable.just(.signedIn)
+      return .just(.signedIn)
     }
   }
 }

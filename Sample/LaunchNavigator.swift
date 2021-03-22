@@ -19,11 +19,13 @@ struct LaunchNavigator: NavigatorType {
   }
 
   private func teste() -> Observable<LaunchState> {
-    let subject = PublishSubject<LaunchState>()
     let action = actions[.signedIn]
-    action?() {
-      subject.onCompleted()
+    return Observable.create { observer in
+      action?() {
+        observer.onNext(.signedIn)
+        observer.onCompleted()
+      }
+      return Disposables.create()
     }
-    return subject.asObservable()
   }
 }

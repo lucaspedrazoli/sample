@@ -21,7 +21,8 @@ class LaunchView: NiblessView {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textColor = .white
-    label.text = "Launch app test"
+    label.font = UIFont(name: "Baskerville-Bold", size: 32)
+    label.text = "Loading..."
     return label
   }()
 

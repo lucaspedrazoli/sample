@@ -19,10 +19,12 @@ class MainDependencyContainer {
     let animator = LaunchAnimator()
     let container = LaunchDependencyContainer(userSessionStore:
       userSessionDataStore)
+    let view = LaunchView(frame: .zero)
     return LaunchViewController(
       container: container,
       viewModel: viewModel,
       navigator: navigator,
-      animator: animator)
+      animator: animator,
+      launchView: view)
   }
 }

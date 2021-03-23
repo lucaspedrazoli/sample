@@ -10,26 +10,28 @@ import UIKit
 import RxSwift
 
 class LaunchViewController<
-  Navigator: NavigatorType,
-  Animator: AnimatorType>: NiblessViewController
+    Navigator: NavigatorType,
+    Animator: AnimatorType
+  >: NiblessViewController
   where
   Navigator.State == LaunchState,
   Animator.State == LaunchState {
 
   let container: LaunchDependencyContainer
+  let launchView: LaunchView
   var viewModel: LaunchViewModel
   var navigator: Navigator
   var animator: Animator
-  lazy var launchView = {
-  return LaunchView(frame: view.frame)
-  }()
+
   let bag = DisposeBag()
 
   public init(
     container: LaunchDependencyContainer,
     viewModel: LaunchViewModel,
     navigator: Navigator,
-    animator: Animator) {
+    animator: Animator,
+    launchView: LaunchView) {
+    self.launchView = launchView
     self.viewModel = viewModel
     self.container = container
     self.navigator = navigator
@@ -41,7 +43,7 @@ class LaunchViewController<
     super.viewDidLoad()
     setupAnimator()
     setupNavigator()
-    view = launchView
+    setupUI()
     animator
       .animate(for: .loading)
       .flatMap { [weak self] _ -> Observable<LaunchState> in
@@ -52,6 +54,11 @@ class LaunchViewController<
       .flatMap(navigator.navigate)
       .subscribe()
       .disposed(by: bag)
+  }
+
+  private func setupUI() {
+    launchView.inflate(with: view.frame)
+    view = launchView
   }
 
   private func setupAnimator() {

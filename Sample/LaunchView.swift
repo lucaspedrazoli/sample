@@ -26,7 +26,7 @@ class LaunchView: NiblessView {
     return label
   }()
 
-  override func setup() {
+  override func addSubviews() {
     addSubview(container)
     container.addSubview(helloMessage)
   }

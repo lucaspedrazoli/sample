@@ -70,13 +70,13 @@ class LaunchView: NiblessView {
     layoutIfNeeded()
     loadingLabel.animate()
     fadeIcon()
-    rotateIcon()
+    //rotateIcon()
   }
 
   func stopAnimations() {
-    loadingLabel.stopAnimation()
+    //loadingLabel.stopAnimation()
     //fade.stopAnimation(true)
-    rotation.pauseAnimation()
+    //rotation.pauseAnimation()
   }
 
   private func rotateIcon() {

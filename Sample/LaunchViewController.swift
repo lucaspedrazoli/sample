@@ -44,6 +44,10 @@ class LaunchViewController<
     setupAnimator()
     setupNavigator()
     setupUI()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     animator
       .animate(for: .loading)
       .flatMap { [weak self] _ -> Observable<LaunchState> in
@@ -73,10 +77,8 @@ class LaunchViewController<
   }
 
   private func loadingAnimation(completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("loading animation")
-      completion()
-    }
+    launchView.animate()
+    completion()
   }
 
   private func signedInAnimation(completion: @escaping () -> Void) {

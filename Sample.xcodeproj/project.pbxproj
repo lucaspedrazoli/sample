@@ -43,6 +43,7 @@
 		7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FD25F1945700E31585 /* LoggerType.swift */; };
 		7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60A25F27DBF00E31585 /* ErrorInfo.swift */; };
 		7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */; };
+		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
 		75D63BC72608F3430074D384 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D63BC62608F3430074D384 /* Alias.swift */; };
 		795427741CFF8DD68F26E2C2 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FFBE67CBD59F2E3BFCA9DC /* Pods_Sample.framework */; };
@@ -101,6 +102,7 @@
 		7558A5FD25F1945700E31585 /* LoggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerType.swift; sourceTree = "<group>"; };
 		7558A60A25F27DBF00E31585 /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
 		7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryType.swift; sourceTree = "<group>"; };
+		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		75D63BC62608F3430074D384 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		9E22ED75257A4928C6FFA1EA /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		7552E71225F7EB5100C070B4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				75C4BFA5260CE5A200EC93CA /* Components */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -328,6 +331,14 @@
 				7558A5FD25F1945700E31585 /* LoggerType.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		75C4BFA5260CE5A200EC93CA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				75C4BFA3260CE57900EC93CA /* GradientLabel.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D9B966EE96B964AF0AE5B215 /* Pods */ = {
@@ -532,6 +543,7 @@
 				754848CD25E8140900529C79 /* NiblessNavigationController.swift in Sources */,
 				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
+				75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */,
 				754848EC25EEACBA00529C79 /* SignupDependencyContainer.swift in Sources */,
 				7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */,
 				75CF6C602605183D00199482 /* LaunchView.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 class LaunchView: NiblessView {
 
-  private let animationDuration: CFTimeInterval = 1.0
+  private let animationDuration: CFTimeInterval = 1.5
 
   lazy var container: UIView = {
       let view = UIView()
@@ -50,15 +50,15 @@ class LaunchView: NiblessView {
     ]
     constraints += [
       loadingLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-      loadingLabel.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+      loadingLabel.bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor),
       loadingLabel.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.8),
       loadingLabel.heightAnchor.constraint(equalToConstant: 50)
     ]
     constraints += [
       loadingIcon.widthAnchor.constraint(equalToConstant: 50),
       loadingIcon.heightAnchor.constraint(equalToConstant: 50),
-      loadingIcon.centerXAnchor.constraint(equalTo: loadingLabel.centerXAnchor),
-      loadingIcon.topAnchor.constraint(equalTo: loadingLabel.bottomAnchor, constant: 15)
+      loadingIcon.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      loadingIcon.centerYAnchor.constraint(equalTo: container.centerYAnchor)
     ]
     NSLayoutConstraint.activate(constraints)
   }

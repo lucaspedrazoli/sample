@@ -10,7 +10,14 @@ import UIKit
 class LaunchView: NiblessView {
 
   private let animationDuration: CFTimeInterval = 1.5
-
+  private lazy var rotation = {
+    return UIViewPropertyAnimator(duration: animationDuration,
+                                  curve: .linear)
+  }()
+  private lazy var fade = {
+    return UIViewPropertyAnimator(duration: animationDuration,
+                                  curve: .linear)
+  }()
   lazy var container: UIView = {
       let view = UIView()
       view.translatesAutoresizingMaskIntoConstraints = false
@@ -70,8 +77,13 @@ class LaunchView: NiblessView {
     rotateIcon()
   }
 
+  func stopAnimations() {
+    loadingLabel.stopAnimation()
+    //fade.stopAnimation(true)
+    rotation.pauseAnimation()
+  }
+
   private func rotateIcon() {
-    let rotation = UIViewPropertyAnimator(duration: animationDuration, curve: .linear)
     rotation.addAnimations {
       self.loadingIcon.transform = CGAffineTransform(rotationAngle: .pi)
     }
@@ -85,7 +97,6 @@ class LaunchView: NiblessView {
   }
 
   private func fadeIcon() {
-    let fade = UIViewPropertyAnimator(duration: animationDuration, curve: .linear)
     fade.addAnimations { [weak self] in
       guard let self = self else { return }
       UIView.animateKeyframes(withDuration: self.animationDuration, delay: 0.0, animations: {

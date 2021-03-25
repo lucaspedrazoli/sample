@@ -77,34 +77,37 @@ class LaunchViewController<
   }
 
   private func loadingAnimation(completion: @escaping () -> Void) {
+    print("loadingAnimation")
     launchView.animate()
     completion()
   }
 
   private func signedInAnimation(completion: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("signed in animation")
+      print("signedInAnimation")
       completion()
     }
   }
 
   private func notSignedInAnimation(completion: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("NOT signedIn animation")
+      print("notSignedInAnimation")
       completion()
     }
   }
 
   private func signedInnavigation(completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("navigation signed in")
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
+      print("signedInnavigation")
+      self?.launchView.stopAnimations()
       completion()
     }
   }
 
   private func notSignedInnavigation(completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("navigation not signed in")
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
+      print("notSignedInnavigation")
+      self?.launchView.stopAnimations()
       completion()
     }
   }

@@ -43,11 +43,11 @@ class GradientLabel: UILabel {
       let font = _font else { return }
     let style = NSMutableParagraphStyle()
     style.alignment = .center
-    let dict: [NSAttributedString.Key: Any] = [.font: font,
+    let attributes: [NSAttributedString.Key: Any] = [.font: font,
                                                .paragraphStyle: style]
     let image = UIGraphicsImageRenderer(size: bounds.size)
       .image { _ in
-        text.draw(in: bounds, withAttributes: dict)
+        text.draw(in: bounds, withAttributes: attributes)
     }
 
     let maskLayer = CALayer()
@@ -67,6 +67,10 @@ class GradientLabel: UILabel {
     gradientAnimation.duration = duration
     gradientAnimation.repeatCount = Float.infinity
     gradientLayer.add(gradientAnimation, forKey: nil)
+  }
+
+  func stopAnimation() {
+    //gradientLayer.removeAllAnimations()
   }
 }
 

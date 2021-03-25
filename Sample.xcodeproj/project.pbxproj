@@ -46,6 +46,7 @@
 		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
 		75D63BC72608F3430074D384 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D63BC62608F3430074D384 /* Alias.swift */; };
+		75F0D2CA260CF1A0005EB6A5 /* coffee-cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F0D2C9260CF1A0005EB6A5 /* coffee-cup.png */; };
 		795427741CFF8DD68F26E2C2 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FFBE67CBD59F2E3BFCA9DC /* Pods_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		75D63BC62608F3430074D384 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
+		75F0D2C9260CF1A0005EB6A5 /* coffee-cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffee-cup.png"; sourceTree = "<group>"; };
 		9E22ED75257A4928C6FFA1EA /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E7259780D1EED844DD52B61 /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		C44060257B321FFCC3918CD7 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		7548489325E80E8500529C79 = {
 			isa = PBXGroup;
 			children = (
+				75F0D2C9260CF1A0005EB6A5 /* coffee-cup.png */,
 				7552E7372602546C00C070B4 /* Default-568h@2x.png */,
 				754848FB25EED3EC00529C79 /* Podfile */,
 				754848C125E8110D00529C79 /* .gitignore */,
@@ -439,6 +442,7 @@
 			files = (
 				754848FC25EED3EC00529C79 /* Podfile in Resources */,
 				7552E7382602546C00C070B4 /* Default-568h@2x.png in Resources */,
+				75F0D2CA260CF1A0005EB6A5 /* coffee-cup.png in Resources */,
 				754848C225E8110D00529C79 /* .gitignore in Resources */,
 				754848A925E80E8800529C79 /* Assets.xcassets in Resources */,
 			);

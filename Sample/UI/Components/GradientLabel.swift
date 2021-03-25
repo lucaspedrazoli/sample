@@ -11,9 +11,11 @@ import UIKit
 class GradientLabel: UILabel {
 
   private let _font: UIFont?
+  private let duration: CFTimeInterval
 
-  init(font: UIFont?, textColor: UIColor) {
+  init(font: UIFont?, textColor: UIColor, duration: CFTimeInterval) {
     _font = font
+    self.duration = duration
     super.init(frame: .zero)
     self.translatesAutoresizingMaskIntoConstraints = false
   }
@@ -36,7 +38,6 @@ class GradientLabel: UILabel {
   }()
 
   func animate() {
-    layoutIfNeeded()
     self.textColor = textColor
     guard let text = text,
       let font = _font else { return }
@@ -63,7 +64,7 @@ class GradientLabel: UILabel {
     let gradientAnimation = CABasicAnimation(keyPath: "locations")
     gradientAnimation.fromValue = [0.0, 0.0, 0.25]
     gradientAnimation.toValue = [0.75, 1.0, 1.0]
-    gradientAnimation.duration = 1.0
+    gradientAnimation.duration = duration
     gradientAnimation.repeatCount = Float.infinity
     gradientLayer.add(gradientAnimation, forKey: nil)
   }

@@ -10,14 +10,10 @@ import UIKit
 class LaunchView: NiblessView {
 
   private let animationDuration: CFTimeInterval = 1.5
-  private lazy var rotation = {
-    return UIViewPropertyAnimator(duration: animationDuration,
-                                  curve: .linear)
-  }()
-  private lazy var fade = {
-    return UIViewPropertyAnimator(duration: animationDuration,
-                                  curve: .linear)
-  }()
+  private var rotation = UIViewPropertyAnimator(duration: 1.5,
+                                                curve: .linear)
+  private var fade = UIViewPropertyAnimator(duration: 1.5,
+                                            curve: .linear)
   lazy var container: UIView = {
       let view = UIView()
       view.translatesAutoresizingMaskIntoConstraints = false

@@ -71,14 +71,12 @@ class LaunchViewController<
   }
 
   private func loadingAnimation(completion: @escaping () -> Void) {
-    print("loadingAnimation")
     launchView.animate()
     completion()
   }
 
   private func signedInnavigation(completion: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-      print("signedInnavigation")
       self?.launchView.stopAnimations()
       completion()
     }
@@ -86,7 +84,6 @@ class LaunchViewController<
 
   private func notSignedInnavigation(completion: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-      print("notSignedInnavigation")
       self?.launchView.stopAnimations()
       completion()
     }

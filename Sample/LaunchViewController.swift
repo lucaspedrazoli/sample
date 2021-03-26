@@ -50,11 +50,7 @@ class LaunchViewController<
     super.viewWillAppear(animated)
     animator
       .animate(for: .loading)
-      .flatMap { [weak self] _ -> Observable<LaunchState> in
-        guard let self = self else { return .empty() }
-        return self.viewModel.loadSession()
-      }
-      .flatMap(animator.animate)
+      .flatMap(viewModel.loadSession)
       .flatMap(navigator.navigate)
       .subscribe()
       .disposed(by: bag)
@@ -67,8 +63,6 @@ class LaunchViewController<
 
   private func setupAnimator() {
     animator.actions[.loading] = loadingAnimation
-    animator.actions[.signedIn] = signedInAnimation
-    animator.actions[.notSignedIn] = notSignedInAnimation
   }
 
   private func setupNavigator() {
@@ -80,20 +74,6 @@ class LaunchViewController<
     print("loadingAnimation")
     launchView.animate()
     completion()
-  }
-
-  private func signedInAnimation(completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("signedInAnimation")
-      completion()
-    }
-  }
-
-  private func notSignedInAnimation(completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-      print("notSignedInAnimation")
-      completion()
-    }
   }
 
   private func signedInnavigation(completion: @escaping () -> Void) {

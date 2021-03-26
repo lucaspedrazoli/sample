@@ -70,7 +70,7 @@ class GradientLabel: UILabel {
   }
 
   func stopAnimation() {
-    //gradientLayer.removeAllAnimations()
+    gradientLayer.removeAllAnimations()
   }
 }
 

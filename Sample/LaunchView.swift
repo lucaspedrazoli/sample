@@ -10,10 +10,11 @@ import UIKit
 class LaunchView: NiblessView {
 
   private let animationDuration: CFTimeInterval = 1.5
-  private var rotation = UIViewPropertyAnimator(duration: 1.5,
-                                                curve: .linear)
-  private var fade = UIViewPropertyAnimator(duration: 1.5,
-                                            curve: .linear)
+  private var timeout: CFTimeInterval {
+    return animationDuration * 4
+  }
+  private var animations: Set<UIViewPropertyAnimator> = []
+
   lazy var container: UIView = {
       let view = UIView()
       view.translatesAutoresizingMaskIntoConstraints = false
@@ -70,29 +71,30 @@ class LaunchView: NiblessView {
     layoutIfNeeded()
     loadingLabel.animate()
     fadeIcon()
-    //rotateIcon()
+    rotateIcon()
   }
 
   func stopAnimations() {
-    //loadingLabel.stopAnimation()
-    //fade.stopAnimation(true)
-    //rotation.pauseAnimation()
+    loadingLabel.stopAnimation()
+    _ = animations.map { $0.stopAnimation(false) }
   }
 
   private func rotateIcon() {
+    let rotation = UIViewPropertyAnimator(duration: 1.5,
+                                          curve: .linear)
     rotation.addAnimations {
       self.loadingIcon.transform = CGAffineTransform(rotationAngle: .pi)
     }
     rotation.addAnimations{
       self.loadingIcon.transform = CGAffineTransform(rotationAngle: .pi * 2)
     }
-    rotation.addCompletion { _ in
-      self.rotateIcon()
-    }
+    animations.insert(rotation)
     rotation.startAnimation()
   }
 
   private func fadeIcon() {
+    let fade = UIViewPropertyAnimator(duration: timeout,
+                                      curve: .linear)
     fade.addAnimations { [weak self] in
       guard let self = self else { return }
       UIView.animateKeyframes(withDuration: self.animationDuration, delay: 0.0, animations: {
@@ -105,10 +107,7 @@ class LaunchView: NiblessView {
         }
       })
     }
-
-    fade.addCompletion { _ in
-      self.fadeIcon()
-    }
+    animations.insert(fade)
     fade.startAnimation()
   }
 }

@@ -10,10 +10,6 @@ import UIKit
 class LaunchView: NiblessView {
 
   private let animationDuration: CFTimeInterval = 1.5
-  private var timeout: CFTimeInterval {
-    return animationDuration * 4
-  }
-  private var animations: Set<UIViewPropertyAnimator> = []
 
   lazy var container: UIView = {
       let view = UIView()
@@ -71,7 +67,7 @@ class LaunchView: NiblessView {
     layoutIfNeeded()
     loadingLabel.animate()
     fadeIcon()
-    //rotateIcon()
+    rotateIcon()
   }
 
   func stopAnimations() {
@@ -80,40 +76,20 @@ class LaunchView: NiblessView {
   }
 
   private func rotateIcon() {
-    let rotation = UIViewPropertyAnimator(duration: timeout,
-                                          curve: .linear)
-
-    rotation
-      .addAnimations {
-        UIView
-          .animateKeyframes(withDuration: self.timeout,
-                            delay: 0.0,
-                            options: [.repeat],
-                            animations: {
-                              UIView
-                                .addKeyframe(withRelativeStartTime: 0.0,
-                                             relativeDuration: 0.25) {
-                                              self.loadingIcon
-                                                .transform = CGAffineTransform(rotationAngle: .pi)
-                              }
-                              UIView.addKeyframe(withRelativeStartTime: 0.25,
-                                                 relativeDuration: 0.25) {
-                                                    self.loadingIcon
-                                                      .transform = CGAffineTransform(rotationAngle: .pi * 2)
-                              }
-
-      })
-    }
-    animations.insert(rotation)
-    rotation.startAnimation()
+    let rotate = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+    rotate.values = [0.0, CGFloat.pi, CGFloat.pi * 2]
+    rotate.keyTimes = [0.0, 0.5, 1.0]
+    rotate.duration = animationDuration
+    rotate.repeatCount = Float.infinity
+    loadingIcon.layer.add(rotate, forKey: nil)
   }
 
   private func fadeIcon() {
-    let fadeAnimation = CAKeyframeAnimation(keyPath: "opacity")
-    fadeAnimation.values = [0.0, 1.0, 0.0]
-    fadeAnimation.keyTimes = [0.0, 0.5, 1.0]
-    fadeAnimation.duration = animationDuration
-    fadeAnimation.repeatCount = Float.infinity
-    loadingIcon.layer.add(fadeAnimation, forKey: nil)
+    let fade = CAKeyframeAnimation(keyPath: "opacity")
+    fade.values = [0.0, 1.0, 0.0]
+    fade.keyTimes = [0.0, 0.5, 1.0]
+    fade.duration = animationDuration
+    fade.repeatCount = Float.infinity
+    loadingIcon.layer.add(fade, forKey: nil)
   }
 }

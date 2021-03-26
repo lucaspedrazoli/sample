@@ -71,8 +71,10 @@ class LaunchView: NiblessView {
   }
 
   func stopAnimations() {
-   // loadingLabel.stopAnimation()
-   // _ = animations.map { $0.stopAnimation(false) }
+    loadingLabel.stopAnimation()
+    loadingLabel.alpha = 0.0
+    loadingIcon.layer.removeAllAnimations()
+    loadingIcon.alpha = 1.0
   }
 
   private func rotateIcon() {

@@ -71,44 +71,49 @@ class LaunchView: NiblessView {
     layoutIfNeeded()
     loadingLabel.animate()
     fadeIcon()
-    rotateIcon()
+    //rotateIcon()
   }
 
   func stopAnimations() {
-    loadingLabel.stopAnimation()
-    _ = animations.map { $0.stopAnimation(false) }
+   // loadingLabel.stopAnimation()
+   // _ = animations.map { $0.stopAnimation(false) }
   }
 
   private func rotateIcon() {
-    let rotation = UIViewPropertyAnimator(duration: 1.5,
+    let rotation = UIViewPropertyAnimator(duration: timeout,
                                           curve: .linear)
-    rotation.addAnimations {
-      self.loadingIcon.transform = CGAffineTransform(rotationAngle: .pi)
-    }
-    rotation.addAnimations{
-      self.loadingIcon.transform = CGAffineTransform(rotationAngle: .pi * 2)
+
+    rotation
+      .addAnimations {
+        UIView
+          .animateKeyframes(withDuration: self.timeout,
+                            delay: 0.0,
+                            options: [.repeat],
+                            animations: {
+                              UIView
+                                .addKeyframe(withRelativeStartTime: 0.0,
+                                             relativeDuration: 0.25) {
+                                              self.loadingIcon
+                                                .transform = CGAffineTransform(rotationAngle: .pi)
+                              }
+                              UIView.addKeyframe(withRelativeStartTime: 0.25,
+                                                 relativeDuration: 0.25) {
+                                                    self.loadingIcon
+                                                      .transform = CGAffineTransform(rotationAngle: .pi * 2)
+                              }
+
+      })
     }
     animations.insert(rotation)
     rotation.startAnimation()
   }
 
   private func fadeIcon() {
-    let fade = UIViewPropertyAnimator(duration: timeout,
-                                      curve: .linear)
-    fade.addAnimations { [weak self] in
-      guard let self = self else { return }
-      UIView.animateKeyframes(withDuration: self.animationDuration, delay: 0.0, animations: {
-        UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5) {
-          self.loadingIcon.alpha = 1.0
-        }
-
-        UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-          self.loadingIcon.alpha = 0.0
-        }
-      })
-    }
-    animations.insert(fade)
-    fade.startAnimation()
+    let fadeAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    fadeAnimation.values = [0.0, 1.0, 0.0]
+    fadeAnimation.keyTimes = [0.0, 0.5, 1.0]
+    fadeAnimation.duration = animationDuration
+    fadeAnimation.repeatCount = Float.infinity
+    loadingIcon.layer.add(fadeAnimation, forKey: nil)
   }
 }
-

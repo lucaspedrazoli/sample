@@ -15,6 +15,7 @@ class ContainerViewController: NiblessViewController {
   init(content: UIViewController) {
     self.contentViewController = content
     super.init()
+    show(content, sender: nil)
   }
 
 
@@ -24,6 +25,13 @@ class ContainerViewController: NiblessViewController {
     add(vc)
   }
 
+  func push(_ vc: UIViewController) {
+
+  }
+
+  func present(_ vc: UIViewController) {
+
+  }
 
 }
 

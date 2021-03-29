@@ -20,11 +20,15 @@ class ContainerViewController: NiblessViewController {
 
 
   override func show(_ vc: UIViewController, sender: Any?) {
-    contentViewController.remove()
-    contentViewController = vc
-    add(vc)
+    vc.view.alpha = 0.0
+    UIView.animate(withDuration: 1.0) {
+      self.contentViewController.view.alpha = 0.0
+      self.contentViewController.remove()
+      self.contentViewController = vc
+      self.add(vc)
+      vc.view.alpha = 1.0
+    }
   }
-
 }
 
 extension UIViewController {

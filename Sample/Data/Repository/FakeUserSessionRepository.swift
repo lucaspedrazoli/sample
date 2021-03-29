@@ -12,7 +12,7 @@ struct FakeUserSessionRepository: UserSessionRepositoryType {
 
   func readUserSession() -> Observable<UserSessionModel?> {
     let obs = PublishSubject<UserSessionModel?>()
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
       obs.onNext(UserSessionModel.empty())
     }
     return obs.asObserver()

@@ -77,21 +77,15 @@ class LaunchViewController<
   }
 
   private func signedInnavigation(completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-      guard let self = self else { return }
-      self.launchView.stopAnimations()
-      completion()
-      let listViewController = self.dependencyContainer.makeListViewController()
-      self.parentContainer?.show(listViewController, sender: nil)
-    }
-
+    launchView.stopAnimations()
+    completion()
+    let listViewController = self.dependencyContainer.makeListViewController()
+    self.parentContainer?.show(listViewController, sender: nil)
   }
 
   private func notSignedInnavigation(completion: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-      self?.launchView.stopAnimations()
-      completion()
-    }
+    launchView.stopAnimations()
+    completion()
   }
 }
 

@@ -25,14 +25,6 @@ class ContainerViewController: NiblessViewController {
     add(vc)
   }
 
-  func push(_ vc: UIViewController) {
-
-  }
-
-  func present(_ vc: UIViewController) {
-
-  }
-
 }
 
 extension UIViewController {

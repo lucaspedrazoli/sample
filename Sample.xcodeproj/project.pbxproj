@@ -29,6 +29,7 @@
 		754848FC25EED3EC00529C79 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 754848FB25EED3EC00529C79 /* Podfile */; };
 		7550F29D260FA8D10034A53D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F29C260FA8D10034A53D /* ContainerViewController.swift */; };
 		7550F29F261242550034A53D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F29E261242550034A53D /* NavigationController.swift */; };
+		7550F2A1261245D10034A53D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F2A0261245D10034A53D /* ListViewController.swift */; };
 		7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */; };
 		7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */; };
 		7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */; };
@@ -91,6 +92,7 @@
 		754848FB25EED3EC00529C79 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7550F29C260FA8D10034A53D /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		7550F29E261242550034A53D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		7550F2A0261245D10034A53D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNavigator.swift; sourceTree = "<group>"; };
 		7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimator.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		7548489E25E80E8500529C79 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				7550F2A0261245D10034A53D /* ListViewController.swift */,
 				7550F29E261242550034A53D /* NavigationController.swift */,
 				7550F29C260FA8D10034A53D /* ContainerViewController.swift */,
 				75D63BC62608F3430074D384 /* Alias.swift */,
@@ -563,6 +566,7 @@
 				754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */,
 				7550F29F261242550034A53D /* NavigationController.swift in Sources */,
 				7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */,
+				7550F2A1261245D10034A53D /* ListViewController.swift in Sources */,
 				754848EA25EEAC9E00529C79 /* LoginDependencyContainer.swift in Sources */,
 				7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */,
 				754848E825EEAC8500529C79 /* OnboardingDependencyContainer.swift in Sources */,

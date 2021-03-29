@@ -78,8 +78,11 @@ class LaunchViewController<
 
   private func signedInnavigation(completion: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { [weak self] in
-      self?.launchView.stopAnimations()
+      guard let self = self else { return }
+      self.launchView.stopAnimations()
       completion()
+      let listViewController = self.container.makeListViewController()
+      self.parentContainer?.show(listViewController, sender: nil)
     }
 
   }

@@ -6,7 +6,7 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class LaunchDependencyContainer {
 
@@ -14,5 +14,10 @@ class LaunchDependencyContainer {
 
   init(userSessionStore: UserSessionStoreType) {
     self.userSessionStore = userSessionStore
+  }
+
+  func makeListViewController() -> UIViewController {
+    let listViewController = ListViewController()
+    return listViewController
   }
 }

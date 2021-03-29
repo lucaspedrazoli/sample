@@ -37,19 +37,23 @@ class ContainerViewController: NiblessViewController {
 
 extension UIViewController {
 
-    func add(_ child: UIViewController) {
-        addChild(child)
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-    }
+  var parentContainer: ContainerViewController? {
+    return parent as? ContainerViewController
+  }
 
-    func remove() {
-        guard parent != nil else {
-            return
-        }
+  func add(_ child: UIViewController) {
+      addChild(child)
+      view.addSubview(child.view)
+      child.didMove(toParent: self)
+  }
 
-        willMove(toParent: nil)
-        view.removeFromSuperview()
-        removeFromParent()
-    }
+  func remove() {
+      guard parent != nil else {
+          return
+      }
+
+      willMove(toParent: nil)
+      view.removeFromSuperview()
+      removeFromParent()
+  }
 }

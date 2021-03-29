@@ -48,6 +48,7 @@ class LaunchViewController<
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    navigationController?.setNavigationBarHidden(true, animated: true)
     animator
       .animate(for: .loading)
       .flatMap(viewModel.loadSession)
@@ -80,6 +81,7 @@ class LaunchViewController<
       self?.launchView.stopAnimations()
       completion()
     }
+
   }
 
   private func notSignedInnavigation(completion: @escaping () -> Void) {

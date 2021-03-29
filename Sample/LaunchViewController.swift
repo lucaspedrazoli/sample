@@ -17,7 +17,7 @@ class LaunchViewController<
   Navigator.State == LaunchState,
   Animator.State == LaunchState {
 
-  let container: LaunchDependencyContainer
+  let dependencyContainer: LaunchDependencyContainer
   let launchView: LaunchView
   var viewModel: LaunchViewModel
   var navigator: Navigator
@@ -33,7 +33,7 @@ class LaunchViewController<
     launchView: LaunchView) {
     self.launchView = launchView
     self.viewModel = viewModel
-    self.container = container
+    self.dependencyContainer = container
     self.navigator = navigator
     self.animator = animator
     super.init()
@@ -81,7 +81,7 @@ class LaunchViewController<
       guard let self = self else { return }
       self.launchView.stopAnimations()
       completion()
-      let listViewController = self.container.makeListViewController()
+      let listViewController = self.dependencyContainer.makeListViewController()
       self.parentContainer?.show(listViewController, sender: nil)
     }
 

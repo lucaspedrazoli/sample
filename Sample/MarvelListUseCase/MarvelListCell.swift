@@ -33,10 +33,10 @@ class MarvelListCell: UITableViewCell {
   }()
 
   func inflate(with item: MarvelListItem) {
-    heroName.text = item.name
-    heroThumb.load(path: item.thumbnailURL)
     addSubviews()
     installConstraints()
+    heroName.text = item.name
+    heroThumb.load(path: item.thumbnailURL)
   }
 
   private func addSubviews() {
@@ -53,9 +53,9 @@ class MarvelListCell: UITableViewCell {
       container.bottomAnchor.constraint(equalTo: self.bottomAnchor)
     ]
     constraints += [
-      heroThumb.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
-      heroThumb.widthAnchor.constraint(equalToConstant: 50),
-      heroThumb.heightAnchor.constraint(equalToConstant: 50),
+      heroThumb.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+      heroThumb.widthAnchor.constraint(equalToConstant: 25),
+      heroThumb.heightAnchor.constraint(equalToConstant: 25),
       heroThumb.topAnchor.constraint(equalTo: container.topAnchor, constant: 10)
     ]
     constraints += [

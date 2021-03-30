@@ -12,14 +12,13 @@ import RxCocoa
 
 class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
-  struct Object {
-    let name: String
-    let role: String
-  }
-
   private let tableView = UITableView(frame: UIScreen.main.bounds)
   private let bag = DisposeBag()
-  private let items = PublishSubject<[Object]>()
+  private let items = PublishSubject<[MarvelListItem]>()
+
+  override func loadView() {
+    super.loadView()
+  }
 
 
   override func viewDidLoad() {
@@ -31,34 +30,24 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    let object = Object(name: "foo", role: "bar")
-    items.onNext([object])
+    let marvelItems = MarvelListItem.fakeData()
+    items.onNext(marvelItems)
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 30
+    return 60
   }
 
   private func bindTableView() {
-    tableView.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
-    items.bind(to: tableView.rx.items(cellIdentifier: "CustomCell", cellType: CustomCell.self)) { (row,item,cell) in
-      cell.inflate(with: item)
+    tableView.register(MarvelListCell.self, forCellReuseIdentifier: MarvelListCell.identifier)
+    items.bind(to: tableView.rx.items(cellIdentifier: MarvelListCell.identifier,
+                                      cellType: MarvelListCell.self)) { (row,item,cell) in
+                                        cell.inflate(with: item)
     }.disposed(by: bag)
 
-    tableView.rx.modelSelected(Object.self).map {
+    tableView.rx.modelSelected(MarvelListItem.self).map {
       print("click item \($0)")
       }.subscribe().disposed(by: bag)
-  }
-}
-
-
-class CustomCell: UITableViewCell {
-
-  func inflate(with item: MarvelListViewController.Object) {
-    backgroundColor = .yellow
-    let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
-    label.text = item.name
-    addSubview(label)
   }
 }
 

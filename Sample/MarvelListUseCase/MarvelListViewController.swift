@@ -18,6 +18,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   override func loadView() {
     super.loadView()
+    tableView.rowHeight = UITableView.automaticDimension
   }
 
 
@@ -32,10 +33,6 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     super.viewDidAppear(animated)
     let marvelItems = MarvelListItem.fakeData()
     items.onNext(marvelItems)
-  }
-
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 70
   }
 
   private func bindTableView() {

@@ -14,6 +14,7 @@ struct FakeUserSessionRepository: UserSessionRepositoryType {
     let obs = PublishSubject<UserSessionModel?>()
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
       obs.onNext(UserSessionModel.fakeData())
+      obs.onCompleted()
     }
     return obs.asObserver()
   }

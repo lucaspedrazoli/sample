@@ -49,6 +49,7 @@
 		75BAD41C2613A56C00E943E2 /* MarvelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41B2613A56C00E943E2 /* MarvelListView.swift */; };
 		75BAD4222613B1DB00E943E2 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4212613B1DB00E943E2 /* ApiKeys.swift */; };
 		75BAD4242613B28700E943E2 /* MarvelListRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4232613B28700E943E2 /* MarvelListRepositoryType.swift */; };
+		75BAD4262613B49300E943E2 /* MarvelListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4252613B49300E943E2 /* MarvelListRepository.swift */; };
 		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
 		75D63BC72608F3430074D384 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D63BC62608F3430074D384 /* Alias.swift */; };
@@ -115,6 +116,7 @@
 		75BAD41B2613A56C00E943E2 /* MarvelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListView.swift; sourceTree = "<group>"; };
 		75BAD4212613B1DB00E943E2 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		75BAD4232613B28700E943E2 /* MarvelListRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListRepositoryType.swift; sourceTree = "<group>"; };
+		75BAD4252613B49300E943E2 /* MarvelListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListRepository.swift; sourceTree = "<group>"; };
 		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		75D63BC62608F3430074D384 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				75BAD419261364A300E943E2 /* MarvelListCell.swift */,
 				75BAD41226135C9900E943E2 /* MarvelListItem.swift */,
 				75BAD41B2613A56C00E943E2 /* MarvelListView.swift */,
+				75BAD4252613B49300E943E2 /* MarvelListRepository.swift */,
 			);
 			path = MarvelListUseCase;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				754848F025EEB5E900529C79 /* UserSessionStoreType.swift in Sources */,
 				7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */,
 				7558A5FA25F138E000E31585 /* Request.swift in Sources */,
+				75BAD4262613B49300E943E2 /* MarvelListRepository.swift in Sources */,
 				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
 				7552E73426024E3B00C070B4 /* FakeUserSessionRepository.swift in Sources */,
 				7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */,

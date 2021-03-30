@@ -7,5 +7,5 @@
 //
 
 enum HTTPVerb: String {
-  case get, post, patch, put, delete
+  case GET, POST, PATCH, PUT, DELETE
 }

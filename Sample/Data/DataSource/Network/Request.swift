@@ -11,9 +11,8 @@ import Foundation
 struct Request {
 
   var endpoint: Endpoint
-  var params: Array<URLQueryItem>
-  var body: [String: Any]?
-  var authToken: String?
+  var params: Array<URLQueryItem> = []
+  var body: [String: Any] = [:]
   let method: HTTPVerb
   private var header: [String: String] = {
     return ["accept_type": "application/json"]
@@ -24,6 +23,6 @@ struct Request {
   }
 
   mutating func addHeader(_ name: String, _ value: String) {
-    header["name"] = value
+    header[name] = value
   }
 }

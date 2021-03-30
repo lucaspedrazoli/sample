@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct Request {
+protocol Request {
 
-  var endpoint: Endpoint
-  var params: Array<URLQueryItem> = []
-  var body: [String: Any] = [:]
-  let method: HTTPVerb
-  private var header: [String: String] = {
-    return ["accept_type": "application/json"]
-  }()
+  var endpoint: Endpoint { get }
+  var method: HTTPVerb { get }
+  var params: Array<URLQueryItem> { get set }
+  var body: [String: Any] { get set }
+  var header: [String: String] { get set }
+}
 
+extension Request {
   mutating func addQueryItem(_ name: String, _ value: String?) {
     params.append(URLQueryItem(name: name, value: value))
   }

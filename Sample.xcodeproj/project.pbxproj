@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		018B735AAA807886EF9E38F4 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236A7671A33052AE236DF11D /* Pods_SampleTests.framework */; };
+		753825972613BEE900B5CB33 /* MarvelListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825962613BEE900B5CB33 /* MarvelListRequest.swift */; };
 		754848A025E80E8500529C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548489F25E80E8500529C79 /* AppDelegate.swift */; };
 		754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848A325E80E8500529C79 /* LaunchViewController.swift */; };
 		754848A925E80E8800529C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754848A825E80E8800529C79 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		236A7671A33052AE236DF11D /* Pods_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FFBE67CBD59F2E3BFCA9DC /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB7E663ECA91F5E522B5513 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
+		753825962613BEE900B5CB33 /* MarvelListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListRequest.swift; sourceTree = "<group>"; };
 		7548489C25E80E8500529C79 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7548489F25E80E8500529C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754848A325E80E8500529C79 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				75BAD41226135C9900E943E2 /* MarvelListItem.swift */,
 				75BAD41B2613A56C00E943E2 /* MarvelListView.swift */,
 				75BAD4252613B49300E943E2 /* MarvelListRepository.swift */,
+				753825962613BEE900B5CB33 /* MarvelListRequest.swift */,
 			);
 			path = MarvelListUseCase;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				75D63BC72608F3430074D384 /* Alias.swift in Sources */,
 				75BAD4282613B63B00E943E2 /* Logger.swift in Sources */,
 				75BAD41326135C9900E943E2 /* MarvelListItem.swift in Sources */,
+				753825972613BEE900B5CB33 /* MarvelListRequest.swift in Sources */,
 				754848F025EEB5E900529C79 /* UserSessionStoreType.swift in Sources */,
 				7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */,
 				7558A5FA25F138E000E31585 /* Request.swift in Sources */,

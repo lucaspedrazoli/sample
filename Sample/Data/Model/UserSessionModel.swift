@@ -17,7 +17,8 @@ struct UserSessionModel: Codable {
     let profile = UserProfile(name: "Foo",
                               email: "foo@bar.com",
                               mobileNumber: "11978767898")
-    let remote = RemoteUserSession(token: "", hash: "")
+    let remote = RemoteUserSession(token: ApiKeys.token,
+                                   hash: ApiKeys.tokenHash)
     return UserSessionModel(profile: profile,
                             remote: remote)
   }

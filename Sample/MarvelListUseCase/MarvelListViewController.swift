@@ -12,21 +12,28 @@ import RxCocoa
 
 class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
-  private let tableView = UITableView(frame: UIScreen.main.bounds)
+  private let marvelListView: MarvelListView
   private let bag = DisposeBag()
   private let items = PublishSubject<[MarvelListItem]>()
 
+
+  init(view: MarvelListView) {
+    self.marvelListView = view
+    super.init()
+  }
+
   override func loadView() {
     super.loadView()
-    tableView.rowHeight = UITableView.automaticDimension
+    marvelListView.tableView.rx
+      .setDelegate(self)
+      .disposed(by: bag)
+    bindTableView()
   }
 
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.rx.setDelegate(self).disposed(by: bag)
-    view.addSubview(tableView)
-    bindTableView()
+    setupUI()
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -35,14 +42,20 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     items.onNext(marvelItems)
   }
 
+  private func setupUI() {
+    marvelListView.inflate(with: view.frame)
+    view = marvelListView
+    marvelListView.registerCell(MarvelListCell.self,
+                                identifier: MarvelListCell.identifier)
+  }
+
   private func bindTableView() {
-    tableView.register(MarvelListCell.self, forCellReuseIdentifier: MarvelListCell.identifier)
-    items.bind(to: tableView.rx.items(cellIdentifier: MarvelListCell.identifier,
+    items.bind(to: marvelListView.tableView.rx.items(cellIdentifier: MarvelListCell.identifier,
                                       cellType: MarvelListCell.self)) { (row,item,cell) in
                                         cell.inflate(with: item)
     }.disposed(by: bag)
 
-    tableView.rx.modelSelected(MarvelListItem.self).map {
+    marvelListView.tableView.rx.modelSelected(MarvelListItem.self).map {
       print("click item \($0)")
       }.subscribe().disposed(by: bag)
   }

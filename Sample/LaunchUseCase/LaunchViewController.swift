@@ -17,11 +17,11 @@ class LaunchViewController<
   Navigator.State == LaunchState,
   Animator.State == LaunchState {
 
-  let dependencyContainer: LaunchDependencyContainer
-  let launchView: LaunchView
-  var viewModel: LaunchViewModel
-  var navigator: Navigator
-  var animator: Animator
+  private let dependencyContainer: LaunchDependencyContainer
+  private let launchView: LaunchView
+  private var viewModel: LaunchViewModel
+  private var navigator: Navigator
+  private var animator: Animator
 
   let bag = DisposeBag()
 

@@ -26,7 +26,7 @@
 		754848FC25EED3EC00529C79 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 754848FB25EED3EC00529C79 /* Podfile */; };
 		7550F29D260FA8D10034A53D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F29C260FA8D10034A53D /* ContainerViewController.swift */; };
 		7550F29F261242550034A53D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F29E261242550034A53D /* NavigationController.swift */; };
-		7550F2A1261245D10034A53D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F2A0261245D10034A53D /* ListViewController.swift */; };
+		7550F2A1261245D10034A53D /* MarvelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F2A0261245D10034A53D /* MarvelListViewController.swift */; };
 		7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */; };
 		7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */; };
 		7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */; };
@@ -43,6 +43,8 @@
 		7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FD25F1945700E31585 /* LoggerType.swift */; };
 		7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60A25F27DBF00E31585 /* ErrorInfo.swift */; };
 		7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */; };
+		75BAD41326135C9900E943E2 /* MarvelListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41226135C9900E943E2 /* MarvelListItem.swift */; };
+		75BAD41626135FC600E943E2 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41526135FC600E943E2 /* UIImageView+URL.swift */; };
 		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
 		75D63BC72608F3430074D384 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D63BC62608F3430074D384 /* Alias.swift */; };
@@ -86,7 +88,7 @@
 		754848FB25EED3EC00529C79 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7550F29C260FA8D10034A53D /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		7550F29E261242550034A53D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		7550F2A0261245D10034A53D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		7550F2A0261245D10034A53D /* MarvelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListViewController.swift; sourceTree = "<group>"; };
 		7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNavigator.swift; sourceTree = "<group>"; };
 		7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimator.swift; sourceTree = "<group>"; };
@@ -103,6 +105,8 @@
 		7558A5FD25F1945700E31585 /* LoggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerType.swift; sourceTree = "<group>"; };
 		7558A60A25F27DBF00E31585 /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
 		7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryType.swift; sourceTree = "<group>"; };
+		75BAD41226135C9900E943E2 /* MarvelListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListItem.swift; sourceTree = "<group>"; };
+		75BAD41526135FC600E943E2 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		75D63BC62608F3430074D384 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				754848CC25E8140900529C79 /* NiblessNavigationController.swift */,
 				7550F29E261242550034A53D /* NavigationController.swift */,
 				7550F29C260FA8D10034A53D /* ContainerViewController.swift */,
+				75BAD41426135FAF00E943E2 /* Extensions */,
 				75C4BFA5260CE5A200EC93CA /* Components */,
 			);
 			path = UserInterface;
@@ -296,7 +301,8 @@
 		75BAD40F261355DD00E943E2 /* MarvelListUseCase */ = {
 			isa = PBXGroup;
 			children = (
-				7550F2A0261245D10034A53D /* ListViewController.swift */,
+				7550F2A0261245D10034A53D /* MarvelListViewController.swift */,
+				75BAD41226135C9900E943E2 /* MarvelListItem.swift */,
 			);
 			path = MarvelListUseCase;
 			sourceTree = "<group>";
@@ -318,6 +324,14 @@
 				7552E72B25FBEDA300C070B4 /* NavigatorType.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		75BAD41426135FAF00E943E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75BAD41526135FC600E943E2 /* UIImageView+URL.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		75C4BFA5260CE5A200EC93CA /* Components */ = {
@@ -532,6 +546,7 @@
 				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
 				75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */,
+				75BAD41626135FC600E943E2 /* UIImageView+URL.swift in Sources */,
 				7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */,
 				75CF6C602605183D00199482 /* LaunchView.swift in Sources */,
 				7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */,
@@ -540,10 +555,11 @@
 				754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */,
 				7550F29F261242550034A53D /* NavigationController.swift in Sources */,
 				7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */,
-				7550F2A1261245D10034A53D /* ListViewController.swift in Sources */,
+				7550F2A1261245D10034A53D /* MarvelListViewController.swift in Sources */,
 				7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */,
 				7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */,
 				75D63BC72608F3430074D384 /* Alias.swift in Sources */,
+				75BAD41326135C9900E943E2 /* MarvelListItem.swift in Sources */,
 				754848F025EEB5E900529C79 /* UserSessionStoreType.swift in Sources */,
 				7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */,
 				7558A5FA25F138E000E31585 /* Request.swift in Sources */,

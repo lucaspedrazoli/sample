@@ -35,7 +35,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 60
+    return 70
   }
 
   private func bindTableView() {

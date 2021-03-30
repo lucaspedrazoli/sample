@@ -53,15 +53,15 @@ class MarvelListCell: UITableViewCell {
       container.bottomAnchor.constraint(equalTo: self.bottomAnchor)
     ]
     constraints += [
-      heroThumb.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-      heroThumb.widthAnchor.constraint(equalToConstant: 25),
-      heroThumb.heightAnchor.constraint(equalToConstant: 25),
-      heroThumb.topAnchor.constraint(equalTo: container.topAnchor, constant: 10)
+      heroThumb.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+      heroThumb.widthAnchor.constraint(equalToConstant: 50),
+      heroThumb.heightAnchor.constraint(equalToConstant: 50),
+      heroThumb.centerYAnchor.constraint(equalTo: container.centerYAnchor)
     ]
     constraints += [
-      heroThumb.leadingAnchor.constraint(equalTo: heroThumb.trailingAnchor, constant: 15),
+      heroName.leadingAnchor.constraint(equalTo: heroThumb.trailingAnchor, constant: 15),
       heroName.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: 10),
-      heroThumb.centerYAnchor.constraint(equalTo: heroThumb.centerYAnchor),
+      heroName.centerYAnchor.constraint(equalTo: heroThumb.centerYAnchor),
       heroName.heightAnchor.constraint(equalTo: heroThumb.heightAnchor, multiplier: 0.8)
     ]
     NSLayoutConstraint.activate(constraints)

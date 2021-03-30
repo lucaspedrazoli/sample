@@ -10,6 +10,7 @@ import Foundation
 
 enum Endpoint {
   case fake
+  case marvelList
 }
 
 extension Endpoint {
@@ -17,6 +18,8 @@ extension Endpoint {
       switch self {
       case .fake:
         return URL(string: "www.google.com")!
+      case .marvelList:
+        return URL(string: "https://gateway.marvel.com/v1/public/characters")!
       }
   }
 }

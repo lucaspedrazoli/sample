@@ -17,7 +17,7 @@ struct NetworkDataSource<Model: Codable>: NetworkDataSourceType {
 
   init(endpoint: Endpoint,
        session: URLSession = URLSession.shared,
-       logger: LoggerType) {
+       logger: LoggerType = Logger()) {
     self.endpoint = endpoint
     self.session = session
     self.logger = logger
@@ -35,19 +35,24 @@ struct NetworkDataSource<Model: Codable>: NetworkDataSourceType {
 
         guard let httpResponse = response as? HTTPURLResponse else {
           let info = ["http_response_error": "unexpected_response_error"]
-          self.logger.log(nil, ErrorInfo(data: info))
+          let error = ErrorInfo(data: info)
+          self.logger.log(nil, error)
+          subject.onError(error)
           return
         }
 
         guard 200..<300 ~= httpResponse.statusCode else {
           let info = ["http_unexpected_status_code": httpResponse.statusCode]
-          self.logger.log(nil, ErrorInfo(data: info))
+          let error = ErrorInfo(data: info)
+          self.logger.log(nil, error)
+          subject.onError(error)
           return
         }
 
         if let data = data {
           let model = try? JSONDecoder().decode(Model.self, from: data)
           subject.onNext(model)
+          subject.onCompleted()
         }
     }
     task.resume()

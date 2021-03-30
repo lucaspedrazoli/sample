@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  MarvelListViewController.swift
 //  Sample
 //
 //  Created by Lucas Pedrazoli on 29/03/21.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ListViewController: NiblessViewController, UITableViewDelegate {
+class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   struct Object {
     let name: String
@@ -54,7 +54,7 @@ class ListViewController: NiblessViewController, UITableViewDelegate {
 
 class CustomCell: UITableViewCell {
 
-  func inflate(with item: ListViewController.Object) {
+  func inflate(with item: MarvelListViewController.Object) {
     backgroundColor = .yellow
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30))
     label.text = item.name

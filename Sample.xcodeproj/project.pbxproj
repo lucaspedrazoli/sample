@@ -170,7 +170,7 @@
 			children = (
 				75BAD4112613574F00E943E2 /* Application */,
 				75BAD410261356A000E943E2 /* MainUseCase */,
-				75BAD40F261355DD00E943E2 /* ListUseCase */,
+				75BAD40F261355DD00E943E2 /* MarvelListUseCase */,
 				75BAD40E2613559300E943E2 /* LaunchUseCase */,
 				7552E71225F7EB5100C070B4 /* UserInterface */,
 				754848C625E812F600529C79 /* Data */,
@@ -293,12 +293,12 @@
 			path = LaunchUseCase;
 			sourceTree = "<group>";
 		};
-		75BAD40F261355DD00E943E2 /* ListUseCase */ = {
+		75BAD40F261355DD00E943E2 /* MarvelListUseCase */ = {
 			isa = PBXGroup;
 			children = (
 				7550F2A0261245D10034A53D /* ListViewController.swift */,
 			);
-			path = ListUseCase;
+			path = MarvelListUseCase;
 			sourceTree = "<group>";
 		};
 		75BAD410261356A000E943E2 /* MainUseCase */ = {

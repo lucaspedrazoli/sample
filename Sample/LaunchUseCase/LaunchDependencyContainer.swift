@@ -17,7 +17,7 @@ class LaunchDependencyContainer {
   }
 
   func makeListViewController() -> UIViewController {
-    let listViewController = ListViewController()
+    let listViewController = MarvelListViewController()
     return listViewController
   }
 }

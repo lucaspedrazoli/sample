@@ -46,6 +46,7 @@
 		75BAD41326135C9900E943E2 /* MarvelListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41226135C9900E943E2 /* MarvelListItem.swift */; };
 		75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41526135FC600E943E2 /* UIImageView.swift */; };
 		75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4172613633D00E943E2 /* UITableViewCell.swift */; };
+		75BAD41A261364A300E943E2 /* MarvelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD419261364A300E943E2 /* MarvelListCell.swift */; };
 		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
 		75D63BC72608F3430074D384 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D63BC62608F3430074D384 /* Alias.swift */; };
@@ -109,6 +110,7 @@
 		75BAD41226135C9900E943E2 /* MarvelListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListItem.swift; sourceTree = "<group>"; };
 		75BAD41526135FC600E943E2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		75BAD4172613633D00E943E2 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		75BAD419261364A300E943E2 /* MarvelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListCell.swift; sourceTree = "<group>"; };
 		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		75D63BC62608F3430074D384 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				7550F2A0261245D10034A53D /* MarvelListViewController.swift */,
+				75BAD419261364A300E943E2 /* MarvelListCell.swift */,
 				75BAD41226135C9900E943E2 /* MarvelListItem.swift */,
 			);
 			path = MarvelListUseCase;
@@ -547,6 +550,7 @@
 				754848E625EEAC6200529C79 /* LaunchDependencyContainer.swift in Sources */,
 				754848CD25E8140900529C79 /* NiblessNavigationController.swift in Sources */,
 				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
+				75BAD41A261364A300E943E2 /* MarvelListCell.swift in Sources */,
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
 				75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */,
 				75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */,

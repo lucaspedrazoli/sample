@@ -11,5 +11,5 @@ import RxSwift
 protocol NetworkDataSourceType {
   associatedtype Model
 
-  func execute() -> Observable<Model?>
+  func execute(_ request: Request) -> Observable<Model?>
 }

@@ -10,11 +10,14 @@ import RxSwift
 
 struct MarvelListRepository<Source: NetworkDataSourceType>: MarvelListRepositoryType {
 
+  let source: Source
+
   init(source: Source) {
-    
+    self.source = source
   }
 
-  func get() -> Observable<[MarvelListItem]> {
+  func get(_ request: Request) -> Observable<[MarvelListItem]?> {
+    //source.execute(request)
     return .empty()
   }
 }

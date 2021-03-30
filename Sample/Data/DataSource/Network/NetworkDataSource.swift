@@ -12,21 +12,19 @@ import RxSwift
 struct NetworkDataSource<Model: Codable>: NetworkDataSourceType {
 
   private let session: URLSession
-  private let request: Request
   private let logger: LoggerType
 
-  init(endpoint: Request,
-       session: URLSession = URLSession.shared,
+  init(session: URLSession = URLSession.shared,
        logger: LoggerType = Logger()) {
-    self.request = endpoint
     self.session = session
     self.logger = logger
   }
 
-  func execute() -> Observable<Model?> {
+  func execute(_ request: Request) -> Observable<Model?> {
     let subject = PublishSubject<Model?>()
+    let _request = request.buildRequest()
     let task = session
-      .dataTask(with: buildRequest()) { (data, response, error) in
+      .dataTask(with: _request) { (data, response, error) in
         if let error = error {
           self.logger.log(error, nil)
           subject.onError(error)
@@ -57,14 +55,5 @@ struct NetworkDataSource<Model: Codable>: NetworkDataSourceType {
     }
     task.resume()
     return subject.asObservable()
-  }
-
-  private func buildRequest() -> URLRequest {
-    var urlComponents = URLComponents(url: request.endpoint.rawValue,
-                                      resolvingAgainstBaseURL: false)!
-    urlComponents.queryItems = request.params
-    var urlRequest = URLRequest(url: urlComponents.url!)
-    urlRequest.httpMethod = request.method.rawValue
-    return urlRequest
   }
 }

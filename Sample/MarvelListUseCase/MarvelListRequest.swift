@@ -15,12 +15,10 @@ struct MarvelListRequest: Request {
   var body: [String : Any] = [:]
   var header: [String : String] = [:]
 
-  init(token: AuthToken, tokenHash: TokenHash) {
+  init() {
     endpoint = .marvelList
     method = .GET
     params = [
-      URLQueryItem(name: "apikey", value: token),
-      URLQueryItem(name: "hash", value: tokenHash),
       URLQueryItem(name: "limit", value: "20")
     ]
   }

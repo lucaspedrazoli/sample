@@ -25,4 +25,13 @@ extension Request {
   mutating func addHeader(_ name: String, _ value: String) {
     header[name] = value
   }
+
+  func buildRequest() -> URLRequest {
+    var urlComponents = URLComponents(url: endpoint.rawValue,
+                                            resolvingAgainstBaseURL: false)!
+    urlComponents.queryItems = params
+    var urlRequest = URLRequest(url: urlComponents.url!)
+    urlRequest.httpMethod = method.rawValue
+    return urlRequest
+  }
 }

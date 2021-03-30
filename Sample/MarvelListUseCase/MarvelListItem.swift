@@ -12,7 +12,7 @@ struct MarvelListItem {
   let thumbnailURL: String
 
   static func fakeData() -> [MarvelListItem] {
-    let url = "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0/standard_small.jpg"
+    let url = "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0/standard_medium.jpg"
     let hulk = MarvelListItem(id: 1009351,
                               name: "Hulk",
                               thumbnailURL: url)

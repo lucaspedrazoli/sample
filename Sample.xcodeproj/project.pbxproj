@@ -44,7 +44,8 @@
 		7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60A25F27DBF00E31585 /* ErrorInfo.swift */; };
 		7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */; };
 		75BAD41326135C9900E943E2 /* MarvelListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41226135C9900E943E2 /* MarvelListItem.swift */; };
-		75BAD41626135FC600E943E2 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41526135FC600E943E2 /* UIImageView+URL.swift */; };
+		75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41526135FC600E943E2 /* UIImageView.swift */; };
+		75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4172613633D00E943E2 /* UITableViewCell.swift */; };
 		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
 		75D63BC72608F3430074D384 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D63BC62608F3430074D384 /* Alias.swift */; };
@@ -106,7 +107,8 @@
 		7558A60A25F27DBF00E31585 /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
 		7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryType.swift; sourceTree = "<group>"; };
 		75BAD41226135C9900E943E2 /* MarvelListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListItem.swift; sourceTree = "<group>"; };
-		75BAD41526135FC600E943E2 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		75BAD41526135FC600E943E2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		75BAD4172613633D00E943E2 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		75D63BC62608F3430074D384 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
@@ -329,7 +331,8 @@
 		75BAD41426135FAF00E943E2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				75BAD41526135FC600E943E2 /* UIImageView+URL.swift */,
+				75BAD41526135FC600E943E2 /* UIImageView.swift */,
+				75BAD4172613633D00E943E2 /* UITableViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -546,10 +549,11 @@
 				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
 				75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */,
-				75BAD41626135FC600E943E2 /* UIImageView+URL.swift in Sources */,
+				75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */,
 				7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */,
 				75CF6C602605183D00199482 /* LaunchView.swift in Sources */,
 				7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */,
+				75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */,
 				7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */,
 				754848FA25EED03000529C79 /* UserSessionStore.swift in Sources */,
 				754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  UIImageView+URL.swift
+//  UIImageView.swift
 //  Sample
 //
 //  Created by Lucas Pedrazoli on 30/03/21.
@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIImageView {
-  func load(url: URL) {
+  func load(path: String) {
+    guard let url = URL(string: path) else { return }
     DispatchQueue.global().async { [weak self] in
       guard let data = try? Data(contentsOf: url) else { return }
       guard let image = UIImage(data: data) else { return }

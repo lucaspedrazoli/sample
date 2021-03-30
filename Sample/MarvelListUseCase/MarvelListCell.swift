@@ -19,6 +19,8 @@ class MarvelListCell: UITableViewCell {
 
   lazy var heroThumb: UIImageView = {
     let imageView = UIImageView()
+    imageView.clipsToBounds = true
+    imageView.layer.cornerRadius = 16.0
     imageView.translatesAutoresizingMaskIntoConstraints = false
     return imageView
   }()
@@ -37,6 +39,7 @@ class MarvelListCell: UITableViewCell {
     installConstraints()
     heroName.text = item.name
     heroThumb.load(path: item.thumbnailURL)
+
   }
 
   private func addSubviews() {

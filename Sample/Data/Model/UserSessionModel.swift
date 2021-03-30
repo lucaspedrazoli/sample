@@ -13,11 +13,11 @@ struct UserSessionModel: Codable {
   let profile: UserProfile
   let remote: RemoteUserSession
 
-  static func empty() -> UserSessionModel {
+  static func fakeData() -> UserSessionModel {
     let profile = UserProfile(name: "Foo",
                               email: "foo@bar.com",
                               mobileNumber: "11978767898")
-    let remote = RemoteUserSession(token: "123abc")
+    let remote = RemoteUserSession(token: "", hash: "")
     return UserSessionModel(profile: profile,
                             remote: remote)
   }

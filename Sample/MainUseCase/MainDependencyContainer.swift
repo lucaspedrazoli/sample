@@ -10,7 +10,7 @@ import Foundation
 
 class MainDependencyContainer {
 
-  private let userSessionDataStore = UserSessionStore()
+  private let userSessionDataStore = FakeUserSessionRepository()
 
   func makeLaunchViewController() -> NiblessViewController {
     let navigator = LaunchNavigator()

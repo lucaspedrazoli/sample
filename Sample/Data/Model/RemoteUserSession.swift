@@ -11,6 +11,7 @@ import Foundation
 struct RemoteUserSession: Codable, Equatable {
 
   let token: AuthToken
+  let hash: TokenHash
 }
 
 

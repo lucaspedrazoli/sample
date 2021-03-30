@@ -9,8 +9,6 @@
 import Foundation
 import RxSwift
 
-typealias AuthToken = String
-
 protocol UserSessionStoreType {
   func read() -> Single<UserSessionModel>
 

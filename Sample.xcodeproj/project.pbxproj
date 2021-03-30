@@ -22,7 +22,6 @@
 		754848F325EEB6E600529C79 /* UserSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F225EEB6E600529C79 /* UserSessionModel.swift */; };
 		754848F525EEB74600529C79 /* RemoteUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F425EEB74600529C79 /* RemoteUserSession.swift */; };
 		754848F725EEB76500529C79 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F625EEB76500529C79 /* UserProfile.swift */; };
-		754848FA25EED03000529C79 /* UserSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848F925EED03000529C79 /* UserSessionStore.swift */; };
 		754848FC25EED3EC00529C79 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 754848FB25EED3EC00529C79 /* Podfile */; };
 		7550F29D260FA8D10034A53D /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F29C260FA8D10034A53D /* ContainerViewController.swift */; };
 		7550F29F261242550034A53D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550F29E261242550034A53D /* NavigationController.swift */; };
@@ -87,7 +86,6 @@
 		754848F225EEB6E600529C79 /* UserSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionModel.swift; sourceTree = "<group>"; };
 		754848F425EEB74600529C79 /* RemoteUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserSession.swift; sourceTree = "<group>"; };
 		754848F625EEB76500529C79 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		754848F925EED03000529C79 /* UserSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStore.swift; sourceTree = "<group>"; };
 		754848FB25EED3EC00529C79 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7550F29C260FA8D10034A53D /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		7550F29E261242550034A53D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				754848EF25EEB5E900529C79 /* UserSessionStoreType.swift */,
-				754848F925EED03000529C79 /* UserSessionStore.swift */,
 			);
 			path = UserSesstionStore;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */,
 				75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */,
 				7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */,
-				754848FA25EED03000529C79 /* UserSessionStore.swift in Sources */,
 				754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */,
 				7550F29F261242550034A53D /* NavigationController.swift in Sources */,
 				7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */,

@@ -6,3 +6,5 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 typealias ControllerAction = (@escaping () -> Void) -> Void
+typealias AuthToken = String
+typealias TokenHash = String

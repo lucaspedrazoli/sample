@@ -10,9 +10,9 @@ import UIKit
 
 class LaunchDependencyContainer {
 
-  let userSessionStore: UserSessionStoreType
+  let userSessionStore: UserSessionRepositoryType
 
-  init(userSessionStore: UserSessionStoreType) {
+  init(userSessionStore: UserSessionRepositoryType) {
     self.userSessionStore = userSessionStore
   }
 

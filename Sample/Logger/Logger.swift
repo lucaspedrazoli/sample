@@ -8,7 +8,7 @@
 
 struct Logger: LoggerType {
   func log(_ error: Error?, _ info: ErrorInfo?) {
-    print("ERROR \(String(describing: error))")
+    print("ERROR TYPE: \(String(describing: error))")
     print("ERROR INFO: \(String(describing: info))")
   }
 }

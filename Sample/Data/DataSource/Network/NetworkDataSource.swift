@@ -20,7 +20,11 @@ struct NetworkDataSource: NetworkDataSourceType {
     self.logger = logger
   }
 
-  func execute<Model: Codable>(_ request: RequestType, type: Model.Type) -> Observable<Model?> {
+  func execute<
+    Model: Codable,
+    ErrorType: Codable>(_ request: RequestType,
+                        modelType: Model.Type,
+                        errorType: ErrorType.Type) -> Observable<Model?> {
     let subject = PublishSubject<Model?>()
     let _request = request.buildRequest()
     let task = session
@@ -32,8 +36,9 @@ struct NetworkDataSource: NetworkDataSourceType {
         }
 
         guard let httpResponse = response as? HTTPURLResponse else {
-          let info = ["http_response_error": "unexpected_response_error",
-                      "url": "\(String(describing: _request.url))"
+          let info = [
+            "http_response_error": "unexpected_response_error",
+            "url": "\(String(describing: _request.url))"
           ]
           let error = ErrorInfo(data: info)
           self.logger.log(nil, error)
@@ -42,8 +47,14 @@ struct NetworkDataSource: NetworkDataSourceType {
         }
 
         guard 200..<300 ~= httpResponse.statusCode else {
-          let info = ["http_unexpected_status_code": "\(httpResponse.statusCode)",
-                      "url": "\(String(describing: _request.url))"
+          var errorModel: ErrorType?
+          if let data = data {
+            errorModel = try? JSONDecoder().decode(ErrorType.self, from: data)
+          }
+          let info = [
+            "http_unexpected_status_code": "\(httpResponse.statusCode)",
+            "url": "\(String(describing: _request.url))",
+            "error": "\(errorModel.debugDescription)"
             ]
           let error = ErrorInfo(data: info)
           self.logger.log(nil, error)

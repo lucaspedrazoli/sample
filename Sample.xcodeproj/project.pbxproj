@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		018B735AAA807886EF9E38F4 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236A7671A33052AE236DF11D /* Pods_SampleTests.framework */; };
 		7525BBD82614BE49006AE041 /* superhero.png in Resources */ = {isa = PBXBuildFile; fileRef = 7525BBD72614BE48006AE041 /* superhero.png */; };
+		7525BBDD2614C532006AE041 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525BBDC2614C532006AE041 /* String.swift */; };
+		7525BBDF2614CD58006AE041 /* MarvelApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525BBDE2614CD58006AE041 /* MarvelApiError.swift */; };
 		753825972613BEE900B5CB33 /* MarvelListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825962613BEE900B5CB33 /* MarvelListRequest.swift */; };
 		753825992614A94B00B5CB33 /* MarvelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825982614A94B00B5CB33 /* MarvelListViewModel.swift */; };
 		7538259B2614AA0800B5CB33 /* MarveListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538259A2614AA0800B5CB33 /* MarveListState.swift */; };
@@ -77,6 +79,8 @@
 		27FFBE67CBD59F2E3BFCA9DC /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB7E663ECA91F5E522B5513 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		7525BBD72614BE48006AE041 /* superhero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superhero.png; sourceTree = "<group>"; };
+		7525BBDC2614C532006AE041 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		7525BBDE2614CD58006AE041 /* MarvelApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiError.swift; sourceTree = "<group>"; };
 		753825962613BEE900B5CB33 /* MarvelListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListRequest.swift; sourceTree = "<group>"; };
 		753825982614A94B00B5CB33 /* MarvelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListViewModel.swift; sourceTree = "<group>"; };
 		7538259A2614AA0800B5CB33 /* MarveListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarveListState.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 				7558A5F925F138E000E31585 /* RequestType.swift */,
 				7558A5F725F1386100E31585 /* HTTPVerb.swift */,
 				7538259C2614AE1300B5CB33 /* QueryKey.swift */,
+				7525BBDE2614CD58006AE041 /* MarvelApiError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				7552E72725FBB22D00C070B4 /* AnimatorType.swift */,
 				7552E72B25FBEDA300C070B4 /* NavigatorType.swift */,
 				75BAD4212613B1DB00E943E2 /* ApiKeys.swift */,
+				7525BBDC2614C532006AE041 /* String.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -573,8 +579,10 @@
 			files = (
 				754848E625EEAC6200529C79 /* LaunchDependencyContainer.swift in Sources */,
 				754848CD25E8140900529C79 /* NiblessNavigationController.swift in Sources */,
+				7525BBDD2614C532006AE041 /* String.swift in Sources */,
 				754848F725EEB76500529C79 /* UserProfile.swift in Sources */,
 				75BAD41A261364A300E943E2 /* MarvelListCell.swift in Sources */,
+				7525BBDF2614CD58006AE041 /* MarvelApiError.swift in Sources */,
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
 				75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */,
 				75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */,

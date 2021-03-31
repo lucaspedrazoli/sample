@@ -10,5 +10,9 @@ import RxSwift
 
 protocol NetworkDataSourceType {
 
-  func execute<Model: Codable>(_ request: RequestType, type: Model.Type) -> Observable<Model?>
+  func execute<
+    Model: Codable,
+    ErrorType: Codable>(_ request: RequestType,
+                        modelType: Model.Type,
+                        errorType: ErrorType.Type) -> Observable<Model?>
 }

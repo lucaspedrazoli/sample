@@ -33,7 +33,7 @@ class MarvelListViewModel {
     let timestamp = String(Date().timeIntervalSince1970)
     request.addQueryItem(.timeStamp, timestamp)
     request.addQueryItem(.token, session.remote.token)
-    request.addQueryItem(.tokenHash, session.remote.hash)
+    request.addQueryItem(.tokenHash, session.remote.token.toMD5())
     request.addQueryItem(.limit, listLimit)
     return marvelListRepository
       .get(request)

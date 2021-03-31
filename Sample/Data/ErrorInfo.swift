@@ -9,5 +9,5 @@
 import Foundation
 
 struct ErrorInfo: Error {
-  let data: [String: Any]
+  let data: [String: Any?]
 }

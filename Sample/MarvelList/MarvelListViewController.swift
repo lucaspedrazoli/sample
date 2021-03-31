@@ -36,10 +36,13 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     setupUI()
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    let marvelItems = MarvelListItem.fakeData()
-    items.onNext(marvelItems)
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    viewModel
+      .load(for: .loading)
+      .map(items.onNext)
+      .subscribe()
+      .disposed(by: bag)
   }
 
   private func setupUI() {
@@ -57,10 +60,9 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
       .disposed(by: bag)
 
     items
-      .bind(to: rxTableView
-        .items(cellIdentifier: MarvelListCell.identifier,
-               cellType: MarvelListCell.self)) { (_, item, cell) in
-                cell.inflate(with: item)
+      .bind(to: rxTableView.items(cellIdentifier: MarvelListCell.identifier,
+                                  cellType: MarvelListCell.self)) { (_, item, cell) in
+                                    cell.inflate(with: item)
     }
     .disposed(by: bag)
 

@@ -32,7 +32,9 @@ struct NetworkDataSource: NetworkDataSourceType {
         }
 
         guard let httpResponse = response as? HTTPURLResponse else {
-          let info = ["http_response_error": "unexpected_response_error"]
+          let info = ["http_response_error": "unexpected_response_error",
+                      "url": "\(String(describing: _request.url))"
+          ]
           let error = ErrorInfo(data: info)
           self.logger.log(nil, error)
           subject.onError(error)
@@ -40,7 +42,9 @@ struct NetworkDataSource: NetworkDataSourceType {
         }
 
         guard 200..<300 ~= httpResponse.statusCode else {
-          let info = ["http_unexpected_status_code": httpResponse.statusCode]
+          let info = ["http_unexpected_status_code": "\(httpResponse.statusCode)",
+                      "url": "\(String(describing: _request.url))"
+            ]
           let error = ErrorInfo(data: info)
           self.logger.log(nil, error)
           subject.onError(error)

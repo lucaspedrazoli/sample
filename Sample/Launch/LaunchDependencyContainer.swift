@@ -24,7 +24,8 @@ class LaunchDependencyContainer {
                                         userSessionRepository: userSessionRepository,
                                         request: request)
     let listView = MarvelListView()
-    let listViewController = MarvelListViewController(view: listView)
+    let listViewController = MarvelListViewController(view: listView,
+                                                      viewModel: viewModel)
     return listViewController
   }
 }

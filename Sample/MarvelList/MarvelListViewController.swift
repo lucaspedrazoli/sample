@@ -13,11 +13,14 @@ import RxCocoa
 class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   private let marvelListView: MarvelListView
+  private let viewModel: MarvelListViewModel
   private let bag = DisposeBag()
   private let items = PublishSubject<[MarvelListItem]>()
 
 
-  init(view: MarvelListView) {
+  init(view: MarvelListView,
+       viewModel: MarvelListViewModel) {
+    self.viewModel = viewModel
     self.marvelListView = view
     super.init()
   }

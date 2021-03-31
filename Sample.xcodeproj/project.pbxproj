@@ -187,9 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				75BAD4112613574F00E943E2 /* Application */,
-				75BAD410261356A000E943E2 /* MainUseCase */,
-				75BAD40F261355DD00E943E2 /* MarvelListUseCase */,
-				75BAD40E2613559300E943E2 /* LaunchUseCase */,
+				75BAD410261356A000E943E2 /* Main */,
+				75BAD40F261355DD00E943E2 /* MarvelList */,
+				75BAD40E2613559300E943E2 /* Launch */,
 				7552E71225F7EB5100C070B4 /* UserInterface */,
 				754848C625E812F600529C79 /* Data */,
 				7558A5FF25F1951300E31585 /* Logger */,
@@ -299,7 +299,7 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
-		75BAD40E2613559300E943E2 /* LaunchUseCase */ = {
+		75BAD40E2613559300E943E2 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
 				754848E525EEAC6200529C79 /* LaunchDependencyContainer.swift */,
@@ -310,10 +310,10 @@
 				7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */,
 				7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */,
 			);
-			path = LaunchUseCase;
+			path = Launch;
 			sourceTree = "<group>";
 		};
-		75BAD40F261355DD00E943E2 /* MarvelListUseCase */ = {
+		75BAD40F261355DD00E943E2 /* MarvelList */ = {
 			isa = PBXGroup;
 			children = (
 				7550F2A0261245D10034A53D /* MarvelListViewController.swift */,
@@ -323,16 +323,16 @@
 				75BAD4252613B49300E943E2 /* MarvelListRepository.swift */,
 				753825962613BEE900B5CB33 /* MarvelListRequest.swift */,
 			);
-			path = MarvelListUseCase;
+			path = MarvelList;
 			sourceTree = "<group>";
 		};
-		75BAD410261356A000E943E2 /* MainUseCase */ = {
+		75BAD410261356A000E943E2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				7548489F25E80E8500529C79 /* AppDelegate.swift */,
 				754848C425E8123400529C79 /* MainDependencyContainer.swift */,
 			);
-			path = MainUseCase;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		75BAD4112613574F00E943E2 /* Application */ = {

@@ -17,7 +17,8 @@ class LaunchDependencyContainer {
   }
 
   func makeListViewController() -> UIViewController {
-    
+    let network = NetworkDataSource()
+    let repository = MarvelListRepository(source: network)
     let listView = MarvelListView()
     let listViewController = MarvelListViewController(view: listView)
     return listViewController

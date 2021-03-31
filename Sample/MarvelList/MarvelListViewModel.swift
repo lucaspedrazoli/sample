@@ -30,6 +30,8 @@ class MarvelListViewModel {
   }
 
   private func list(_ session: UserSessionModel) -> Observable<[MarvelListItem]> {
+    let timestamp = String(Date().timeIntervalSince1970)
+    request.addQueryItem(.timeStamp, timestamp)
     request.addQueryItem(.token, session.remote.token)
     request.addQueryItem(.tokenHash, session.remote.hash)
     request.addQueryItem(.limit, listLimit)

@@ -10,4 +10,5 @@ enum QueryKey: String {
   case token = "apikey"
   case tokenHash = "hash"
   case limit
+  case timeStamp = "ts"
 }

@@ -10,15 +10,19 @@ import UIKit
 
 class LaunchDependencyContainer {
 
-  let userSessionStore: UserSessionRepositoryType
+  let userSessionRepository: UserSessionRepositoryType
 
   init(userSessionStore: UserSessionRepositoryType) {
-    self.userSessionStore = userSessionStore
+    self.userSessionRepository = userSessionStore
   }
 
   func makeListViewController() -> UIViewController {
     let network = NetworkDataSource()
     let repository = MarvelListRepository(source: network)
+    let request = MarvelListRequest(endpoint: .marvelList, method: .GET)
+    let viewModel = MarvelListViewModel(marvelListRepository: repository,
+                                        userSessionRepository: userSessionRepository,
+                                        request: request)
     let listView = MarvelListView()
     let listViewController = MarvelListViewController(view: listView)
     return listViewController

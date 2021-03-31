@@ -11,15 +11,12 @@ import Foundation
 struct MarvelListRequest: RequestType {
   let endpoint: Endpoint
   let method: HTTPVerb
-  var params: Array<URLQueryItem>
+  var params: Array<URLQueryItem> = []
   var body: [String : Any] = [:]
   var header: [String : String] = [:]
 
-  init() {
-    endpoint = .marvelList
-    method = .GET
-    params = [
-      URLQueryItem(name: "limit", value: "20")
-    ]
+  init(endpoint: Endpoint, method: HTTPVerb) {
+    self.endpoint = endpoint
+    self.method = method
   }
 }

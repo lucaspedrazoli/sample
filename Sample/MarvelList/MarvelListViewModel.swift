@@ -9,6 +9,7 @@
 import RxSwift
 
 class MarvelListViewModel {
+  private let listLimit = "20"
   private let marvelListRepository: MarvelListRepositoryType
   private let userSessionRepository: UserSessionRepositoryType
   private(set) var request: RequestType
@@ -24,13 +25,16 @@ class MarvelListViewModel {
   func load(for: MarvelListState) -> Observable<[MarvelListItem]> {
     return userSessionRepository
       .readUserSession()
+      .compactMap { $0 }
       .flatMap(list)
   }
 
-  private func list(_ session: UserSessionModel?) -> Observable<[MarvelListItem]> {
-    guard let session = session else { return .error(ErrorInfo(data: [:])) }
+  private func list(_ session: UserSessionModel) -> Observable<[MarvelListItem]> {
     request.addQueryItem(.token, session.remote.token)
     request.addQueryItem(.tokenHash, session.remote.hash)
-    return marvelListRepository.get(request).compactMap { $0 }
+    request.addQueryItem(.limit, listLimit)
+    return marvelListRepository
+      .get(request)
+      .compactMap { $0 }
   }
 }

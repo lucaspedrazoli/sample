@@ -11,4 +11,6 @@ enum QueryKey: String {
   case tokenHash = "hash"
   case limit
   case timeStamp = "ts"
+  case orderBy
+  case offset
 }

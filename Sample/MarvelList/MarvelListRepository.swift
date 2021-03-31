@@ -16,10 +16,10 @@ struct MarvelListRepository: MarvelListRepositoryType {
     self.source = source
   }
 
-  func get(_ request: RequestType) -> Observable<[MarvelListItem]?> {
+  func get(_ request: RequestType) -> Observable<MarvelList?> {
     return source
       .execute(request,
-               modelType: [MarvelListItem].self,
+               modelType: MarvelList.self,
                errorType: MarvelApiError.self)
   }
 }

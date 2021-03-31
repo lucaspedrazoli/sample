@@ -9,13 +9,19 @@
 struct MarvelListItem: Codable {
   let id: Int64
   let name: String
-  let thumbnail: String
+  let description: String
+}
 
-  static func fakeData() -> [MarvelListItem] {
-    let url = "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0/standard_medium.jpg"
-    let hulk = MarvelListItem(id: 1009351,
-                              name: "Hulk",
-                              thumbnail: url)
-    return [hulk, hulk, hulk]
+struct MarvelList: Codable {
+  let heroes: [MarvelListItem]
+
+  enum ItemKey: String, CodingKey {
+    case data, results
+  }
+
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: ItemKey.self)
+    let data = try container.nestedContainer(keyedBy: ItemKey.self, forKey: .data)
+    heroes = try data.decode([MarvelListItem].self, forKey: .results)
   }
 }

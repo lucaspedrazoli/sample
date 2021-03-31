@@ -39,7 +39,7 @@ class MarvelListCell: UITableViewCell {
     addSubviews()
     installConstraints()
     heroName.text = item.name
-    heroThumb.load(path: item.thumbnail)
+    heroThumb.load(path: "")
 
   }
 

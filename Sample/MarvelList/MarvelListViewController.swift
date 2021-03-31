@@ -27,10 +27,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   override func loadView() {
     super.loadView()
-    marvelListView.tableView.rx
-      .setDelegate(self)
-      .disposed(by: bag)
-    bindTableView()
+    setupTableView()
   }
 
 
@@ -52,15 +49,26 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
                                 identifier: MarvelListCell.identifier)
   }
 
-  private func bindTableView() {
-    items.bind(to: marvelListView.tableView.rx.items(cellIdentifier: MarvelListCell.identifier,
-                                      cellType: MarvelListCell.self)) { (row,item,cell) in
-                                        cell.inflate(with: item)
-    }.disposed(by: bag)
+  private func setupTableView() {
+    let rxTableView = marvelListView.tableView.rx
 
-    marvelListView.tableView.rx.modelSelected(MarvelListItem.self).map {
-      print("click item \($0)")
-      }.subscribe().disposed(by: bag)
+    rxTableView
+      .setDelegate(self)
+      .disposed(by: bag)
+
+    items
+      .bind(to: rxTableView
+        .items(cellIdentifier: MarvelListCell.identifier,
+               cellType: MarvelListCell.self)) { (_, item, cell) in
+                cell.inflate(with: item)
+    }
+    .disposed(by: bag)
+
+    rxTableView
+      .modelSelected(MarvelListItem.self)
+      .map { print("click item \($0)") }
+      .subscribe()
+      .disposed(by: bag)
   }
 }
 

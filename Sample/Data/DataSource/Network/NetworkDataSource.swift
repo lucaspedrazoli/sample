@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-struct NetworkDataSource<Model: Codable>: NetworkDataSourceType {
+struct NetworkDataSource: NetworkDataSourceType {
 
   private let session: URLSession
   private let logger: LoggerType
@@ -20,7 +20,7 @@ struct NetworkDataSource<Model: Codable>: NetworkDataSourceType {
     self.logger = logger
   }
 
-  func execute(_ request: Request) -> Observable<Model?> {
+  func execute<Model: Codable>(_ request: Request, type: Model.Type) -> Observable<Model?> {
     let subject = PublishSubject<Model?>()
     let _request = request.buildRequest()
     let task = session

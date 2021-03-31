@@ -7,4 +7,3 @@
 //
 typealias StateControllerAction = (@escaping () -> Void) -> Void
 typealias AuthToken = String
-typealias TokenHash = String

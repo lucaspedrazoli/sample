@@ -11,6 +11,7 @@
 		7525BBD82614BE49006AE041 /* superhero.png in Resources */ = {isa = PBXBuildFile; fileRef = 7525BBD72614BE48006AE041 /* superhero.png */; };
 		7525BBDD2614C532006AE041 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525BBDC2614C532006AE041 /* String.swift */; };
 		7525BBDF2614CD58006AE041 /* MarvelApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525BBDE2614CD58006AE041 /* MarvelApiError.swift */; };
+		7525BBE12614CFD6006AE041 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7525BBE02614CFD6006AE041 /* Date.swift */; };
 		753825972613BEE900B5CB33 /* MarvelListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825962613BEE900B5CB33 /* MarvelListRequest.swift */; };
 		753825992614A94B00B5CB33 /* MarvelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825982614A94B00B5CB33 /* MarvelListViewModel.swift */; };
 		7538259B2614AA0800B5CB33 /* MarveListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538259A2614AA0800B5CB33 /* MarveListState.swift */; };
@@ -81,6 +82,7 @@
 		7525BBD72614BE48006AE041 /* superhero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superhero.png; sourceTree = "<group>"; };
 		7525BBDC2614C532006AE041 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7525BBDE2614CD58006AE041 /* MarvelApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiError.swift; sourceTree = "<group>"; };
+		7525BBE02614CFD6006AE041 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		753825962613BEE900B5CB33 /* MarvelListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListRequest.swift; sourceTree = "<group>"; };
 		753825982614A94B00B5CB33 /* MarvelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListViewModel.swift; sourceTree = "<group>"; };
 		7538259A2614AA0800B5CB33 /* MarveListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarveListState.swift; sourceTree = "<group>"; };
@@ -167,6 +169,15 @@
 				236A7671A33052AE236DF11D /* Pods_SampleTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7525BBE22614CFE2006AE041 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7525BBDC2614C532006AE041 /* String.swift */,
+				7525BBE02614CFD6006AE041 /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7548489325E80E8500529C79 = {
@@ -352,11 +363,11 @@
 		75BAD4112613574F00E943E2 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				7525BBE22614CFE2006AE041 /* Extensions */,
 				75D63BC62608F3430074D384 /* Alias.swift */,
 				7552E72725FBB22D00C070B4 /* AnimatorType.swift */,
 				7552E72B25FBEDA300C070B4 /* NavigatorType.swift */,
 				75BAD4212613B1DB00E943E2 /* ApiKeys.swift */,
-				7525BBDC2614C532006AE041 /* String.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -596,6 +607,7 @@
 				7550F29F261242550034A53D /* NavigationController.swift in Sources */,
 				7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */,
 				7550F2A1261245D10034A53D /* MarvelListViewController.swift in Sources */,
+				7525BBE12614CFD6006AE041 /* Date.swift in Sources */,
 				7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */,
 				7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */,
 				75BAD41C2613A56C00E943E2 /* MarvelListView.swift in Sources */,

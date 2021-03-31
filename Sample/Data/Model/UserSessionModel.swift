@@ -17,10 +17,14 @@ struct UserSessionModel: Codable {
     let profile = UserProfile(name: "Foo",
                               email: "foo@bar.com",
                               mobileNumber: "11978767898")
-    let remote = RemoteUserSession(token: ApiKeys.token,
-                                   hash: ApiKeys.tokenHash)
+    let remote = RemoteUserSession(token: ApiKeys.marvelToken,
+                                   privateToken: ApiKeys.marvelPrivateToken)
     return UserSessionModel(profile: profile,
                             remote: remote)
+  }
+
+  func hash(_ timeStamp: String) -> String {
+    return (timeStamp + remote.privateToken +  remote.token).toMD5()
   }
 
 }

@@ -64,6 +64,8 @@ struct NetworkDataSource: NetworkDataSourceType {
 
         if let data = data {
           let model = try? JSONDecoder().decode(Model.self, from: data)
+          print("Network response ------>")
+          dump(model)
           subject.onNext(model)
           subject.onCompleted()
         }

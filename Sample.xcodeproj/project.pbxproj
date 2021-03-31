@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		018B735AAA807886EF9E38F4 /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236A7671A33052AE236DF11D /* Pods_SampleTests.framework */; };
 		753825972613BEE900B5CB33 /* MarvelListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825962613BEE900B5CB33 /* MarvelListRequest.swift */; };
+		753825992614A94B00B5CB33 /* MarvelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825982614A94B00B5CB33 /* MarvelListViewModel.swift */; };
+		7538259B2614AA0800B5CB33 /* MarveListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538259A2614AA0800B5CB33 /* MarveListState.swift */; };
+		7538259D2614AE1300B5CB33 /* QueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538259C2614AE1300B5CB33 /* QueryKey.swift */; };
 		754848A025E80E8500529C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548489F25E80E8500529C79 /* AppDelegate.swift */; };
 		754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848A325E80E8500529C79 /* LaunchViewController.swift */; };
 		754848A925E80E8800529C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754848A825E80E8800529C79 /* Assets.xcassets */; };
@@ -38,7 +41,7 @@
 		7558A5F125F126E400E31585 /* NetworkDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */; };
 		7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */; };
 		7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F725F1386100E31585 /* HTTPVerb.swift */; };
-		7558A5FA25F138E000E31585 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F925F138E000E31585 /* Request.swift */; };
+		7558A5FA25F138E000E31585 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5F925F138E000E31585 /* RequestType.swift */; };
 		7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FB25F14C0000E31585 /* Endpoint.swift */; };
 		7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FD25F1945700E31585 /* LoggerType.swift */; };
 		7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60A25F27DBF00E31585 /* ErrorInfo.swift */; };
@@ -74,6 +77,9 @@
 		27FFBE67CBD59F2E3BFCA9DC /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB7E663ECA91F5E522B5513 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		753825962613BEE900B5CB33 /* MarvelListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListRequest.swift; sourceTree = "<group>"; };
+		753825982614A94B00B5CB33 /* MarvelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListViewModel.swift; sourceTree = "<group>"; };
+		7538259A2614AA0800B5CB33 /* MarveListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarveListState.swift; sourceTree = "<group>"; };
+		7538259C2614AE1300B5CB33 /* QueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryKey.swift; sourceTree = "<group>"; };
 		7548489C25E80E8500529C79 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7548489F25E80E8500529C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754848A325E80E8500529C79 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +113,7 @@
 		7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSourceType.swift; sourceTree = "<group>"; };
 		7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataSource.swift; sourceTree = "<group>"; };
 		7558A5F725F1386100E31585 /* HTTPVerb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPVerb.swift; sourceTree = "<group>"; };
-		7558A5F925F138E000E31585 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7558A5F925F138E000E31585 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		7558A5FB25F14C0000E31585 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		7558A5FD25F1945700E31585 /* LoggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerType.swift; sourceTree = "<group>"; };
 		7558A60A25F27DBF00E31585 /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
@@ -284,8 +290,9 @@
 				7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */,
 				7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */,
 				7558A5FB25F14C0000E31585 /* Endpoint.swift */,
-				7558A5F925F138E000E31585 /* Request.swift */,
+				7558A5F925F138E000E31585 /* RequestType.swift */,
 				7558A5F725F1386100E31585 /* HTTPVerb.swift */,
+				7538259C2614AE1300B5CB33 /* QueryKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -322,6 +329,8 @@
 				75BAD41B2613A56C00E943E2 /* MarvelListView.swift */,
 				75BAD4252613B49300E943E2 /* MarvelListRepository.swift */,
 				753825962613BEE900B5CB33 /* MarvelListRequest.swift */,
+				753825982614A94B00B5CB33 /* MarvelListViewModel.swift */,
+				7538259A2614AA0800B5CB33 /* MarveListState.swift */,
 			);
 			path = MarvelList;
 			sourceTree = "<group>";
@@ -569,6 +578,7 @@
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
 				75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */,
 				75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */,
+				7538259B2614AA0800B5CB33 /* MarveListState.swift in Sources */,
 				7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */,
 				75CF6C602605183D00199482 /* LaunchView.swift in Sources */,
 				7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */,
@@ -587,12 +597,14 @@
 				753825972613BEE900B5CB33 /* MarvelListRequest.swift in Sources */,
 				754848F025EEB5E900529C79 /* UserSessionStoreType.swift in Sources */,
 				7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */,
-				7558A5FA25F138E000E31585 /* Request.swift in Sources */,
+				7558A5FA25F138E000E31585 /* RequestType.swift in Sources */,
 				75BAD4262613B49300E943E2 /* MarvelListRepository.swift in Sources */,
 				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
 				7552E73426024E3B00C070B4 /* FakeUserSessionRepository.swift in Sources */,
 				7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */,
+				7538259D2614AE1300B5CB33 /* QueryKey.swift in Sources */,
 				754848CB25E813D300529C79 /* NiblessView.swift in Sources */,
+				753825992614A94B00B5CB33 /* MarvelListViewModel.swift in Sources */,
 				75BAD4222613B1DB00E943E2 /* ApiKeys.swift in Sources */,
 				754848F525EEB74600529C79 /* RemoteUserSession.swift in Sources */,
 				75BAD4242613B28700E943E2 /* MarvelListRepositoryType.swift in Sources */,

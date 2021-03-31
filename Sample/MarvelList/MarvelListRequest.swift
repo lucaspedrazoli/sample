@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MarvelListRequest: Request {
+struct MarvelListRequest: RequestType {
   let endpoint: Endpoint
   let method: HTTPVerb
   var params: Array<URLQueryItem>

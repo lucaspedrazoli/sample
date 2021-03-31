@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Request {
+protocol RequestType {
 
   var endpoint: Endpoint { get }
   var method: HTTPVerb { get }
@@ -17,9 +17,9 @@ protocol Request {
   var header: [String: String] { get set }
 }
 
-extension Request {
-  mutating func addQueryItem(_ name: String, _ value: String?) {
-    params.append(URLQueryItem(name: name, value: value))
+extension RequestType {
+  mutating func addQueryItem(_ key: QueryKey, _ value: String?) {
+    params.append(URLQueryItem(name: key.rawValue, value: value))
   }
 
   mutating func addHeader(_ name: String, _ value: String) {

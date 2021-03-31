@@ -20,7 +20,7 @@ struct NetworkDataSource: NetworkDataSourceType {
     self.logger = logger
   }
 
-  func execute<Model: Codable>(_ request: Request, type: Model.Type) -> Observable<Model?> {
+  func execute<Model: Codable>(_ request: RequestType, type: Model.Type) -> Observable<Model?> {
     let subject = PublishSubject<Model?>()
     let _request = request.buildRequest()
     let task = session

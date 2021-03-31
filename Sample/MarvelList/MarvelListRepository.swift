@@ -16,7 +16,7 @@ struct MarvelListRepository: MarvelListRepositoryType {
     self.source = source
   }
 
-  func get(_ request: Request) -> Observable<[MarvelListItem]?> {
+  func get(_ request: RequestType) -> Observable<[MarvelListItem]?> {
     return source
       .execute(request, type: [MarvelListItem].self)
   }

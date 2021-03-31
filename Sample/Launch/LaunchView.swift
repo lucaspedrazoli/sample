@@ -19,7 +19,7 @@ class LaunchView: NiblessView {
   }()
 
   lazy var loadingIcon: UIImageView = {
-    let image = UIImage(named: "coffee-cup")
+    let image = UIImage(named: "superhero")
     let imageView = UIImageView(image: image)
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.alpha = 0.0
@@ -55,8 +55,8 @@ class LaunchView: NiblessView {
       loadingLabel.heightAnchor.constraint(equalToConstant: 50)
     ]
     constraints += [
-      loadingIcon.widthAnchor.constraint(equalToConstant: 50),
-      loadingIcon.heightAnchor.constraint(equalToConstant: 50),
+      loadingIcon.widthAnchor.constraint(equalToConstant: 90),
+      loadingIcon.heightAnchor.constraint(equalToConstant: 90),
       loadingIcon.centerXAnchor.constraint(equalTo: container.centerXAnchor),
       loadingIcon.centerYAnchor.constraint(equalTo: container.centerYAnchor)
     ]

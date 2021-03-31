@@ -10,7 +10,7 @@ import RxSwift
 
 protocol AnimatorType {
   associatedtype State: Hashable
-  var actions: [State: ControllerAction] { get set}
+  var actions: [State: StateControllerAction] { get set}
 
   func animate(for state: State) -> Observable<State>
 }

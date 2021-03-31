@@ -5,6 +5,6 @@
 //  Created by Lucas Pedrazoli on 22/03/21.
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
-typealias ControllerAction = (@escaping () -> Void) -> Void
+typealias StateControllerAction = (@escaping () -> Void) -> Void
 typealias AuthToken = String
 typealias TokenHash = String

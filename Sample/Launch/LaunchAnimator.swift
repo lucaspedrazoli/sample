@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 struct LaunchAnimator: AnimatorType {
-  var actions: [LaunchState : ControllerAction] = [:]
+  var actions: [LaunchState : StateControllerAction] = [:]
 
   func animate(for state: LaunchState) -> Observable<LaunchState> {
     switch state {

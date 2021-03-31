@@ -9,7 +9,7 @@
 import RxSwift
 
 struct LaunchNavigator: NavigatorType {
-  var actions: [LaunchState : ControllerAction] = [:]
+  var actions: [LaunchState : StateControllerAction] = [:]
 
   func navigate(for state: LaunchState) -> Observable<LaunchState> {
     switch state {

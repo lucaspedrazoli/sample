@@ -62,6 +62,7 @@
 		75BAD4282613B63B00E943E2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4272613B63B00E943E2 /* Logger.swift */; };
 		75C0A0E826160BF30070D6CE /* ImageFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0E726160BF30070D6CE /* ImageFileName.swift */; };
 		75C0A0EA26160C150070D6CE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0E926160C150070D6CE /* UIImage.swift */; };
+		75C0A0F0261613B30070D6CE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0EF261613B30070D6CE /* LoadingView.swift */; };
 		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
 		75D63BC72608F3430074D384 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D63BC62608F3430074D384 /* Alias.swift */; };
@@ -140,6 +141,7 @@
 		75BAD4272613B63B00E943E2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		75C0A0E726160BF30070D6CE /* ImageFileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileName.swift; sourceTree = "<group>"; };
 		75C0A0E926160C150070D6CE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		75C0A0EF261613B30070D6CE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		75D63BC62608F3430074D384 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 				75BAD410261356A000E943E2 /* Main */,
 				75BAD40F261355DD00E943E2 /* MarvelList */,
 				75BAD40E2613559300E943E2 /* Launch */,
-				7552E71225F7EB5100C070B4 /* UserInterface */,
+				7552E71225F7EB5100C070B4 /* UI */,
 				754848C625E812F600529C79 /* Data */,
 				7558A5FF25F1951300E31585 /* Logger */,
 				754848A825E80E8800529C79 /* Assets.xcassets */,
@@ -271,19 +273,15 @@
 			path = UserSesstionStore;
 			sourceTree = "<group>";
 		};
-		7552E71225F7EB5100C070B4 /* UserInterface */ = {
+		7552E71225F7EB5100C070B4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				75C0A0E726160BF30070D6CE /* ImageFileName.swift */,
-				754848C825E8132600529C79 /* NiblessViewController.swift */,
-				754848CA25E813D300529C79 /* NiblessView.swift */,
-				754848CC25E8140900529C79 /* NiblessNavigationController.swift */,
-				7550F29E261242550034A53D /* NavigationController.swift */,
-				7550F29C260FA8D10034A53D /* ContainerViewController.swift */,
+				75C0A0F1261613CC0070D6CE /* Views */,
+				75C0A0EE261613670070D6CE /* ApplicationUI */,
 				75BAD41426135FAF00E943E2 /* Extensions */,
 				75C4BFA5260CE5A200EC93CA /* Components */,
 			);
-			path = UserInterface;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		7558A5EE25F1266E00E31585 /* Repository */ = {
@@ -396,6 +394,27 @@
 				75C0A0E926160C150070D6CE /* UIImage.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		75C0A0EE261613670070D6CE /* ApplicationUI */ = {
+			isa = PBXGroup;
+			children = (
+				75C0A0E726160BF30070D6CE /* ImageFileName.swift */,
+				754848C825E8132600529C79 /* NiblessViewController.swift */,
+				754848CA25E813D300529C79 /* NiblessView.swift */,
+				754848CC25E8140900529C79 /* NiblessNavigationController.swift */,
+				7550F29E261242550034A53D /* NavigationController.swift */,
+				7550F29C260FA8D10034A53D /* ContainerViewController.swift */,
+			);
+			path = ApplicationUI;
+			sourceTree = "<group>";
+		};
+		75C0A0F1261613CC0070D6CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75C0A0EF261613B30070D6CE /* LoadingView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		75C4BFA5260CE5A200EC93CA /* Components */ = {
@@ -619,6 +638,7 @@
 				75977C952615E881005E26A5 /* MarvelImageSize.swift in Sources */,
 				7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */,
 				75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */,
+				75C0A0F0261613B30070D6CE /* LoadingView.swift in Sources */,
 				7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */,
 				754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */,
 				7550F29F261242550034A53D /* NavigationController.swift in Sources */,

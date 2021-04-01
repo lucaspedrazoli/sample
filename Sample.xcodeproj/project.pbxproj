@@ -62,7 +62,7 @@
 		75BAD4282613B63B00E943E2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4272613B63B00E943E2 /* Logger.swift */; };
 		75C0A0E826160BF30070D6CE /* ImageFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0E726160BF30070D6CE /* ImageFileName.swift */; };
 		75C0A0EA26160C150070D6CE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0E926160C150070D6CE /* UIImage.swift */; };
-		75C0A0F426161BE10070D6CE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0F326161BE10070D6CE /* LoadingViewController.swift */; };
+		75C0A0F426161BE10070D6CE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0F326161BE10070D6CE /* LoadingView.swift */; };
 		75C0A0F626161E0E0070D6CE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0A0F526161E0E0070D6CE /* UILabel.swift */; };
 		75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4BFA3260CE57900EC93CA /* GradientLabel.swift */; };
 		75CF6C602605183D00199482 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CF6C5F2605183D00199482 /* LaunchView.swift */; };
@@ -142,7 +142,7 @@
 		75BAD4272613B63B00E943E2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		75C0A0E726160BF30070D6CE /* ImageFileName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileName.swift; sourceTree = "<group>"; };
 		75C0A0E926160C150070D6CE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		75C0A0F326161BE10070D6CE /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		75C0A0F326161BE10070D6CE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		75C0A0F526161E0E0070D6CE /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		75C4BFA3260CE57900EC93CA /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		75CF6C5F2605183D00199482 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -415,7 +415,7 @@
 		75C0A0F1261613CC0070D6CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				75C0A0F326161BE10070D6CE /* LoadingViewController.swift */,
+				75C0A0F326161BE10070D6CE /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -649,7 +649,7 @@
 				7550F2A1261245D10034A53D /* MarvelListViewController.swift in Sources */,
 				7525BBE12614CFD6006AE041 /* Date.swift in Sources */,
 				7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */,
-				75C0A0F426161BE10070D6CE /* LoadingViewController.swift in Sources */,
+				75C0A0F426161BE10070D6CE /* LoadingView.swift in Sources */,
 				7558A5F825F1386100E31585 /* HTTPVerb.swift in Sources */,
 				75BAD41C2613A56C00E943E2 /* MarvelListView.swift in Sources */,
 				75C0A0E826160BF30070D6CE /* ImageFileName.swift in Sources */,

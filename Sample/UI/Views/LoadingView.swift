@@ -1,5 +1,5 @@
 //
-//  LoadingViewController.swift
+//  LoadingView.swift
 //  Sample
 //
 //  Created by Lucas Pedrazoli on 01/04/21.
@@ -8,23 +8,7 @@
 
 import UIKit
 
-class LoadingViewController: NiblessViewController {
-
-  fileprivate let loadingView = LoadingView()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupUI()
-  }
-
-  private func setupUI() {
-    loadingView.inflate(with: view.frame)
-    view = loadingView
-  }
-}
-
-
-fileprivate class LoadingView: NiblessView {
+class LoadingView: NiblessView {
 
   private let animationDuration: CFTimeInterval = 0.5
 

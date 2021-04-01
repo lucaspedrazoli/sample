@@ -16,7 +16,7 @@ class LoadingView: NiblessView {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
     view.backgroundColor = .gray
-    view.backgroundColor?.withAlphaComponent(0.3)
+    view.alpha = 0.6
     view.layer.cornerRadius = 10.0
     return view
   }()
@@ -93,6 +93,10 @@ class LoadingView: NiblessView {
     layoutIfNeeded()
     fadeIcon()
     fadeLabel()
+  }
+
+  func present(in view: UIView) {
+    view.addSubview(self)
   }
 
   private func fadeIcon() {

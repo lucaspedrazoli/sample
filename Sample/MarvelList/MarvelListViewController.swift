@@ -51,7 +51,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     super.viewDidAppear(animated)
     let loading = LoadingView()
     loading.inflate(with: view.frame)
-    view = loading
+    loading.present(in: view)
     loading.animate()
   }
 

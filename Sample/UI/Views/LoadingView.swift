@@ -115,7 +115,7 @@ class LoadingView: NiblessView {
 
   func remove() {
     guard self.superview != nil else { return }
-    let animation = UIViewPropertyAnimator(duration: 0.5, curve: .linear)
+    let animation = UIViewPropertyAnimator(duration: 1, curve: .linear)
     animation.addAnimations { [weak self] in
       self?.container.alpha = 0
     }

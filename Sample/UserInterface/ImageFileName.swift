@@ -7,5 +7,5 @@
 //
 
 enum ImageFileName: String {
-  case placeholder, superhero
+  case placeholder, superhero, captain
 }

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
   func load(url: String) {
-    let placeholder =  UIImage(named: "placeholder")
+    let placeholder =  UIImage.local(.placeholder)
     addImageWithFade(placeholder, interval: 0.3, alpha: 0.5)
     guard let url = URL(string: url) else { return }
     DispatchQueue.global().async { [weak self] in

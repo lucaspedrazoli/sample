@@ -19,7 +19,7 @@ class LaunchView: NiblessView {
   }()
 
   lazy var loadingIcon: UIImageView = {
-    let image = UIImage(named: "superhero")
+    let image = UIImage.local(.superhero)
     let imageView = UIImageView(image: image)
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.alpha = 0.0

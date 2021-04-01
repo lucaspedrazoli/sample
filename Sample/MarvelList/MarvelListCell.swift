@@ -26,10 +26,7 @@ class MarvelListCell: UITableViewCell {
   }()
 
   lazy var heroName: UILabel = {
-    let label = UILabel(frame: CGRect(x: 0,
-                                      y: 0,
-                                      width: 0,
-                                      height: CGFloat.greatestFiniteMagnitude))
+    let label = UILabel.selfSizedHeight
     label.font = UIFont(name: "Georgia", size: 20.0)
     label.textAlignment = .center
     label.lineBreakMode = .byWordWrapping

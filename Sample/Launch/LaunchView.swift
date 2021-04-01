@@ -27,7 +27,7 @@ class LaunchView: NiblessView {
   }()
 
   lazy var loadingLabel: GradientLabel = {
-    let font = UIFont(name: "HelveticaNeue-Thin",size: 41.0)
+    let font = UIFont(name: "HelveticaNeue-Thin", size: 41.0)
     let label = GradientLabel(font: font,
                               textColor: .white,
                               duration: animationDuration)

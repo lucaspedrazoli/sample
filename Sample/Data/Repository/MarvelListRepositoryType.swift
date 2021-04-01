@@ -9,5 +9,5 @@
 import RxSwift
 
 protocol MarvelListRepositoryType {
-  func get(_ request: RequestType) -> Observable<MarvelList?>
+  func get(_ request: RequestType) -> Observable<MarvelList>
 }

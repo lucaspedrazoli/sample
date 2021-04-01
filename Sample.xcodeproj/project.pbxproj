@@ -15,7 +15,7 @@
 		753825972613BEE900B5CB33 /* MarvelListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825962613BEE900B5CB33 /* MarvelListRequest.swift */; };
 		753825992614A94B00B5CB33 /* MarvelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753825982614A94B00B5CB33 /* MarvelListViewModel.swift */; };
 		7538259B2614AA0800B5CB33 /* MarveListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538259A2614AA0800B5CB33 /* MarveListState.swift */; };
-		7538259D2614AE1300B5CB33 /* QueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538259C2614AE1300B5CB33 /* QueryKey.swift */; };
+		7538259D2614AE1300B5CB33 /* MarvelQueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7538259C2614AE1300B5CB33 /* MarvelQueryKey.swift */; };
 		754848A025E80E8500529C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548489F25E80E8500529C79 /* AppDelegate.swift */; };
 		754848A425E80E8500529C79 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754848A325E80E8500529C79 /* LaunchViewController.swift */; };
 		754848A925E80E8800529C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754848A825E80E8800529C79 /* Assets.xcassets */; };
@@ -50,6 +50,8 @@
 		7558A5FE25F1945700E31585 /* LoggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A5FD25F1945700E31585 /* LoggerType.swift */; };
 		7558A60B25F27DC000E31585 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60A25F27DBF00E31585 /* ErrorInfo.swift */; };
 		7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */; };
+		75977C952615E881005E26A5 /* MarvelImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75977C942615E881005E26A5 /* MarvelImageSize.swift */; };
+		75977C972615E8CF005E26A5 /* MarvelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75977C962615E8CF005E26A5 /* MarvelList.swift */; };
 		75BAD41326135C9900E943E2 /* MarvelListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41226135C9900E943E2 /* MarvelListItem.swift */; };
 		75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41526135FC600E943E2 /* UIImageView.swift */; };
 		75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4172613633D00E943E2 /* UITableViewCell.swift */; };
@@ -86,7 +88,7 @@
 		753825962613BEE900B5CB33 /* MarvelListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListRequest.swift; sourceTree = "<group>"; };
 		753825982614A94B00B5CB33 /* MarvelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListViewModel.swift; sourceTree = "<group>"; };
 		7538259A2614AA0800B5CB33 /* MarveListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarveListState.swift; sourceTree = "<group>"; };
-		7538259C2614AE1300B5CB33 /* QueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryKey.swift; sourceTree = "<group>"; };
+		7538259C2614AE1300B5CB33 /* MarvelQueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelQueryKey.swift; sourceTree = "<group>"; };
 		7548489C25E80E8500529C79 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7548489F25E80E8500529C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754848A325E80E8500529C79 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,8 @@
 		7558A5FD25F1945700E31585 /* LoggerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerType.swift; sourceTree = "<group>"; };
 		7558A60A25F27DBF00E31585 /* ErrorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
 		7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryType.swift; sourceTree = "<group>"; };
+		75977C942615E881005E26A5 /* MarvelImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelImageSize.swift; sourceTree = "<group>"; };
+		75977C962615E8CF005E26A5 /* MarvelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelList.swift; sourceTree = "<group>"; };
 		75BAD41226135C9900E943E2 /* MarvelListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListItem.swift; sourceTree = "<group>"; };
 		75BAD41526135FC600E943E2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		75BAD4172613633D00E943E2 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -302,13 +306,12 @@
 		7558A5F625F137F900E31585 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				75977C932615E867005E26A5 /* MarvelApi */,
 				7558A5F025F126E400E31585 /* NetworkDataSourceType.swift */,
 				7558A5F225F12A2A00E31585 /* NetworkDataSource.swift */,
 				7558A5FB25F14C0000E31585 /* Endpoint.swift */,
 				7558A5F925F138E000E31585 /* RequestType.swift */,
 				7558A5F725F1386100E31585 /* HTTPVerb.swift */,
-				7538259C2614AE1300B5CB33 /* QueryKey.swift */,
-				7525BBDE2614CD58006AE041 /* MarvelApiError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -320,6 +323,16 @@
 				75BAD4272613B63B00E943E2 /* Logger.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		75977C932615E867005E26A5 /* MarvelApi */ = {
+			isa = PBXGroup;
+			children = (
+				7538259C2614AE1300B5CB33 /* MarvelQueryKey.swift */,
+				7525BBDE2614CD58006AE041 /* MarvelApiError.swift */,
+				75977C942615E881005E26A5 /* MarvelImageSize.swift */,
+			);
+			path = MarvelApi;
 			sourceTree = "<group>";
 		};
 		75BAD40E2613559300E943E2 /* Launch */ = {
@@ -347,6 +360,7 @@
 				753825962613BEE900B5CB33 /* MarvelListRequest.swift */,
 				753825982614A94B00B5CB33 /* MarvelListViewModel.swift */,
 				7538259A2614AA0800B5CB33 /* MarveListState.swift */,
+				75977C962615E8CF005E26A5 /* MarvelList.swift */,
 			);
 			path = MarvelList;
 			sourceTree = "<group>";
@@ -600,6 +614,7 @@
 				7538259B2614AA0800B5CB33 /* MarveListState.swift in Sources */,
 				7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */,
 				75CF6C602605183D00199482 /* LaunchView.swift in Sources */,
+				75977C952615E881005E26A5 /* MarvelImageSize.swift in Sources */,
 				7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */,
 				75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */,
 				7558A5FC25F14C0000E31585 /* Endpoint.swift in Sources */,
@@ -622,7 +637,7 @@
 				754848C925E8132600529C79 /* NiblessViewController.swift in Sources */,
 				7552E73426024E3B00C070B4 /* FakeUserSessionRepository.swift in Sources */,
 				7558A5F325F12A2A00E31585 /* NetworkDataSource.swift in Sources */,
-				7538259D2614AE1300B5CB33 /* QueryKey.swift in Sources */,
+				7538259D2614AE1300B5CB33 /* MarvelQueryKey.swift in Sources */,
 				754848CB25E813D300529C79 /* NiblessView.swift in Sources */,
 				753825992614A94B00B5CB33 /* MarvelListViewModel.swift in Sources */,
 				75BAD4222613B1DB00E943E2 /* ApiKeys.swift in Sources */,
@@ -635,6 +650,7 @@
 				7552E72825FBB22D00C070B4 /* AnimatorType.swift in Sources */,
 				754848A025E80E8500529C79 /* AppDelegate.swift in Sources */,
 				7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */,
+				75977C972615E8CF005E26A5 /* MarvelList.swift in Sources */,
 				754848C525E8123400529C79 /* MainDependencyContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

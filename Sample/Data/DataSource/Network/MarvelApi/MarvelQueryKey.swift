@@ -6,7 +6,7 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
-enum QueryKey: String {
+enum MarvelQueryKey: String {
   case token = "apikey"
   case tokenHash = "hash"
   case limit

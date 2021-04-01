@@ -18,7 +18,7 @@ protocol RequestType {
 }
 
 extension RequestType {
-  mutating func addQueryItem(_ key: QueryKey, _ value: String?) {
+  mutating func addQueryItem(_ key: MarvelQueryKey, _ value: String?) {
     params.append(URLQueryItem(name: key.rawValue, value: value))
   }
 

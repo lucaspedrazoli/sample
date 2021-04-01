@@ -15,7 +15,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
   private let marvelListView: MarvelListView
   private let viewModel: MarvelListViewModel
   private let bag = DisposeBag()
-  private let list = PublishSubject<MarvelList>()
+  private let heroeList = PublishSubject<[MarvelListItem]>()
 
 
   init(view: MarvelListView,
@@ -40,7 +40,9 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     super.viewWillAppear(animated)
     viewModel
       .load(for: .loading)
-      .map { print($0) }
+      .map {
+        self.heroeList.onNext($0.heroes)
+      }
       .subscribe()
       .disposed(by: bag)
   }
@@ -59,7 +61,14 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
       .setDelegate(self)
       .disposed(by: bag)
 
-    //list.bind(to: rxTableView.items(Marve))
+    heroeList
+      .bind(to: rxTableView
+        .items(cellIdentifier: MarvelListCell.identifier,
+               cellType: MarvelListCell.self)) { (_, item, cell) in
+                cell.inflate(with: item)
+    }
+    .disposed(by: bag)
+
 
     rxTableView
       .modelSelected(MarvelListItem.self)

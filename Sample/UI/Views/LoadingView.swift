@@ -91,7 +91,7 @@ class LoadingView: NiblessView {
 
   func animate() {
     layoutIfNeeded()
-    fadeIcon()
+    shakeIcon()
     fadeLabel()
   }
 
@@ -99,13 +99,31 @@ class LoadingView: NiblessView {
     view.addSubview(self)
   }
 
-  private func fadeIcon() {
-    let fade = CAKeyframeAnimation(keyPath: "opacity")
-    fade.values = [0.0, 1.0, 0.0]
-    fade.keyTimes = [0.0, 0.5, 1.0]
-    fade.duration = animationDuration
-    fade.repeatCount = Float.infinity
-    loadingIcon.layer.add(fade, forKey: nil)
+  func stopAnimations() {
+    loadingIcon.layer.removeAllAnimations()
+    loadingLabel.layer.removeAllAnimations()
+  }
+
+  func remove() {
+    guard self.superview != nil else { return }
+    let animation = UIViewPropertyAnimator(duration: 0.5, curve: .linear)
+    animation.addAnimations { [weak self] in
+      self?.container.alpha = 0
+    }
+    animation.addCompletion { [weak self] _ in
+      self?.stopAnimations()
+      self?.removeFromSuperview()
+    }
+    animation.startAnimation()
+  }
+
+  private func shakeIcon() {
+    let shake = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+    shake.values = [0.0, -CGFloat.pi/15, CGFloat.pi/15, 0.0]
+    shake.keyTimes = [0.0, 0.25, 0.50, 1.0]
+    shake.duration = animationDuration
+    shake.repeatCount = Float.infinity
+    loadingIcon.layer.add(shake, forKey: nil)
   }
 
   private func fadeLabel() {

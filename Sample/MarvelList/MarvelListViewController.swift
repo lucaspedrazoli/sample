@@ -53,6 +53,9 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     loading.inflate(with: view.frame)
     loading.present(in: view)
     loading.animate()
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+      loading.remove()
+    }
   }
 
   private func setupUI() {

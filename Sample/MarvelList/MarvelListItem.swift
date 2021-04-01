@@ -35,7 +35,7 @@ struct MarvelListItem: Codable {
   }
 
   func imageURL(size: MarvelImageSize) -> String {
-    return thumbnail.path + "/\(size.rawValue)" + thumbnail.fileExtension
+    return thumbnail.path + "/\(size.rawValue)" + "." + thumbnail.fileExtension
   }
 
 }

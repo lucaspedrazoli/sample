@@ -26,12 +26,17 @@ class MarvelListCell: UITableViewCell {
   }()
 
   lazy var heroName: UILabel = {
-    let label = UILabel()
-    label.font = UIFont(name: "Georgia", size: 30.0)
-    label.textAlignment = .justified
+    let label = UILabel(frame: CGRect(x: 0,
+                                      y: 0,
+                                      width: 0,
+                                      height: CGFloat.greatestFiniteMagnitude))
+    label.font = UIFont(name: "Georgia", size: 20.0)
+    label.textAlignment = .center
+    label.lineBreakMode = .byWordWrapping
     label.textColor = .black
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
+    label.sizeToFit()
     return label
   }()
 
@@ -52,23 +57,24 @@ class MarvelListCell: UITableViewCell {
   private func installConstraints() {
 
     var constraints = [
-      container.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-      container.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-      container.topAnchor.constraint(equalTo: self.topAnchor),
-      container.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+      container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+      container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+      container.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+      container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
     ]
     constraints += [
-      heroThumb.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 10),
+      heroThumb.leadingAnchor.constraint(equalTo: container.leadingAnchor),
       heroThumb.widthAnchor.constraint(equalToConstant: 100),
       heroThumb.heightAnchor.constraint(equalToConstant: 100),
-      heroThumb.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
-      heroThumb.bottomAnchor.constraint(lessThanOrEqualTo: container.bottomAnchor, constant: -10)
+      heroThumb.topAnchor.constraint(equalTo: container.topAnchor),
+      heroThumb.bottomAnchor.constraint(lessThanOrEqualTo: container.bottomAnchor)
     ]
     constraints += [
-      heroName.leadingAnchor.constraint(equalTo: heroThumb.trailingAnchor, constant: 30),
-      heroName.trailingAnchor.constraint(equalTo: container.trailingAnchor,constant: 10),
+      heroName.leadingAnchor.constraint(equalTo: heroThumb.trailingAnchor, constant: 10),
+      heroName.trailingAnchor.constraint(equalTo: container.trailingAnchor),
       heroName.topAnchor.constraint(equalTo: heroThumb.topAnchor),
-      heroName.heightAnchor.constraint(equalTo: heroThumb.heightAnchor)
+      heroName.heightAnchor.constraint(greaterThanOrEqualTo: heroThumb.heightAnchor,
+                                       multiplier: 0.3)
     ]
     NSLayoutConstraint.activate(constraints)
   }

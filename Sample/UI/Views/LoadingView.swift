@@ -96,7 +96,16 @@ class LoadingView: NiblessView {
   }
 
   func present(in view: UIView) {
+    let pulse = CASpringAnimation(keyPath: "transform.scale")
+    pulse.initialVelocity = 5.0
+    pulse.mass = 1.0
+    pulse.damping = 10.0
+    pulse.stiffness = 10.0
+    pulse.fromValue = 0.0
+    pulse.toValue = 1.0
+    pulse.duration = pulse.settlingDuration
     view.addSubview(self)
+    container.layer.add(pulse, forKey: nil)
   }
 
   func stopAnimations() {

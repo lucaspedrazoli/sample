@@ -17,6 +17,21 @@ class LoadingView: NiblessView {
     view.translatesAutoresizingMaskIntoConstraints = false
     view.backgroundColor = .gray
     view.backgroundColor?.withAlphaComponent(0.3)
+    view.layer.cornerRadius = 10.0
+    return view
+  }()
+
+  lazy var alertBox: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = .white
+    view.layer.borderWidth = 1.0
+    view.layer.borderColor = UIColor.black.cgColor
+    view.layer.shadowColor = UIColor.black.cgColor
+    view.layer.shadowOffset = .zero
+    view.layer.shadowOpacity = 1.0
+    view.layer.shadowRadius = 10
+    view.layer.cornerRadius = 10.0
     return view
   }()
 
@@ -28,8 +43,9 @@ class LoadingView: NiblessView {
   }()
 
   lazy var loadingLabel: UILabel = {
-    let font = UIFont(name: "AmericanTypewriter-Bold", size: 30.0)
+    let font = UIFont(name: "AmericanTypewriter-Bold", size: 25.0)
     let label = UILabel.selfSizedHeight
+    label.font = font
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textColor = .black
     label.textAlignment = .center
@@ -40,34 +56,43 @@ class LoadingView: NiblessView {
 
   override func addSubviews() {
     addSubview(container)
-    container.addSubview(loadingLabel)
-    container.addSubview(loadingIcon)
+    container.addSubview(alertBox)
+    alertBox.addSubview(loadingLabel)
+    alertBox.addSubview(loadingIcon)
   }
 
   override func installConstraints() {
     var constraints = [
-      container.topAnchor.constraint(equalTo: self.topAnchor),
-      container.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-      container.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-      container.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+      container.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+      container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+      container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+      container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
     ]
     constraints += [
-      loadingIcon.widthAnchor.constraint(equalToConstant: 90),
-      loadingIcon.heightAnchor.constraint(equalToConstant: 90),
-      loadingIcon.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-      loadingIcon.centerYAnchor.constraint(equalTo: container.centerYAnchor)
+      alertBox.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 0.3),
+      alertBox.widthAnchor.constraint(equalTo: container.widthAnchor, multiplier: 0.6),
+      alertBox.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+      alertBox.centerYAnchor.constraint(equalTo: container.centerYAnchor)
     ]
     constraints += [
-      loadingLabel.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-      loadingLabel.topAnchor.constraint(equalTo: loadingIcon.bottomAnchor, constant: 10),
-      loadingLabel.widthAnchor.constraint(equalToConstant: 200),
-      loadingLabel.heightAnchor.constraint(equalToConstant: 30)
+      loadingIcon.widthAnchor.constraint(equalToConstant: 70),
+      loadingIcon.heightAnchor.constraint(equalToConstant: 70),
+      loadingIcon.centerXAnchor.constraint(equalTo: alertBox.centerXAnchor),
+      loadingIcon.centerYAnchor.constraint(equalTo: alertBox.centerYAnchor, constant: -20)
+    ]
+    constraints += [
+      loadingLabel.centerXAnchor.constraint(equalTo: alertBox.centerXAnchor),
+      loadingLabel.bottomAnchor.constraint(equalTo: alertBox.bottomAnchor, constant: -10),
+      loadingLabel.widthAnchor.constraint(equalTo: alertBox.widthAnchor, multiplier: 0.8),
+      loadingLabel.heightAnchor.constraint(greaterThanOrEqualTo: alertBox.heightAnchor, multiplier: 0.3)
     ]
     NSLayoutConstraint.activate(constraints)
   }
 
   func animate() {
     layoutIfNeeded()
+    fadeIcon()
+    fadeLabel()
   }
 
   private func fadeIcon() {

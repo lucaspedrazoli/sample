@@ -47,6 +47,14 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
       .disposed(by: bag)
   }
 
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    let loading = LoadingView()
+    loading.inflate(with: view.frame)
+    view = loading
+    loading.animate()
+  }
+
   private func setupUI() {
     marvelListView.inflate(with: view.frame)
     view = marvelListView

@@ -8,4 +8,5 @@
 
 enum ImageFileName: String {
   case placeholder, superhero, captain
+  case marvelLogo = "marvel_logo_"
 }

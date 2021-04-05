@@ -17,6 +17,16 @@ class MarvelListView: NiblessView {
       return view
   }()
 
+  lazy var imageHeader: UIImageView = {
+    let image = UIImage.local(.marvelLogo)
+    let imageView = UIImageView(image: image)
+    imageView.layer.borderWidth = 0.5
+    imageView.layer.borderColor = UIColor.black.cgColor
+    imageView.layer.cornerRadius = 10
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    return imageView
+  }()
+
   lazy var tableView: UITableView = {
     let tableView = UITableView()
     tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +41,7 @@ class MarvelListView: NiblessView {
 
   override func addSubviews() {
     self.addSubview(container)
+    container.addSubview(imageHeader)
     container.addSubview(tableView)
   }
 
@@ -42,7 +53,13 @@ class MarvelListView: NiblessView {
       container.trailingAnchor.constraint(equalTo: self.trailingAnchor)
     ]
     constraints += [
-      tableView.topAnchor.constraint(equalTo: container.topAnchor),
+      imageHeader.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
+      imageHeader.heightAnchor.constraint(equalToConstant: 150),
+      imageHeader.widthAnchor.constraint(equalToConstant: 300),
+      imageHeader.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+    ]
+    constraints += [
+      tableView.topAnchor.constraint(equalTo: imageHeader.bottomAnchor, constant: 10),
       tableView.bottomAnchor.constraint(equalTo: container.bottomAnchor),
       tableView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
       tableView.trailingAnchor.constraint(equalTo: container.trailingAnchor)

@@ -110,15 +110,15 @@ class LoadingView: NiblessView {
   }
 
   func remove() {
-    DispatchQueue.main.async {
-      guard self.superview != nil else { return }
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self, self.superview != nil else { return }
       let animation = UIViewPropertyAnimator(duration: 1, curve: .linear)
-      animation.addAnimations { [weak self] in
-        self?.container.alpha = 0
+      animation.addAnimations {
+        self.container.alpha = 0
       }
-      animation.addCompletion { [weak self] _ in
-        self?.stopAnimations()
-        self?.removeFromSuperview()
+      animation.addCompletion { _ in
+        self.stopAnimations()
+        self.removeFromSuperview()
       }
       animation.startAnimation()
     }

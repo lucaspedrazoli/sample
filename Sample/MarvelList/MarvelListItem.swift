@@ -22,6 +22,14 @@ struct MarvelListItem: Codable {
     let fileExtension: String
   }
 
+  init(id: Int64, name: String,
+       description: String, thumbnail: Thumbnail) {
+    self.id = id
+    self.name = name
+    self.description = description
+    self.thumbnail = thumbnail
+  }
+
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: ItemKey.self)
     id = try container.decode(Int64.self, forKey: .id)
@@ -38,4 +46,9 @@ struct MarvelListItem: Codable {
     return thumbnail.path + "/\(size.rawValue)" + "." + thumbnail.fileExtension
   }
 
+  static func empty() -> MarvelListItem {
+    let thumb = Thumbnail(path: "", fileExtension: "")
+    return MarvelListItem(id: 0, name: "",
+                          description: "", thumbnail: thumb)
+  }
 }

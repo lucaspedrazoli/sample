@@ -15,9 +15,19 @@ struct MarvelList: Codable {
     case data, results
   }
 
+  init(heroes: [MarvelListItem]) {
+    self.heroes = heroes
+  }
+
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: ItemKey.self)
     let data = try container.nestedContainer(keyedBy: ItemKey.self, forKey: .data)
     heroes = try data.decode([MarvelListItem].self, forKey: .results)
+  }
+
+  static func empty() -> MarvelList {
+    let heroe = MarvelListItem.empty()
+    let heroeList: [MarvelListItem] = [heroe, heroe, heroe]
+    return MarvelList(heroes: heroeList)
   }
 }

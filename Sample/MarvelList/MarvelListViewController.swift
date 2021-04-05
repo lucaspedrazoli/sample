@@ -16,6 +16,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
   private let viewModel: MarvelListViewModel
   private let bag = DisposeBag()
   private let heroeList = PublishSubject<[MarvelListItem]>()
+  private let loadingView = LoadingView()
 
 
   init(view: MarvelListView,
@@ -38,24 +39,22 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    viewModel
-      .load(for: .loading)
-      .map {
-        self.heroeList.onNext($0.heroes)
-      }
-      .subscribe()
-      .disposed(by: bag)
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    let loading = LoadingView()
-    loading.inflate(with: view.frame)
-    loading.present(in: view)
-    loading.animate()
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-      loading.remove()
-    }
+    loadingView.inflate(with: view.frame)
+    loadingView.present(in: view)
+    loadingView.animate()
+    viewModel
+      .load(for: .loading)
+      .map { [weak self] in
+
+        self?.heroeList.onNext($0.heroes)
+        self?.loadingView.remove()
+      }
+      .subscribe()
+      .disposed(by: bag)
   }
 
   private func setupUI() {

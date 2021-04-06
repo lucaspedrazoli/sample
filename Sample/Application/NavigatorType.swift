@@ -13,5 +13,5 @@ protocol NavigatorType {
   associatedtype State: Hashable
   var actions: [State: StateControllerAction] { get set }
 
-  func navigate(for state: LaunchState) -> Observable<State>
+  func navigate(for state: State) -> Observable<State>
 }

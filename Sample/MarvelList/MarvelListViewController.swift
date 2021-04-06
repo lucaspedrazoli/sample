@@ -10,7 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MarvelListViewController: NiblessViewController, UITableViewDelegate {
+class MarvelListViewController<
+  Animator: AnimatorType
+  >: NiblessViewController, UITableViewDelegate
+  where Animator.State == MarvelListState {
 
   private let marvelListView: MarvelListView
   private let viewModel: MarvelListViewModel
@@ -20,7 +23,8 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
 
   init(view: MarvelListView,
-       viewModel: MarvelListViewModel) {
+       viewModel: MarvelListViewModel,
+       animator: Animator) {
     self.viewModel = viewModel
     self.marvelListView = view
     super.init()
@@ -28,9 +32,8 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   override func loadView() {
     super.loadView()
-    setupTableView()
+    bindTableView()
   }
-
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -63,7 +66,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
                                 identifier: MarvelListCell.identifier)
   }
 
-  private func setupTableView() {
+  private func bindTableView() {
     let rxTableView = marvelListView.tableView.rx
 
     rxTableView

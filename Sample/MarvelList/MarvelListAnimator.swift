@@ -14,4 +14,15 @@ struct MarvelListAnimator: StateControllerType {
   func perform(for state: MarvelListState) -> Observable<MarvelListState> {
     return .empty()
   }
+
+  private func loadingAnimation() -> Observable<MarvelListState> {
+    return Observable.create { observer in
+      let action = self.actions[.loading]
+      action?() {
+        observer.onNext(.loading)
+        observer.onCompleted()
+      }
+      return Disposables.create()
+    }
+  }
 }

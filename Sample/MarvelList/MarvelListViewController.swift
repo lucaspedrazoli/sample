@@ -15,7 +15,7 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
   private let marvelListView: MarvelListView
   private let viewModel: MarvelListViewModel
   private let bag = DisposeBag()
-  private let heroeList = PublishSubject<[MarvelListItem]>()
+  private let heroeList = PublishRelay<[MarvelListItem]>()
   private let loadingView = LoadingView()
 
 
@@ -48,10 +48,9 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     loadingView.animate()
     viewModel
       .load(for: .loading)
-      .map { [weak self] in
-
-        self?.heroeList.onNext($0.heroes)
-        self?.loadingView.remove()
+      .map {
+        self.heroeList.accept($0.heroes)
+        self.loadingView.remove()
       }
       .subscribe()
       .disposed(by: bag)
@@ -72,10 +71,10 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
       .disposed(by: bag)
 
     heroeList
-      .bind(to: rxTableView
-        .items(cellIdentifier: MarvelListCell.identifier,
-               cellType: MarvelListCell.self)) { (_, item, cell) in
-                cell.inflate(with: item)
+      .asDriver(onErrorJustReturn: [])
+      .drive(rxTableView.items(cellIdentifier: MarvelListCell.identifier,
+                               cellType: MarvelListCell.self )) {  (_, item, cell) in
+                                cell.inflate(with: item)
     }
     .disposed(by: bag)
 

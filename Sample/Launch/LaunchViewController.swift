@@ -10,8 +10,8 @@ import UIKit
 import RxSwift
 
 class LaunchViewController<
-    Navigator: NavigatorType,
-    Animator: AnimatorType
+    Navigator: StateControllerType,
+    Animator: StateControllerType
   >: NiblessViewController
   where
   Navigator.State == LaunchState,
@@ -50,9 +50,9 @@ class LaunchViewController<
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: true)
     animator
-      .animate(for: .loading)
+      .perform(for: .loading)
       .flatMap(viewModel.loadSession)
-      .flatMap(navigator.navigate)
+      .flatMap(navigator.perform)
       .subscribe()
       .disposed(by: bag)
   }

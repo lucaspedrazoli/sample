@@ -37,8 +37,7 @@
 		7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */; };
 		7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */; };
 		7552E72625FBAFE100C070B4 /* LaunchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */; };
-		7552E72825FBB22D00C070B4 /* AnimatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72725FBB22D00C070B4 /* AnimatorType.swift */; };
-		7552E72C25FBEDA300C070B4 /* NavigatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72B25FBEDA300C070B4 /* NavigatorType.swift */; };
+		7552E72825FBB22D00C070B4 /* StateControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72725FBB22D00C070B4 /* StateControllerType.swift */; };
 		7552E73025FBFB6A00C070B4 /* LaunchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E72F25FBFB6A00C070B4 /* LaunchState.swift */; };
 		7552E73426024E3B00C070B4 /* FakeUserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552E73326024E3B00C070B4 /* FakeUserSessionRepository.swift */; };
 		7552E7382602546C00C070B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7552E7372602546C00C070B4 /* Default-568h@2x.png */; };
@@ -118,8 +117,7 @@
 		7552E71325F7EE2900C070B4 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		7552E72125FA7E0900C070B4 /* LaunchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNavigator.swift; sourceTree = "<group>"; };
 		7552E72525FBAFE100C070B4 /* LaunchAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimator.swift; sourceTree = "<group>"; };
-		7552E72725FBB22D00C070B4 /* AnimatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorType.swift; sourceTree = "<group>"; };
-		7552E72B25FBEDA300C070B4 /* NavigatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorType.swift; sourceTree = "<group>"; };
+		7552E72725FBB22D00C070B4 /* StateControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateControllerType.swift; sourceTree = "<group>"; };
 		7552E72F25FBFB6A00C070B4 /* LaunchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchState.swift; sourceTree = "<group>"; };
 		7552E73326024E3B00C070B4 /* FakeUserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserSessionRepository.swift; sourceTree = "<group>"; };
 		7552E7372602546C00C070B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -384,8 +382,7 @@
 			children = (
 				7525BBE22614CFE2006AE041 /* Extensions */,
 				75D63BC62608F3430074D384 /* Alias.swift */,
-				7552E72725FBB22D00C070B4 /* AnimatorType.swift */,
-				7552E72B25FBEDA300C070B4 /* NavigatorType.swift */,
+				7552E72725FBB22D00C070B4 /* StateControllerType.swift */,
 				75BAD4212613B1DB00E943E2 /* ApiKeys.swift */,
 			);
 			path = Application;
@@ -678,8 +675,7 @@
 				75256555261CF7CC00B71020 /* MarvelListAnimator.swift in Sources */,
 				754848F325EEB6E600529C79 /* UserSessionModel.swift in Sources */,
 				7550F29D260FA8D10034A53D /* ContainerViewController.swift in Sources */,
-				7552E72C25FBEDA300C070B4 /* NavigatorType.swift in Sources */,
-				7552E72825FBB22D00C070B4 /* AnimatorType.swift in Sources */,
+				7552E72825FBB22D00C070B4 /* StateControllerType.swift in Sources */,
 				754848A025E80E8500529C79 /* AppDelegate.swift in Sources */,
 				7552E72225FA7E0900C070B4 /* LaunchNavigator.swift in Sources */,
 				75977C972615E8CF005E26A5 /* MarvelList.swift in Sources */,

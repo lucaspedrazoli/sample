@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class MarvelListViewController<
-  Animator: AnimatorType
+  Animator: StateControllerType
   >: NiblessViewController, UITableViewDelegate
   where Animator.State == MarvelListState {
 

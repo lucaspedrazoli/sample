@@ -9,10 +9,10 @@
 import UIKit
 import RxSwift
 
-struct LaunchAnimator: AnimatorType {
+struct LaunchAnimator: StateControllerType {
   var actions: [LaunchState : StateControllerAction] = [:]
 
-  func animate(for state: LaunchState) -> Observable<LaunchState> {
+  func perform(for state: LaunchState) -> Observable<LaunchState> {
     switch state {
     case .loading:
       return loadingAnimation()

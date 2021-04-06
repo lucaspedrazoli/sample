@@ -1,5 +1,5 @@
 //
-//  Navigator.swift
+//  StateControllerType.swift
 //  Sample
 //
 //  Created by Lucas Pedrazoli on 12/03/21.
@@ -7,11 +7,10 @@
 //
 
 import RxSwift
-import UIKit
 
-protocol NavigatorType {
+protocol StateControllerType {
   associatedtype State: Hashable
-  var actions: [State: StateControllerAction] { get set }
+  var actions: [State: StateControllerAction] { get set}
 
-  func navigate(for state: State) -> Observable<State>
+  func perform(for state: State) -> Observable<State>
 }

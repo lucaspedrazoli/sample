@@ -8,10 +8,10 @@
 
 import RxSwift
 
-struct MarvelListAnimator: AnimatorType {
+struct MarvelListAnimator: StateControllerType {
   var actions: [MarvelListState: StateControllerAction] = [:]
 
-  func animate(for state: MarvelListState) -> Observable<MarvelListState> {
+  func perform(for state: MarvelListState) -> Observable<MarvelListState> {
     return .empty()
   }
 }

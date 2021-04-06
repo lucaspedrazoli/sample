@@ -8,10 +8,10 @@
 
 import RxSwift
 
-struct LaunchNavigator: NavigatorType {
+struct LaunchNavigator: StateControllerType {
   var actions: [LaunchState : StateControllerAction] = [:]
 
-  func navigate(for state: LaunchState) -> Observable<LaunchState> {
+  func perform(for state: LaunchState) -> Observable<LaunchState> {
     switch state {
       default:
         return teste()

@@ -7,5 +7,5 @@
 //
 
 enum MarvelListState: String {
-  case loading, loadedUp, empty
+  case loading, loadedUp, empty, error
 }

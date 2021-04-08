@@ -14,18 +14,16 @@ struct LaunchAnimator: StateControllerType {
 
   func perform(for state: LaunchState) -> Observable<LaunchState> {
     switch state {
-    case .loading:
-      return loadingAnimation()
-    case .signedIn:
-      return signedInAnimation()
-    case .notSignedIn:
-      return notSignedInAnimation()
+    case .error:
+      return error()
+    default:
+      return animate(for: state)
     }
   }
 
-  private func loadingAnimation() -> Observable<LaunchState> {
+  private func animate(for state: LaunchState) -> Observable<LaunchState> {
     return Observable.create { observer in
-      let action = self.actions[.loading]
+      let action = self.actions[state]
       action?() {
         observer.onNext(.loading)
         observer.onCompleted()
@@ -34,23 +32,12 @@ struct LaunchAnimator: StateControllerType {
     }
   }
 
-  private func signedInAnimation() -> Observable<LaunchState> {
+  func error() -> Observable<LaunchState> {
     return Observable.create { observer in
-      let action = self.actions[.signedIn]
+      let action = self.actions[.error]
       action?() {
-        observer.onNext(.signedIn)
-        observer.onCompleted()
-      }
-      return Disposables.create()
-    }
-  }
-
-  private func notSignedInAnimation() -> Observable<LaunchState> {
-    return Observable.create { observer in
-      let action = self.actions[.notSignedIn]
-      action?() {
-        observer.onNext(.notSignedIn)
-        observer.onCompleted()
+        let error = NSError(domain: "", code: 0, userInfo: nil)
+        observer.onError(error)
       }
       return Disposables.create()
     }

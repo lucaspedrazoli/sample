@@ -20,6 +20,17 @@ class MarvelListViewController<
   private let bag = DisposeBag()
   private let heroeList = PublishRelay<[MarvelListItem]>()
   private let loadingView = LoadingView()
+  private var animator: Animator
+
+  lazy var emptyStateView: UIView = {
+    let view = UIView(frame: UIScreen.main.bounds)
+    view.backgroundColor = .black
+    let label = UILabel(frame: CGRect(x: 50, y: 50, width: 200, height: 200))
+    label.text = "EMPTY"
+    label.textColor = .white
+    view.addSubview(label)
+    return view
+  }()
 
 
   init(view: MarvelListView,
@@ -27,6 +38,7 @@ class MarvelListViewController<
        animator: Animator) {
     self.viewModel = viewModel
     self.marvelListView = view
+    self.animator = animator
     super.init()
   }
 
@@ -46,15 +58,10 @@ class MarvelListViewController<
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    loadingView.inflate(with: view.frame)
-    loadingView.present(in: view)
-    loadingView.animate()
     viewModel
       .load(for: .loading)
-      .map {
-        self.heroeList.accept($0.heroes)
-        self.loadingView.remove()
-      }
+      .flatMap(pushItems)
+      .flatMap(animator.perform)
       .subscribe()
       .disposed(by: bag)
   }
@@ -64,6 +71,28 @@ class MarvelListViewController<
     view = marvelListView
     marvelListView.registerCell(MarvelListCell.self,
                                 identifier: MarvelListCell.identifier)
+  }
+
+  private func showEmptyState(_ completion: @escaping () -> Void) {
+    view.addSubview(emptyStateView)
+    completion()
+  }
+
+  private func pushItems(from list: MarvelList) -> Observable<MarvelListState> {
+    heroeList.accept(list.heroes)
+    return .just(.loadedUp)
+  }
+
+  private func loadingAnimation(_ completion: @escaping () -> Void) {
+    loadingView.inflate(with: view.frame)
+    loadingView.present(in: view)
+    loadingView.animate()
+    completion()
+  }
+
+  private func loadedUpAnimation(_ completion: @escaping () -> Void) {
+    loadingView.remove()
+    completion()
   }
 
   private func bindTableView() {

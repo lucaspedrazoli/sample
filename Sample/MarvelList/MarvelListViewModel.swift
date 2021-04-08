@@ -25,6 +25,7 @@ class MarvelListViewModel {
   }
 
   func load(for: MarvelListState) -> Observable<MarvelList> {
+    // return .empty()
     return userSessionRepository
       .readUserSession()
       .compactMap { $0 }

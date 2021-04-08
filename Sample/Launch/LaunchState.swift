@@ -10,4 +10,5 @@ enum LaunchState: String {
   case loading
   case notSignedIn
   case signedIn
+  case error
 }

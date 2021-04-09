@@ -20,6 +20,8 @@ struct LaunchNavigator: StateControllerType {
   }
 
   private func signedInnavigation() {
-    
+    NavigationController
+      .shared
+      .show(sigendInViewController, sender: nil)
   }
 }

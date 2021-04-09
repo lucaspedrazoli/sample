@@ -14,6 +14,10 @@ class NiblessNavigationController: UINavigationController {
     super.init(nibName: nil, bundle: nil)
   }
 
+  public override init(rootViewController: UIViewController) {
+    super.init(rootViewController: rootViewController)
+  }
+
   @available(*, unavailable,
     message: "Loading this view controller from a nib is unsupported."
   )

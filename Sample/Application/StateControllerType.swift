@@ -10,7 +10,6 @@ import RxSwift
 
 protocol StateControllerType {
   associatedtype State: Hashable
-  var actions: [State: StateControllerAction] { get set}
 
-  func perform(for state: State) -> Observable<State>
+  func perform(for state: State)
 }

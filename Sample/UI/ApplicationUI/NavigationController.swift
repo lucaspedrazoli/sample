@@ -8,9 +8,15 @@
 
 import UIKit
 
-class NavigationController: UINavigationController {
+class NavigationController: NiblessNavigationController {
+
+  static let shared = NavigationController()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+
+  func addRootViewController(_ root: NiblessViewController) {
+    viewControllers = [root]
   }
 }

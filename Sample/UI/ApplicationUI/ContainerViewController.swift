@@ -33,10 +33,6 @@ class ContainerViewController: NiblessViewController {
 
 extension UIViewController {
 
-  var parentContainer: ContainerViewController? {
-    return parent as? ContainerViewController
-  }
-
   func add(_ child: UIViewController) {
       addChild(child)
       view.addSubview(child.view)

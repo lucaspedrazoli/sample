@@ -17,8 +17,8 @@ class LaunchViewModel {
     self.userSessionRepository = userSessionRepository
   }
 
-  func loadSession(for state: LaunchState) -> Observable<LaunchState> {
-    guard state == .loading else { return .empty() } 
+  func loadSession(with animation: () -> Void) -> Observable<LaunchState> {
+    animation()
     return userSessionRepository
             .readUserSession()
             .flatMap(stateForSession)

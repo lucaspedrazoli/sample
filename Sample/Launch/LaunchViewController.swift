@@ -10,18 +10,15 @@ import UIKit
 import RxSwift
 
 class LaunchViewController<
-    Navigator: StateControllerType,
-    Animator: StateControllerType
+    Navigator: StateControllerType
   >: NiblessViewController
   where
-  Navigator.State == LaunchState,
-  Animator.State == LaunchState {
+  Navigator.State == LaunchState {
 
   private let dependencyContainer: LaunchDependencyContainer
   private let launchView: LaunchView
   private var viewModel: LaunchViewModel
   private var navigator: Navigator
-  private var animator: Animator
 
   let bag = DisposeBag()
 
@@ -29,31 +26,28 @@ class LaunchViewController<
     container: LaunchDependencyContainer,
     viewModel: LaunchViewModel,
     navigator: Navigator,
-    animator: Animator,
     launchView: LaunchView) {
     self.launchView = launchView
     self.viewModel = viewModel
     self.dependencyContainer = container
     self.navigator = navigator
-    self.animator = animator
     super.init()
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupAnimator()
-    setupNavigator()
     setupUI()
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: true)
-    animator
-      .perform(for: .loading)
-      .flatMap(viewModel.loadSession)
-      .flatMap(navigator.perform)
-      .subscribe()
+    viewModel
+      .loadSession(with: launchView.animate)
+      .map(navigator.perform)
+      .subscribe(onCompleted: { [weak self] in
+        self?.launchView.stopAnimations()
+      })
       .disposed(by: bag)
   }
 
@@ -62,30 +56,13 @@ class LaunchViewController<
     view = launchView
   }
 
-  private func setupAnimator() {
-    animator.actions[.loading] = loadingAnimation
-  }
-
-  private func setupNavigator() {
-    navigator.actions[.signedIn] = signedInnavigation
-    navigator.actions[.notSignedIn] = notSignedInnavigation
-  }
-
-  private func loadingAnimation(completion: @escaping () -> Void) {
-    launchView.animate()
-    completion()
-  }
-
-  private func signedInnavigation(completion: @escaping () -> Void) {
-    launchView.stopAnimations()
-    completion()
+  private func signedInnavigation() {
     let listViewController = self.dependencyContainer.makeListViewController()
-    self.parentContainer?.show(listViewController, sender: nil)
+    self.show(listViewController, sender: nil)
   }
 
-  private func notSignedInnavigation(completion: @escaping () -> Void) {
+  private func notSignedInnavigation() {
     launchView.stopAnimations()
-    completion()
   }
 }
 

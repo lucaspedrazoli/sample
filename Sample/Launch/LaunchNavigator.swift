@@ -9,23 +9,17 @@
 import RxSwift
 
 struct LaunchNavigator: StateControllerType {
-  var actions: [LaunchState : StateControllerAction] = [:]
 
-  func perform(for state: LaunchState) -> Observable<LaunchState> {
+  var sigendInViewController: NiblessViewController
+
+  func perform(for state: LaunchState) {
     switch state {
-      default:
-        return teste()
-      }
+       default:
+         signedInnavigation()
+    }
   }
 
-  private func teste() -> Observable<LaunchState> {
-    let action = actions[.signedIn]
-    return Observable.create { observer in
-      action?() {
-        observer.onNext(.signedIn)
-        observer.onCompleted()
-      }
-      return Disposables.create()
-    }
+  private func signedInnavigation() {
+    
   }
 }

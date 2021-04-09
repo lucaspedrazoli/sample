@@ -16,7 +16,7 @@ class LaunchDependencyContainer {
     self.userSessionRepository = userSessionStore
   }
 
-  func makeListViewController() -> UIViewController {
+  func makeListViewController() -> NiblessViewController {
     let network = NetworkDataSource()
     let repository = MarvelListRepository(source: network)
     let request = MarvelListRequest(endpoint: .marvelList, method: .GET)

@@ -11,6 +11,9 @@ import UIKit
 class NavigationController: NiblessNavigationController {
 
   static let shared = NavigationController()
+  var root: ContainerViewController? {
+    return viewControllers.first as? ContainerViewController
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()

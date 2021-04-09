@@ -57,16 +57,15 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     viewModel
       .load(with: showLoading)
       .map(pushItems)
       .subscribe()
       .disposed(by: bag)
-
-  }
-
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
   }
 
   private func bindViews() {

@@ -24,15 +24,15 @@ class MarvelListViewModel {
     self.request = request
   }
 
-  func load(for: MarvelListState) -> Observable<MarvelList> {
-    // return .empty()
+  func load(with animation: () -> Void) -> Observable<MarvelList> {
+    animation()
     return userSessionRepository
       .readUserSession()
       .compactMap { $0 }
-      .flatMap(list)
+      .flatMap(getList)
   }
 
-  private func list(_ session: UserSessionModel) -> Observable<MarvelList> {
+  private func getList(_ session: UserSessionModel) -> Observable<MarvelList> {
     let timestamp = Date.roundedTimestamp()
     let hash = session.hash(timestamp)
     request.addQueryItem(.timeStamp, timestamp)

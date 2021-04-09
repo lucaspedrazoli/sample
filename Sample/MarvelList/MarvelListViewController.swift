@@ -10,17 +10,22 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class MarvelListViewController<
-  Animator: StateControllerType
-  >: NiblessViewController, UITableViewDelegate
-  where Animator.State == MarvelListState {
+extension Reactive where Base: MarvelListView {
+  var isLoading: Binder<Bool> {
+    return Binder(self.base) { view, isLoading in
+
+    }
+  }
+}
+
+
+class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   private let marvelListView: MarvelListView
   private let viewModel: MarvelListViewModel
   private let bag = DisposeBag()
-  private let heroeList = PublishRelay<[MarvelListItem]>()
+  private let heroeList = BehaviorRelay<[MarvelListItem]>(value: [])
   private let loadingView = LoadingView()
-  private var animator: Animator
 
   lazy var emptyStateView: UIView = {
     let view = UIView(frame: UIScreen.main.bounds)
@@ -32,19 +37,17 @@ class MarvelListViewController<
     return view
   }()
 
-
   init(view: MarvelListView,
-       viewModel: MarvelListViewModel,
-       animator: Animator) {
+       viewModel: MarvelListViewModel){
     self.viewModel = viewModel
     self.marvelListView = view
-    self.animator = animator
     super.init()
   }
 
   override func loadView() {
     super.loadView()
     bindTableView()
+    bindViews()
   }
 
   override func viewDidLoad() {
@@ -54,15 +57,23 @@ class MarvelListViewController<
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    viewModel
+      .load(with: showLoading)
+      .map(pushItems)
+      .subscribe()
+      .disposed(by: bag)
+
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    viewModel
-      .load(for: .loading)
-      .flatMap(pushItems)
-      .flatMap(animator.perform)
-      .subscribe()
+  }
+
+  private func bindViews() {
+    heroeList
+      .filter { $0.isEmpty }
+      .map { _ in return "message" }
+      .subscribe(onNext: showEmptyState)
       .disposed(by: bag)
   }
 
@@ -73,26 +84,19 @@ class MarvelListViewController<
                                 identifier: MarvelListCell.identifier)
   }
 
-  private func showEmptyState(_ completion: @escaping () -> Void) {
+  private func showEmptyState(_ message: String) {
     view.addSubview(emptyStateView)
-    completion()
   }
 
-  private func pushItems(from list: MarvelList) -> Observable<MarvelListState> {
+  private func pushItems(from list: MarvelList) {
     heroeList.accept(list.heroes)
-    return .just(.loadedUp)
+    loadingView.remove()
   }
 
-  private func loadingAnimation(_ completion: @escaping () -> Void) {
+  private func showLoading() {
     loadingView.inflate(with: view.frame)
     loadingView.present(in: view)
     loadingView.animate()
-    completion()
-  }
-
-  private func loadedUpAnimation(_ completion: @escaping () -> Void) {
-    loadingView.remove()
-    completion()
   }
 
   private func bindTableView() {

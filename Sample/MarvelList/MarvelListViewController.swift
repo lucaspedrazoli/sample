@@ -13,7 +13,7 @@ import RxCocoa
 extension Reactive where Base: MarvelListView {
   var isLoading: Binder<Bool> {
     return Binder(self.base) { view, isLoading in
-
+      isLoading ? view.showEmptyState(with: "") : view.removeEmptyState()
     }
   }
 }
@@ -26,16 +26,6 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
   private let bag = DisposeBag()
   private let heroeList = BehaviorRelay<[MarvelListItem]>(value: [])
   private let loadingView = LoadingView()
-
-  lazy var emptyStateView: UIView = {
-    let view = UIView(frame: UIScreen.main.bounds)
-    view.backgroundColor = .black
-    let label = UILabel(frame: CGRect(x: 50, y: 50, width: 200, height: 200))
-    label.text = "EMPTY"
-    label.textColor = .white
-    view.addSubview(label)
-    return view
-  }()
 
   init(view: MarvelListView,
        viewModel: MarvelListViewModel){
@@ -63,17 +53,17 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
     super.viewDidAppear(animated)
     viewModel
       .load(with: showLoading)
-      .map(pushItems)
-      .subscribe()
+      .observe(on: MainScheduler.instance)
+      .subscribe(onNext: pushItems)
       .disposed(by: bag)
+
   }
 
   private func bindViews() {
     heroeList
       .asDriver()
-      .filter { $0.isEmpty }
-      .map { _ in return "message" }
-      .drive(onNext: showEmptyState)
+      .map { $0.isEmpty }
+      .drive(marvelListView.rx.isLoading)
       .disposed(by: bag)
   }
 
@@ -84,13 +74,10 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
                                 identifier: MarvelListCell.identifier)
   }
 
-  private func showEmptyState(_ message: String) {
-    view.addSubview(emptyStateView)
-  }
-
   private func pushItems(from list: MarvelList) {
-    //heroeList.accept(list.heroes)
-    heroeList.accept([])
+    heroeList.accept(list.heroes)
+    marvelListView.removeEmptyState()
+    //heroeList.accept([])
     loadingView.remove()
   }
 

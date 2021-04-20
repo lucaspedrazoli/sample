@@ -32,11 +32,25 @@ class MarvelListView: NiblessView {
     tableView.translatesAutoresizingMaskIntoConstraints = false
     tableView.backgroundColor = .clear
     tableView.rowHeight = UITableView.automaticDimension
+    tableView.separatorStyle = .none
     return tableView
   }()
 
   func registerCell(_ cell: AnyClass, identifier: String) {
     tableView.register(cell, forCellReuseIdentifier: identifier)
+  }
+
+  func showEmptyState(with message: String) {
+    let empty = EmptyStateView()
+    empty.inflate(with: tableView.frame)
+    tableView.backgroundView = empty
+  }
+
+  func removeEmptyState() {
+    UIView.animate(withDuration: 0.5) {
+      self.tableView.backgroundView?.alpha = 0.0
+      self.tableView.backgroundView = nil
+    }
   }
 
   override func addSubviews() {

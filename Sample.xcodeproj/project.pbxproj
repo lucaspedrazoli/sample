@@ -49,6 +49,7 @@
 		7558A60D25F28EE200E31585 /* UserSessionRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */; };
 		75977C952615E881005E26A5 /* MarvelImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75977C942615E881005E26A5 /* MarvelImageSize.swift */; };
 		75977C972615E8CF005E26A5 /* MarvelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75977C962615E8CF005E26A5 /* MarvelList.swift */; };
+		75ABFE78262F5F840070C38B /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ABFE77262F5F840070C38B /* EmptyStateView.swift */; };
 		75BAD41326135C9900E943E2 /* MarvelListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41226135C9900E943E2 /* MarvelListItem.swift */; };
 		75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD41526135FC600E943E2 /* UIImageView.swift */; };
 		75BAD4182613633D00E943E2 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAD4172613633D00E943E2 /* UITableViewCell.swift */; };
@@ -127,6 +128,7 @@
 		7558A60C25F28EE200E31585 /* UserSessionRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryType.swift; sourceTree = "<group>"; };
 		75977C942615E881005E26A5 /* MarvelImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelImageSize.swift; sourceTree = "<group>"; };
 		75977C962615E8CF005E26A5 /* MarvelList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelList.swift; sourceTree = "<group>"; };
+		75ABFE77262F5F840070C38B /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		75BAD41226135C9900E943E2 /* MarvelListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListItem.swift; sourceTree = "<group>"; };
 		75BAD41526135FC600E943E2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		75BAD4172613633D00E943E2 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				75C0A0F326161BE10070D6CE /* LoadingView.swift */,
+				75ABFE77262F5F840070C38B /* EmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				75BAD41A261364A300E943E2 /* MarvelListCell.swift in Sources */,
 				7525BBDF2614CD58006AE041 /* MarvelApiError.swift in Sources */,
 				7552E71425F7EE2900C070B4 /* LaunchViewModel.swift in Sources */,
+				75ABFE78262F5F840070C38B /* EmptyStateView.swift in Sources */,
 				75C4BFA4260CE57900EC93CA /* GradientLabel.swift in Sources */,
 				75BAD41626135FC600E943E2 /* UIImageView.swift in Sources */,
 				7538259B2614AA0800B5CB33 /* MarveListState.swift in Sources */,

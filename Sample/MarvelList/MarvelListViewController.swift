@@ -70,9 +70,10 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
 
   private func bindViews() {
     heroeList
+      .asDriver()
       .filter { $0.isEmpty }
       .map { _ in return "message" }
-      .subscribe(onNext: showEmptyState)
+      .drive(onNext: showEmptyState)
       .disposed(by: bag)
   }
 
@@ -88,7 +89,8 @@ class MarvelListViewController: NiblessViewController, UITableViewDelegate {
   }
 
   private func pushItems(from list: MarvelList) {
-    heroeList.accept(list.heroes)
+    //heroeList.accept(list.heroes)
+    heroeList.accept([])
     loadingView.remove()
   }
 

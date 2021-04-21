@@ -30,7 +30,7 @@ struct NetworkDataSource: NetworkDataSourceType {
     let task = session
       .dataTask(with: _request) { (data, response, error) in
         if let error = error {
-          self.logger.log(error, nil)
+          self.logger.log(error, nil, context: .network)
           subject.onError(error)
           return
         }
@@ -41,7 +41,7 @@ struct NetworkDataSource: NetworkDataSourceType {
             "url": "\(String(describing: _request.url))"
           ]
           let error = ErrorInfo(data: info)
-          self.logger.log(nil, error)
+          self.logger.log(nil, error, context: .network)
           subject.onError(error)
           return
         }
@@ -57,16 +57,15 @@ struct NetworkDataSource: NetworkDataSourceType {
             "error": "\(errorModel.debugDescription)"
             ]
           let error = ErrorInfo(data: info)
-          self.logger.log(nil, error)
+          self.logger.log(nil, error, context: .network)
           subject.onError(error)
           return
         }
 
         if let data = data {
           let model = try? JSONDecoder().decode(Model.self, from: data)
-//          print("Network response ------>")
-//          dump(_request.url)
-//          dump(model)
+          let info = ["url": _request.url]
+          self.logger.printData(info, object: model, context: .network)
           subject.onNext(model)
           subject.onCompleted()
         }

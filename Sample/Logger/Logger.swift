@@ -7,14 +7,36 @@
 //
 
 struct Logger: LoggerType {
-  func log(_ error: Error?, _ info: ErrorInfo?) {
+
+  private var shouldPrint = false
+
+  func log(_ error: Error?, _ info: ErrorInfo?, context: LogContext) {
     print("\n\n")
+    print(context.rawValue.uppercased())
     print("===================================")
-    print("ERROR TYPE ------------>")
-    dump(error)
-    print("ERROR INFO ------------>")
-    dump(info)
+    if let error = error {
+      print("ERROR TYPE ------------>")
+      dump(error)
+    }
+    if let info = info {
+      print("ERROR INFO ------------>")
+      dump(info)
+    } else {
+      print("NO DATA TO PRINT")
+    }
     print("===================================")
     print("\n\n")
+  }
+
+  func printData(_ info: [String: Any], object: Any, context: LogContext) {
+    guard shouldPrint else { return }
+    print("\n\n")
+    print(context.rawValue.uppercased())
+    print("===================================")
+    print("INFO ------------>")
+    if !info.isEmpty {
+      print(info)
+    }
+    dump(object)
   }
 }

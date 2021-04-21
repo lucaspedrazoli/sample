@@ -6,7 +6,9 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
+import Foundation
+
 protocol LoggerType {
   func log(_ error: Error?, _ info: ErrorInfo?, context: LogContext)
-  func printData(_ info: [String: Any], object: Any, context: LogContext)
+  func printData(_ info: [String: String?], object: Mirror, context: LogContext)
 }

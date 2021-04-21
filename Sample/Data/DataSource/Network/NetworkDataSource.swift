@@ -64,8 +64,9 @@ struct NetworkDataSource: NetworkDataSourceType {
 
         if let data = data {
           let model = try? JSONDecoder().decode(Model.self, from: data)
-          let info = ["url": _request.url]
-          self.logger.printData(info, object: model, context: .network)
+          let info = ["url": _request.url?.absoluteString]
+          let object = Mirror(reflecting: model as Any)
+          self.logger.printData(info, object: object, context: .network)
           subject.onNext(model)
           subject.onCompleted()
         }

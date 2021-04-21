@@ -6,6 +6,8 @@
 //  Copyright © 2021 Lucas Pedrazoli. All rights reserved.
 //
 
+import Foundation
+
 struct Logger: LoggerType {
 
   private var shouldPrint = false
@@ -28,7 +30,7 @@ struct Logger: LoggerType {
     print("\n\n")
   }
 
-  func printData(_ info: [String: Any], object: Any, context: LogContext) {
+  func printData(_ info: [String: String?], object: Mirror, context: LogContext) {
     guard shouldPrint else { return }
     print("\n\n")
     print(context.rawValue.uppercased())
